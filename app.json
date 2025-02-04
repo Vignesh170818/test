@@ -1,0 +1,54 @@
+{
+  "Type": "DotEnvVaultProvider", 
+  "AWSSecretManagerProvider": {
+    "Region": "{MyWizardAWSRegion}",
+    "SecretName": "{MyWizardAWSSecretName}",
+    "Version": "AWSCURRENT"
+  },
+  "AzureKeyVaultProvider": { 
+    "KeyVaultUri": "#{genlitekeyvaulturi}#", 
+    "UserAssignedManagedIdentity": "#{genliteusermanagedidentity}#"
+  },
+  "LocalVaultProvider": {
+    "FilePath": "pythonconfig.ini"
+  },
+  "SecretKeys": {
+    "CompletionApiKey": "CompletionApiKey",
+    "CompletionEndPoint": "CompletionEndPoint",
+    "CompletionDeploymentName": "CompletionDeploymentName",
+    "EmbeddingApiKey": "EmbeddingApiKey",
+    "EmbeddingEndPoint": "EmbeddingEndPoint",
+    "EmbeddingDeploymentName": "EmbeddingDeploymentName"
+  },
+  "Files": [
+    {
+      "IsCloudKeyStorage": "{IsCloudKeyStorage}",
+      "ComponentName": "GenLite",
+      "EncryptionEnabled": "false",
+      "SourceFilePath": "./pythonconfig.ini",
+      "ConfigurationSourceType": "ini"
+    }
+  ],
+  "KeyVaultEnabled": "True",
+  "ADAuthEnabled":"True",
+  "ADAuthConfig":{
+    "ClientId": "",
+    "ClientSecret": "",
+    "TenantId":"",
+    "RedirectUri":"/get_token",
+    "Scope"  : "['User.Read']",
+    "BaseUri" : "#{genlitebaseuri}#/core"
+  },
+  "AllowedOrigins":["https://*.accenture.com*","https://*.azurewebsites.net*"],
+
+  "AppLog": {
+    "LogDir": "/home/LogFiles",
+    "FileName": "gen_app.log",
+    "MaxLogBytes": 5000000,
+    "BackUps": 3,
+    "Format": "%(asctime)s %(levelname)s %(process)d %(message)s %(filename)s :%(funcName)s :%(lineno)d :%(pathname)s",
+    "LogLevel": "INFO"
+    },
+    "SUFFIX":"/core",
+    "AllowedWebsites":["accenture.com","azurewebsites.net"]
+}

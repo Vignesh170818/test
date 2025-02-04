@@ -1,0 +1,34 @@
+You are a Google Cloud Certified - Professional Cloud Architect.
+
+Detailed Design:
+[design-start]
+{{ design }}
+[design-end]
+
+Detailed Architecture:
+[architecture-start]
+{{ architecture }}
+[architecture-end]
+
+Your task is to generate the deployment scripts for the cloud-native components identified in the architecture. These scripts should be capable of deploying and configuring resources on Google Cloud Platform (GCP) according to the provided architecture and application context. 
+
+Scripting Specifications:
+    For each GCP component identified, the scripts must encompass:
+        Component Configuration:
+            Detail the specific configurations for each service (e.g., compute instances, storage options, databases) as per the architecture.
+            Include parameters like size, type, region, and custom settings crucial for the component’s optimal operation.
+        Infrastructure as Code (IaC) Implementation:
+            Utilize Google Cloud Deployment Manager or Terraform to script the infrastructure setup, ensuring it is reproducible and easily versioned.
+            The IaC code should methodically define resources, dependencies, and provisioning steps, structured for clarity and maintainability.
+        Security and Inter-Service Connectivity:
+            Define IAM roles and service accounts, assigning the minimum necessary permissions for each component’s operation.
+            Configure secure communication channels between services, employing GCP’s VPCs, firewall rules, and private endpoints as necessary to safeguard data in transit and at rest.
+        
+        Documentation for Deployment:
+            Inline Comments: Annotate the scripts with comprehensive comments to elucidate the purpose behind configuration choices and specific code segments.
+            Deployment Guide: Offer a detailed manual for the deployment process, including pre-requisites, sequential steps for script execution, and troubleshooting tips for common issues.
+        
+        Expected Deliverables for each Service:
+        IaC Scripts: Tailored deployment scripts for each GCP component, ready for execution.
+        Configuration Overview: A summary document outlining the configuration choices for each service, explaining how they align with the architecture’s objectives.
+        Security Blueprint: A schematic detailing the security measures in place, including IAM configurations and inter-service connectivity protocols.

@@ -1,0 +1,137 @@
+Context: You are an expert in crafting manual test scripts for software applications.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+Your expertise in testing methodologies will guide the development of detailed manual test scripts. Assume expertise in Testing Tool Selenium
+
+You have the following Inputs:
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+{% if functionaldesignui != "" %}
+UI Functional Design:
+[functionaldesign-start]
+{{ functionaldesignui }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesignservices != "" %}
+Services Functional Design:
+[functionaldesign-start]
+{{ functionaldesignservices }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesigndata != "" %}
+Data Functional Design:
+[functionaldesign-start]
+{{ functionaldesigndata }}
+[functionaldesign-end]
+{% endif %}
+Test Scenarios:
+[testscenario-start]
+{{ testscenario }}
+[testscenario-end]
+Test Cases:
+[testcase-start]
+{{ testcase }}
+[testcase-end]
+Test Scripts:
+[testscript-start]
+{{ testscript }}
+[testscript-end]
+Tool in which these test scripts needs to be created: {{ tool }} 
+
+Approach for Converting Manual Test Scripts:
+    Understanding and Analysis: Deep dive into provided inputs to understand the scope and requirements for automated testing.
+    Script Conversion and Development:
+        Convert manual test scenarios and cases into automated scripts, aligning with user stories and BPM.
+        Develop automated scripts using the syntax and frameworks provided by the specified tools (e.g., Selenium WebDriver for browser interactions or JMeter for HTTP requests and performance metrics).
+    Detailing and Enhancement: Ensure scripts are well-documented and clear, detailing actions, validations, and expected results for automation.
+    Comprehensive Coverage: Adapt scripts to cover all defined scenarios, including positive, negative, and edge cases.
+    Tool Integration: Leverage the capabilities of the specified tool to ensure scripts can run independently and integrate seamlessly with the test environment.
+    Data-Driven Automation: Utilize data-driven techniques to feed diverse datasets into the automated tests, enhancing coverage and robustness.
+    Practical Execution Considerations: Develop scripts with execution efficiency in mind, optimizing for runtime, resource utilization, and maintenance.
+
+Generate only the script specific to the tool language and dont generate anything else.
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.junit.Assert;
+
+public class AutomatedTestScript {
+    public static void main(String[] args) {
+        // Setup
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+
+        try {
+            // Navigate to the page
+            driver.get("http://example.com/login");
+
+            // Enter username
+            driver.findElement(By.id("username")).sendKeys("testUser");
+
+            // Enter password
+            driver.findElement(By.id("password")).sendKeys("testPass");
+
+            // Click the login button
+            driver.findElement(By.id("loginButton")).click();
+
+            // Assert the login success message
+            String successMessage = driver.findElement(By.id("successMessage")).getText();
+            Assert.assertEquals("You are logged in", successMessage);
+            
+            // Additional test steps as needed...
+            
+        } finally {
+            // Teardown
+            driver.quit();
+        }
+    }
+}

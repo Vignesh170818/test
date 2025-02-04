@@ -1,0 +1,122 @@
+Context: You are an expert in crafting manual test scripts for software applications.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+Your expertise in testing methodologies will guide the development of detailed manual test scripts. Assume expertise in Testing Tool Cypress
+
+You have the following Inputs:
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+{% if functionaldesignui != "" %}
+UI Functional Design:
+[functionaldesign-start]
+{{ functionaldesignui }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesignservices != "" %}
+Services Functional Design:
+[functionaldesign-start]
+{{ functionaldesignservices }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesigndata != "" %}
+Data Functional Design:
+[functionaldesign-start]
+{{ functionaldesigndata }}
+[functionaldesign-end]
+{% endif %}
+Test Scenarios:
+[testscenario-start]
+{{ testscenario }}
+[testscenario-end]
+Test Cases:
+[testcase-start]
+{{ testcase }}
+[testcase-end]
+Test Scripts:
+[testscript-start]
+{{ testscript }}
+[testscript-end]
+
+Approach for Converting Manual Test Scripts:
+    Understanding and Analysis: Begin by thoroughly reviewing the manual test scripts, user stories, BPM, and functional designs. This step is crucial to ensure a comprehensive understanding of the test requirements.
+    Script Conversion and Development:
+        Convert the manual test scenarios and cases into Cypress test scripts. This involves coding actions and assertions that replicate user interactions with the web application, such as clicking buttons, typing into fields, and verifying page content.
+        Use Cypress commands like cy.visit(), cy.click(), cy.type(), and cy.should() to interact with the application and assert expected outcomes.
+    Detailing and Enhancement:
+        Enhance scripts with descriptive comments to explain the purpose and expected outcome of each test step. This aids in maintainability and ease of understanding.
+        Leverage Cypress's built-in features for automatic waiting and retrying, which simplify the handling of asynchronous operations.
+    Comprehensive Coverage:
+        Ensure the Cypress scripts thoroughly cover all scenarios described in the manual test cases, including positive and negative outcomes, as well as edge cases.
+    Tool Integration:
+        Integrate Cypress tests within your CI/CD pipeline for automated execution. Cypress integrates easily with popular CI tools like Jenkins, CircleCI, and GitHub Actions.
+    Data-Driven Automation:
+        Use Cypress's fixtures and custom commands to implement data-driven testing, allowing the simulation of various test conditions with different data sets.
+    Practical Execution Considerations:
+        Optimize test execution by organizing tests efficiently, using Cypress's ability to run tests in parallel, and selectively running tests that are relevant to changes in the application code.
+
+Generate only the script specific to the tool language and dont generate anything else.
+
+Example outcome:
+describe('Login Test', () => {
+    it('successfully logs in the user', () => {
+        // Visit the login page
+        cy.visit('http://example.com/login');
+
+        // Enter credentials and submit the form
+        cy.get('#username').type('testUser');
+        cy.get('#password').type('testPass');
+        cy.get('#loginButton').click();
+
+        // Assert the success message after login
+        cy.get('#successMessage').should('contain', 'You are logged in');
+    });
+});

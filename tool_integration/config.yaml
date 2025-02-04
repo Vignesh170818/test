@@ -1,0 +1,22 @@
+tool_entity:
+  cloudjira: ["epic", "feature", "userstory", "task"]
+  hpalm: ["test"]
+
+cloudjira:
+  username_id: "azurevault"
+  CloudJiraUserName: ""
+  password_id: "azurevault"
+  CloudJiraPassword: ""
+  server_url : "https://jira4phoenixmywiz.atlassian.net"
+  project : "CCN"
+
+hpalm:
+  baseUrl : "https://almaccenturestg.saas.microfocus.com/qcbin/"
+  username_id : "azurevault"
+  HpalmUserName : ""
+  password_id : "azurevault"
+  HpalmPassword : ""
+  project : "MyWIzard_Phoenix_Dev_lx"
+  domain : "MYWIZARD_PHONEIX_DEV"
+
+

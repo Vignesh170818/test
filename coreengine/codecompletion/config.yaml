@@ -1,0 +1,8 @@
+bisonconfig:
+  googleproject: "acn-genlite"
+  googleservicelocation: "us-central1"
+  modelname: "code-bison-32k"
+  max_output_tokens: "8192"
+  json_key: "acn-genlite.json"
+  temperature: "0.1"
+  top_p: "0.5"

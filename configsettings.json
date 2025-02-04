@@ -1,0 +1,117 @@
+[
+  {
+    "name": "AWS_ACCESS_KEY_ID",
+    "value": "",
+    "slotSetting": true
+  },
+  {
+    "name": "AWS_DEFAULT_REGION",
+    "value": "us-west-2",
+    "slotSetting": true
+  },
+  {
+    "name": "AWS_SECRET_ACCESS_KEY",
+    "value": "",
+    "slotSetting": true
+  },
+  {
+    "name": "BEDROCK_ASSUME_ROLE",
+    "value": "arn:aws:iam::620178079631:role/AmazonSageMaker-ExecutionRole",
+    "slotSetting": true
+  },
+  {
+    "name": "CompletionApiKey",
+    "value": "",
+    "slotSetting": true
+  },
+  {
+    "name": "CompletionApiType",
+    "value": "azure",
+    "slotSetting": true
+  },
+  {
+    "name": "CompletionApiVersion",
+    "value": "2023-03-15-preview",
+    "slotSetting": true
+  },
+  {
+    "name": "CompletionDeploymentName",
+    "value": "gpt-35-turbo-16k",
+    "slotSetting": true
+  },
+  {
+    "name": "CompletionEndPoint",
+    "value": "https://genlite.openai.azure.com/",
+    "slotSetting": true
+  },
+  {
+    "name": "EmbeddingApiKey",
+    "value": "",
+    "slotSetting": true
+  },
+  {
+    "name": "EmbeddingApiType",
+    "value": "azure",
+    "slotSetting": true
+  },
+  {
+    "name": "EmbeddingApiVersion",
+    "value": "2023-03-15-preview",
+    "slotSetting": true
+  },
+  {
+    "name": "EmbeddingDeploymentName",
+    "value": "text-embedding-ada-002",
+    "slotSetting": true
+  },
+  {
+    "name": "EmbeddingEndPoint",
+    "value": "https://genlite.openai.azure.com/",
+    "slotSetting": true
+  },
+  {
+    "name": "GPT4ApiKey",
+    "value": "",
+    "slotSetting": true
+  },
+  {
+    "name": "GPT4ApiType",
+    "value": "azure",
+    "slotSetting": true
+  },
+  {
+    "name": "GPT4ApiVersion",
+    "value": "2023-03-15-preview",
+    "slotSetting": true
+  },
+  {
+    "name": "GPT4DeploymentName",
+    "value": "gpt-4",
+    "slotSetting": true
+  },
+  {
+    "name": "GPT4EndPoint",
+    "value": "https://llmgenaisacoe-openai.openai.azure.com/",
+    "slotSetting": true
+  },
+  {
+    "name": "NEO4J-PASSWORD",
+    "value": "",
+    "slotSetting": true
+  },
+  {
+    "name": "NEO4J-URL",
+    "value": "neo4j+s://a81a5cd7.databases.neo4j.io:7687",
+    "slotSetting": true
+  },
+  {
+    "name": "NEO4J-USER",
+    "value": "neo4j",
+    "slotSetting": true
+  },
+  {
+    "name": "WEBSITE_HTTPLOGGING_RETENTION_DAYS",
+    "value": "1",
+    "slotSetting": false
+  }
+]

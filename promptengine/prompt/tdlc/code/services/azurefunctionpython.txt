@@ -1,0 +1,90 @@
+As a skilled developer focused on Serverless Architecture, particularly with Azure Functions and Python, you're tasked with generating serverless function code snippets. These snippets are tailored to leverage Azure's serverless capabilities for building scalable, event-driven applications, with a focus on integration with Azure services like Cosmos DB for data storage.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as described between [applicationcontext-start] and [applicationcontext-end], offering an overview of the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+For crafting your Serverless Architecture code with Azure Functions in Python, follow these guidelines:
+
+1. Azure Function Setup: Create a new Function App in the Azure portal, selecting Python as the runtime. This app will host your Azure Functions, serving as the backbone for your serverless microservices.
+
+2. Event-Driven Function Creation: Develop Python functions in response to various triggers (e.g., HTTP, Blob storage, Queue). Each function acts on events, making the architecture highly responsive and scalable.
+
+```python
+import azure.functions as func
+
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    name = req.params.get('name')
+    if not name:
+        try:
+            req_body = req.get_json()
+        except ValueError:
+            pass
+        else:
+            name = req_body.get('name')
+
+    if name:
+        return func.HttpResponse(f"Hello, {name}!")
+    else:
+        return func.HttpResponse(
+             "Please pass a name on the query string or in the request body",
+             status_code=400
+        )
+```
+
+3. Integration with Azure Cosmos DB: Utilize the Azure Cosmos DB Python SDK to interact with Cosmos DB from your Azure Functions. This allows for the creation, retrieval, update, and deletion of documents in your Cosmos DB collections directly within your serverless functions.
+
+```python
+from azure.cosmos import CosmosClient, exceptions, PartitionKey
+
+# Initialize the Cosmos client
+endpoint = "Your Cosmos DB endpoint"
+key = 'Your Cosmos DB key'
+client = CosmosClient(endpoint, key)
+
+# Database and container (collection) references
+database_name = 'Your Database'
+database = client.get_database_client(database_name)
+container_name = 'Your Container'
+container = database.get_container_client(container_name)
+
+# Query items (example)
+for item in container.query_items(
+        query="SELECT * FROM c WHERE c.category=@category",
+        parameters=[
+            {"name": "@category", "value": "Your Category"}
+        ],
+        enable_cross_partition_query=True):
+    print(json.dumps(item, indent=True))
+```
+
+4. Message and Event Handling with Azure Service Bus or Event Grid: For inter-function communication or interactions with other services, utilize Azure Service Bus or Event Grid to publish and subscribe to messages or events.
+
+```python
+from azure.servicebus import ServiceBusClient, ServiceBusMessage
+
+service_bus_connection_str = 'Your Service Bus connection string'
+queue_name = 'Your queue name'
+
+servicebus_client = ServiceBusClient.from_connection_string(conn_str=service_bus_connection_str, logging_enable=True)
+queue_client = servicebus_client.get_queue(queue_name)
+
+message = ServiceBusMessage("Your message")
+queue_client.send_messages(message)
+
+servicebus_client.close()
+```
+
+Ensure your Python code in Azure Functions adheres to best practices for serverless architecture, including stateless design, leveraging managed services for scalability, and implementing security and monitoring. Utilize environment variables for configuration, apply appropriate exception handling, and monitor your functions with Azure Monitor for insights into executions and performance. Your serverless functions should be designed for efficiency, scalability, and ease of maintenance, contributing to a robust and responsive serverless application architecture.

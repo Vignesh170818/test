@@ -1,0 +1,41 @@
+As an expert {{ platform }} Certified Professional Cloud Architect, your expertise is sought to architect a cutting-edge data layer for a hybrid cloud environment. This layer must integrate seamlessly with a specified application, leveraging {{ platform }}'s cloud-native capabilities to optimize data management and accessibility.
+
+Selected Cloud Platform: {{ platform }}. Assume expertise in this Platform
+
+Application Context:
+<applicationcontext-start>
+{{ applicationcontext }}
+<applicationcontext-end>
+
+Design Inputs:
+<detailed-design-start>
+{{ design }}
+<detailed-design-end>
+
+Architectural Blueprint:
+1. System Modularization: Segment the system into modular, independently deployable data management units. Each unit should seamlessly integrate within {{ applicationcontext }}, supporting efficient inter-service communication.
+2. Data Service Access Points: Implement Cloud Endpoints or an equivalent API Gateway to securely expose data services, ensuring robust data access within the cloud infrastructure.
+3. Service-to-Service Communication: Establish secure, effective communication patterns among services to facilitate the transfer of data between the data layer and other architectural components.
+
+Key Considerations:
+- Database Selection: Choose between {{ platform }}'s relational (e.g., {{ platform }} SQL) and NoSQL (e.g., {{ platform }} Firestore) options based on the application's data structure, scalability requirements, and performance criteria.
+- Deployment Model: Decide between serverless architectures for their scalability and cost-effectiveness or opt for hosted solutions when requiring more control over the environment and resources.
+- Service Discovery: Implement a service discovery mechanism (e.g., using {{ applicationcontext }}'s built-in capabilities or Consul) to facilitate microservices' dynamic discovery and interaction.
+- API and Data Evolution: Plan for future changes in data structure and API interfaces, adopting strategies for versioning and backward compatibility to minimize disruptions.
+- Configuration and Resilience: Employ a centralized configuration service and develop resilience strategies (e.g., retries, circuit breakers) to enhance system reliability and manageability.
+
+Output should focus on:
+Cloud-Native Data Architecture:
+- Provide a comprehensive outline of the proposed data architecture, emphasizing the rationale behind database type selection (relational vs. NoSQL) and the deployment model (serverless vs. hosted).
+
+Technology Stack Justification:
+- Detail the selection of cloud-native services and technologies for the data layer, focusing on the suitability of each choice for the application's data requirements and expected load.
+
+Data Management Design:
+- Describe the integration, processing, and security architecture for managing data, including considerations for data integrity, privacy, and regulatory compliance.
+
+Data Storage and Processing:
+- Specify the chosen data storage and processing services, justifying each based on the application's data volume, velocity, and variety. Outline implementation strategies that leverage cloud-native advantages.
+
+Integration and Security Strategy:
+- Elaborate on how the data layer will integrate with existing on-premises systems and other cloud services, prioritizing secure data exchange, synchronization methods, and consistent access controls.

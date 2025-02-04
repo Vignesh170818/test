@@ -1,0 +1,113 @@
+As a skilled developer focused on Serverless Architecture using Java with Azure Functions, you're tasked with generating serverless function code snippets. These snippets will leverage Azure's serverless capabilities to build scalable, event-driven applications, emphasizing integration with Azure services like Cosmos DB for data management.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as described between [applicationcontext-start] and [applicationcontext-end], providing an overview of the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+To craft your Serverless Architecture code with Azure Functions in Java, adhere to the following guidelines:
+
+1. Azure Function App Setup: Initialize a new Function App in the Azure portal, choosing Java as the runtime. This app will serve as the container for your Azure Functions, facilitating your serverless microservices.
+
+2. Developing Event-Driven Functions: Create Java functions triggered by various sources (HTTP requests, Blob storage events, Queue messages). Each function should act upon its specific trigger, enabling responsive and scalable serverless microservices.
+
+```java
+package com.example.functions;
+
+import com.microsoft.azure.functions.annotation.*;
+import com.microsoft.azure.functions.*;
+
+/
+ * Azure Function with HTTP Trigger.
+ */
+public class Function {
+    @FunctionName("helloFunction")
+    public HttpResponseMessage run(
+            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
+            final ExecutionContext context) {
+        context.getLogger().info("Java HTTP trigger processed a request.");
+
+        // Parse query parameter
+        final String query = request.getQueryParameters().get("name");
+        final String name = request.getBody().orElse(query);
+
+        if (name == null) {
+            return request.createResponseBuilder(HttpStatus.BAD_REQUEST).body("Please pass a name on the query string or in the request body").build();
+        } else {
+            return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+        }
+    }
+}
+```
+
+3. Azure Cosmos DB Integration: Interact with Azure Cosmos DB using the Azure Cosmos DB Java SDK within your Azure Functions. This enables operations such as document creation, retrieval, update, and deletion directly within your serverless functions.
+
+```java
+import com.azure.cosmos.*;
+import com.azure.cosmos.models.*;
+
+public class CosmosDBManager {
+    private CosmosClient cosmosClient;
+    private CosmosDatabase database;
+    private CosmosContainer container;
+
+    public CosmosDBManager(String endpoint, String key, String databaseName, String containerName) {
+        this.cosmosClient = new CosmosClientBuilder()
+                .endpoint(endpoint)
+                .key(key)
+                .consistencyLevel(ConsistencyLevel.EVENTUAL)
+                .buildClient();
+
+        this.database = cosmosClient.getDatabase(databaseName);
+        this.container = database.getContainer(containerName);
+    }
+
+    // Example method to query items
+    public void queryItems(String sqlQuery) {
+        CosmosPagedIterable<YourEntity> items = this.container.queryItems(sqlQuery, new CosmosQueryRequestOptions(), YourEntity.class);
+        items.iterableByPage().forEach(page -> {
+            System.out.println("Got a page of query result with " + page.getResults().size() + " items read");
+            page.getResults().forEach(item -> System.out.println(item.toString()));
+        });
+    }
+
+    // Additional CRUD operations
+}
+```
+
+4. Handling Messages and Events with Azure Service Bus or Event Grid: For communication between functions or with other services, use Azure Service Bus or Event Grid to publish and subscribe to messages or events, ensuring your functions react to system-wide events efficiently.
+
+```java
+import com.azure.messaging.servicebus.*;
+
+public class ServiceBusSender {
+    public static void sendMessage(String connectionString, String queueName, String message) {
+        // Create a sender client for the queue
+        ServiceBusSenderClient senderClient = new ServiceBusClientBuilder()
+            .connectionString(connectionString)
+            .sender()
+            .queueName(queueName)
+            .buildClient();
+
+        // Send a single message to the queue
+        senderClient.sendMessage(new ServiceBusMessage(message));
+        System.out.println("Sent a single message to the queue: " + queueName);
+
+        // Close the sender client
+        senderClient.close();
+    }
+}
+```
+
+Ensure your Java code in Azure Functions follows best practices for serverless architecture, including efficient use of resources, scalability, and maintainability. Utilize environment variables for configuration settings, apply comprehensive exception handling, and monitor your functions with Azure Monitor to gain insights into performance and execution. Your serverless functions should be designed to provide a robust, efficient solution, contributing to a highly responsive serverless application architecture.

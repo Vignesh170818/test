@@ -1,0 +1,110 @@
+name: $(date:yyyyMMdd)$(rev:.r)
+resources:
+  repositories:
+    - repository: self
+      type: git
+      ref: refs/heads/main
+
+trigger: none
+variables:
+  username: "acrGenLiteTestDemo"
+  ACRRegistry: "acrGenLiteTestDemo.azurecr.io"
+  keyVaultName: "kv-GenLiteTestDemo"
+  resourceGroup: "rg-GenLiteTestDemo"
+  AppServiceName: "app-GenLiteTestDemo"
+  identityName: "id-GenLiteTestDemo"
+  ACRPassword: "{ACRPassword}"
+  genliteusermanagedidentity: ""
+  genlitekeyvaulturi: ""
+  genlitecloudprovider: "azure"
+  azureSubscription: "Genlite-azr-sbx"
+
+jobs:
+  - job: Job_1
+    displayName: Agent job 1
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - checkout: self
+        fetchDepth: 1
+
+      - task: AzurePowerShell@5
+        inputs:
+          azureSubscription: "$(azureSubscription)"
+          ScriptType: "InlineScript"
+          Inline: |
+            $ACRrepo = "$(Build.Repository.Name)".ToLower()
+            ##ClientID of MI
+            $ManagedIdentity = (Get-AzUserAssignedIdentity -ResourceGroupName $(resourceGroup) -Name $(identityName)).ClientId
+
+            #Keyvault URL
+            $keyVaultUrl = (Get-AzKeyVault -VaultName $(keyVaultName) -ResourceGroupName $(resourceGroup)).VaultUri
+
+            Write-Host "##vso[task.setvariable variable=genlitekeyvaulturi]$keyVaultUrl"
+
+            Write-Host "##vso[task.setvariable variable=genliteusermanagedidentity]$ManagedIdentity"
+
+            Write-Host "##vso[task.setvariable variable=ACRrepo]$ACRrepo"
+          azurePowerShellVersion: "LatestVersion"
+
+      - task: qetza.replacetokens.replacetokens-task.replacetokens@5
+        displayName: Replace tokens in **/app.json
+        inputs:
+          targetFiles: "**/app.json"
+
+      - task: Bash@3
+        inputs:
+          targetType: "inline"
+          script: |
+            sudo rm -rf $(System.DefaultWorkingDirectory)/.git         
+            sudo ls -lrta $(System.DefaultWorkingDirectory)         
+            sudo docker system df
+            sudo docker builder prune -f
+            sudo docker system df
+
+      - task: Bash@3
+        displayName: DockerBuild
+        inputs:
+          targetType: inline
+          script: >
+            docker build -t $(ACRRegistry)/$(ACRrepo):$(Build.BuildId) .
+      - task: Bash@3
+        displayName: DockerPush
+        inputs:
+          targetType: inline
+          script: >
+            docker login $(ACRRegistry) -u $(username) -p $(ACRPassword)
+
+
+            docker push $(ACRRegistry)/$(ACRrepo):$(Build.BuildId)
+
+  - job: Job_2
+    displayName: Agent job
+    dependsOn: Job_1
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - checkout: self
+        fetchDepth: 1
+      - task: AzureAppServiceManage@0
+        displayName: "Stop Azure App Service: $(AppServiceName)"
+        inputs:
+          azureSubscription: "$(azureSubscription)"
+          Action: Stop Azure App Service
+          WebAppName: $(AppServiceName)
+      - task: AzureRmWebAppDeployment@4
+        displayName: "Azure App Service Deploy: $(AppServiceName)"
+        inputs:
+          azureSubscription: "$(azureSubscription)"
+          WebAppKind: webAppContainer
+          WebAppName: $(AppServiceName)
+          DockerNamespace: $(ACRRegistry)
+          DockerRepository: $(Build.Repository.Name)
+          DockerImageTag: $(Build.BuildId)
+      - task: AzureAppServiceManage@0
+        displayName: "Start App Service: $(AppServiceName)"
+        inputs:
+          azureSubscription: "$(azureSubscription)"
+          Action: Start Azure App Service
+          WebAppName: $(AppServiceName)
+

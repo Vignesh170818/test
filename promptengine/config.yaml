@@ -1,0 +1,177 @@
+angular:
+  template_dir: "path/to/angular/templates"
+  template_name: "angular_template.txt"
+bpmjson:
+  template_dir: "promptengine/prompt/tdlc/bpm"
+  template_name: "bpmjson.txt"
+processflow:
+  template_dir: "promptengine/prompt/tdlc/bpm"
+  template_name: "processflow.txt"
+generateepic:
+  template_dir: "promptengine/prompt/tdlc/epic"
+  template_name: "generate.txt"
+reviewepic:
+  template_dir: "promptengine/prompt/tdlc/epic"
+  template_name: "review.txt"
+applyepicreview:
+  template_dir: "promptengine/prompt/tdlc/epic"
+  template_name: "apply.txt"
+generatefeature:
+  template_dir: "promptengine/prompt/tdlc/feature"
+  template_name: "list.txt"
+expandfeature:
+  template_dir: "promptengine/prompt/tdlc/feature"
+  template_name: "expand.txt"
+userstories_dataslicing:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "userstories_dataslicing.txt"
+userstories_functionalslicing:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "userstories_functionalslicing.txt"
+userstories_securityslicing:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "userstories_securityslicing.txt"
+userstories_testdrivenslicing:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "userstories_testdrivenslicing.txt"
+userstories_uislicing:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "userstories_uislicing.txt"
+userstories_verticalslicing:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "userstories_verticalslicing.txt"
+expanduserstory:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "expand.txt"
+userstorytasks:
+  template_dir: "promptengine/prompt/tdlc/userstory"
+  template_name: "tasks.txt"
+functionaldesign_ui:
+  template_dir: "promptengine/prompt/tdlc/design/functional"
+  template_name: "ui.txt"
+functionaldesign_data:
+  template_dir: "promptengine/prompt/tdlc/design/functional"
+  template_name: "data.txt"
+functionaldesign_services:
+  template_dir: "promptengine/prompt/tdlc/design/functional"
+  template_name: "services.txt"
+highleveldesign_ui:
+  template_dir: "promptengine/prompt/tdlc/design/hld"
+  template_name: "ui.txt"
+highleveldesign_data:
+  template_dir: "promptengine/prompt/tdlc/design/hld"
+  template_name: "data.txt"
+highleveldesign_services:
+  template_dir: "promptengine/prompt/tdlc/design/hld"
+  template_name: "services.txt"
+lowleveldesign_ui:
+  template_dir: "promptengine/prompt/tdlc/design/lld"
+  template_name: "ui.txt"
+lowleveldesign_data:
+  template_dir: "promptengine/prompt/tdlc/design/lld"
+  template_name: "data.txt"
+lowleveldesign_services:
+  template_dir: "promptengine/prompt/tdlc/design/lld"
+  template_name: "services.txt"
+codegeneration_ui_html:
+  template_dir: "promptengine/prompt/tdlc/code/ui"
+  template_name: "html.txt"
+codegeneration_ui_angular:
+  template_dir: "promptengine/prompt/tdlc/code/ui"
+  template_name: "angular.txt"
+codegeneration_ui_vue:
+  template_dir: "promptengine/prompt/tdlc/code/ui"
+  template_name: "vue.txt"
+codegeneration_ui_react:
+  template_dir: "promptengine/prompt/tdlc/code/ui"
+  template_name: "react.txt"
+codegeneration_services_python:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "python.txt"
+codegeneration_services_java:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "java.txt"
+codegeneration_services_nodejs:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "node.txt"
+codegeneration_services_csharp:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "csharp.txt"
+codegeneration_services_azurefunctionjava:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "azurefunctionjava.txt"
+codegeneration_services_azurefunctionpython:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "azurefunctionpython.txt"
+codegeneration_services_googlefunctionpython:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "googlefunctionpython.txt"
+codegeneration_services_googlefunctionjava:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "googlefunctionjava.txt"
+codegeneration_services_awslambdapython:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "awslambdapython.txt"
+codegeneration_services_awslambdajava:
+  template_dir: "promptengine/prompt/tdlc/code/services"
+  template_name: "awslambdajava.txt"
+codegeneration_data_sql:
+  template_dir: "promptengine/prompt/tdlc/code/data"
+  template_name: "sql.txt"
+testscenarios:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "testscenarios.txt"
+testcases:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "testcases.txt"
+testscripts:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "testscripts.txt"
+testscripts_selenium:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "selenium.txt"
+testscripts_puppeteer:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "puppeteer.txt"
+testscripts_cypress:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "cypress.txt"
+testscripts_cucumber:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "cucumber.txt"
+testscripts_playwright:
+  template_dir: "promptengine/prompt/tdlc/test"
+  template_name: "playwright.txt"
+architecture_ui:
+  template_dir: "promptengine/prompt/tdlc/architecture"
+  template_name: "ui.txt"
+architecture_services:
+  template_dir: "promptengine/prompt/tdlc/architecture"
+  template_name: "services.txt"
+architecture_data:
+  template_dir: "promptengine/prompt/tdlc/architecture"
+  template_name: "data.txt"
+componentdiagram_services:
+  template_dir: "promptengine/prompt/tdlc/componentdiagram"
+  template_name: "services.txt"
+componentdiagram_ui:
+  template_dir: "promptengine/prompt/tdlc/componentdiagram"
+  template_name: "ui.txt"
+componentdiagram_data:
+  template_dir: "promptengine/prompt/tdlc/componentdiagram"
+  template_name: "data.txt"
+componentdiagram:
+  template_dir: "promptengine/prompt/tdlc/componentdiagram"
+  template_name: "componentdiagram.txt"
+deployment_aws:
+  template_dir: "promptengine/prompt/tdlc/deployment"
+  template_name: "aws.txt"
+deployment_azure:
+  template_dir: "promptengine/prompt/tdlc/deployment"
+  template_name: "azure.txt"
+deployment_gcp:
+  template_dir: "promptengine/prompt/tdlc/deployment"
+  template_name: "gcp.txt"
+functionaldesign_image:
+  template_dir: "promptengine/prompt/tdlc/design/functional"
+  template_name: "fromimage.txt"

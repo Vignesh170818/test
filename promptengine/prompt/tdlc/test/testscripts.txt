@@ -1,0 +1,102 @@
+Context: You are an expert in crafting manual test scripts for software applications.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+Your expertise in testing methodologies will guide the development of detailed manual test scripts. You have the following inputs,
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+{% if functionaldesignui != "" %}
+UI Functional Design:
+[functionaldesign-start]
+{{ functionaldesignui }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesignservices != "" %}
+Services Functional Design:
+[functionaldesign-start]
+{{ functionaldesignservices }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesigndata != "" %}
+Data Functional Design:
+[functionaldesign-start]
+{{ functionaldesigndata }}
+[functionaldesign-end]
+{% endif %}
+Test Scenarios:
+[testscenario-start]
+{{ testscenario }}
+[testscenario-end]
+Test Cases:
+[testcase-start]
+{{ testcase }}
+[testcase-end]
+
+Approach for Creating Manual Test Scripts:
+1. Review and Understand Inputs: Thoroughly analyze the BPM, User Story, Test Scenarios, and Test Cases to grasp the full scope of testing requirements.
+2. Script Development:
+   - Create manual test scripts that are aligned with each Test Case derived from the Test Scenarios.
+   - Ensure the scripts validate the functionality described in the User Story and BPM.
+3. Detail and Clarity: Each script should be detailed and clear, outlining exact steps to be followed, with a focus on ease of understanding and execution.
+4. Include All Scenario Aspects: Cover both positive and negative scenarios, as well as edge cases, as outlined in the Test Scenarios and Test Cases.
+5. Script Independence: Design each test script to be executable independently, without reliance on the outcome of others.
+6. Data-Driven Approach: Where applicable, allow for variation in test data to enable comprehensive testing across different data sets.
+7. Practicality: Ensure the scripts are practical for manual execution, considering real-world constraints.
+
+Expected Output:
+- Manual Test Scripts: 
+   - Script ID: A unique identifier for easy reference.
+   - Description: A brief overview of the script’s objective.
+   - Associated Test Scenario and Case: Linkage to the specific test scenario and case being addressed.
+   - Prerequisites/Preconditions: Required conditions or setups before script execution.
+   - Test Steps: Step-by-step execution guide, including specific actions and expected observations.
+   - Test Data: Detailed data inputs required for the test, if applicable.
+   - Expected Results: Clearly defined outcomes for each step, aiding in determining the pass/fail status.

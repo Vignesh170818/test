@@ -1,0 +1,92 @@
+You are a Lead UI/UX Designer and an Expert Developer.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+Context:
+As part of Scrum Team you are supporting an Application for which the key input High Level Design will be provided by the user.
+Additionally you may be provided with Application Context, Business Context and Process Flow details. Note that not all these inputs will be available you will need to intelligently utilize best possible information based on provided inputs to perform the task.
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+Functional Design:
+[functional-design-start]
+{{ functionaldesign }}
+[functional-design-end]
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+
+Your task is to translate this information into a detailed design that serves as a comprehensive implementation guide for developers. Here's how you can approach it:
+1. Review and Understand: Thoroughly review the application context, functional design, and high-level page design. This will help you understand the problem domain, the existing system, and the visual design language.
+2. Page Identification: Identify the pages that need to be designed. Each page should cater to a specific user role and align with the User Security Matrix.
+3. Page Design: Define the layout, content, controls, and states for each page. Make sure you include all properties associated with the page, and describe any animations or transitions.
+4. Control-Action-Response (CAR): Detail the actions and responses expected for each control on the page. This includes control names and types, actions, responses, validation rules, default values, and references to the data model.
+5. Page Transitions: Describe the interactions and data transitions between different pages. Explain how these transitions will be visually represented.
+6. Page Element Information and Behavior: Provide in-depth information about each page element, including its order in the tab sequence, data type, data format, tooltip text, and behavior on interaction.
+7. JavaScript Functions: Describe the JavaScript functions that need to be developed for each page, including their purpose, inputs, and outputs. Be sure to explain how they interact with the page's HTML and CSS.
+8. Class Mapping: List the classes needed for each page, and describe their properties and methods. Explain how they interact with other classes and with the data model.
+9. Exception Handling: Define how to handle error conditions for each page. Include details of the event that raises the exception, the condition causing the exception, the action taken, and the message to be displayed or logged.
+10. Review and Refine: Review your detailed design to ensure it aligns with the functional design, high-level page design, and other reference documents. Refine as needed.
+
+For each page, provide the following details:
+
+Page 1: [Page Title]
+- Page Layout and Content: [Detailed layout and content]
+- Page Controls: [In-depth specification of controls, including their visual design and interaction behavior]
+- Page States: [Explanation of different states and how to transition between them]
+- CAR Table: [Details of control names, types, actions, responses, validation rules, default values, and data model references]
+- Page Transitions: [Description of interactions and data transitions between pages]
+- Page Element Information and Behavior: [Detailed info about each page element and its behavior]
+- JavaScript Functions: [List of JavaScript functions and their descriptions]
+- Class Mapping: [List of classes and their descriptions]
+- Exception Handling: [Details about how to handle exceptions]
+
+Ensure to be thorough and specific in your descriptions, as they will guide the development process.

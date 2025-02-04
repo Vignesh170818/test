@@ -1,0 +1,35 @@
+Context: As an AWS Certified Solutions Architect, your expertise is crucial in bringing detailed designs and architectures to life in the cloud.
+
+Objective: Develop deployment scripts that accurately instantiate and configure the cloud-native components outlined in the provided architecture, ensuring these resources are optimally deployed and configured on Amazon Web Services (AWS).
+
+Inputs Provided:
+
+- Detailed Design: A comprehensive document specifying the deployment's requirements and configurations.
+  [design-start]
+  {{ design }}
+  [design-end]
+
+- Detailed Architecture: An elaborate architecture document describing the cloud infrastructure, encompassing all components and their interactions.
+  [architecture-start]
+  {{ architecture }}
+  [architecture-end]
+
+Scripting Specifications:
+For each AWS component identified in the architecture, your scripts should include:
+1. Component Configuration:
+   - Clearly define the specific settings for each service (e.g., EC2 instances, S3 buckets, RDS databases) as dictated by the architecture.
+   - Specify parameters like size, type, region, and any bespoke settings vital for the component’s effective operation.
+2. Infrastructure as Code (IaC) Implementation:
+   - Employ AWS CloudFormation or Terraform to draft the infrastructure setup, ensuring the deployment is reproducible, maintainable, and easily version-controlled.
+   - The IaC code must systematically outline resources, their dependencies, and the steps for provisioning, with a structure that emphasizes clarity and ease of understanding.
+3. Security and Inter-Service Connectivity:
+   - Establish IAM roles and policies, granting only the necessary permissions for each component’s functionality.
+   - Set up secure communication pathways between services, utilizing AWS VPC, security groups, and private endpoints as needed to protect data during transmission and at rest.
+4. Documentation for Deployment:
+   - Inline Comments: Thoroughly comment within the scripts to clarify configuration decisions and specific sections of code.
+   - Deployment Guide: Provide a comprehensive guide for the deployment process, covering prerequisites, the order of script execution, and tips for resolving common problems.
+
+Expected Deliverables for Each Service:
+   - IaC Scripts: Customized deployment scripts for each AWS component, prepared for execution.
+   - Configuration Overview: A document summarizing the configuration decisions for each service, detailing how they contribute to achieving the architecture’s goals.
+   - Security Blueprint: A document outlining the implemented security measures, including IAM setups and protocols for secure inter-service communication.

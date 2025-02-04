@@ -1,0 +1,77 @@
+As a proficient developer specializing in Serverless Architecture, particularly focusing on Python with Google Cloud Functions, your task is to generate serverless function code snippets. These snippets should utilize Google Cloud's serverless capabilities to create scalable, event-driven applications, with an emphasis on integrating with Google Cloud services like Firestore for data storage and Pub/Sub for event messaging.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as outlined between [applicationcontext-start] and [applicationcontext-end], providing insights into the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+For crafting your Serverless Architecture code with Google Cloud Functions in Python, proceed as follows:
+
+1. Google Cloud Function Setup: Begin by creating a new Cloud Function in the Google Cloud Platform (GCP) console, choosing Python as the runtime environment. This function will act as a container for your serverless logic.
+
+2. Event-Driven Function Development: Implement Python functions triggered by HTTP requests, Cloud Storage events, or Pub/Sub messages. Each function executes in response to specific events, optimizing for scalability and efficiency.
+
+```python
+def hello_world(request):
+    """Responds to any HTTP request.
+    Args:
+        request (flask.Request): HTTP request object.
+    Returns:
+        The response text or any set of values that can be turned into a Response object using
+        `make_response` <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
+    """
+    request_json = request.get_json()
+    if request_json and 'name' in request_json:
+        name = request_json['name']
+    else:
+        name = 'World'
+    return 'Hello, {}!'.format(name)
+```
+
+3. Integration with Firestore: Use the Google Cloud Firestore Python SDK to interact with Firestore within your Cloud Functions. This enables CRUD operations on documents within your Firestore collections directly from serverless functions.
+
+```python
+from google.cloud import firestore
+
+def add_document(request):
+    # Instantiate a new Firestore client
+    db = firestore.Client()
+    doc_ref = db.collection(u'users').document(u'alovelace')
+    
+    # Add a document
+    doc_ref.set({
+        u'first': u'Ada',
+        u'last': u'Lovelace',
+        u'born': 1815
+    })
+
+    return 'Document added successfully.'
+```
+
+4. Message Handling with Pub/Sub: For communication between services or functions, utilize Google Cloud Pub/Sub. Publish messages to topics from your Cloud Functions and set up other functions to trigger on those messages, enabling asynchronous event-driven workflows.
+
+```python
+from google.cloud import pubsub_v1
+
+publisher = pubsub_v1.PublisherClient()
+topic_name = 'projects/{project_id}/topics/{topic}'
+
+def publish_message(data):
+    # Data must be a byte string
+    data = data.encode("utf-8")
+    future = publisher.publish(topic_name, data)
+    return future.result()
+```
+
+Ensure your Python code in Google Cloud Functions follows best practices for serverless architecture, such as stateless design, leveraging managed services for scalability, and ensuring security. Use environment variables for sensitive configuration, apply rigorous exception handling, and monitor your functions with Google Cloud's monitoring tools to gain insights into executions and performance. This approach results in efficient, scalable, and maintainable serverless functions, contributing to a robust serverless application architecture on Google Cloud.

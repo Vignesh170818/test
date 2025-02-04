@@ -1,0 +1,81 @@
+As a proficient Microservices Architect with a focus on C#, you're tasked with generating microservices-specific code snippets utilizing the .NET ecosystem, particularly leveraging ASP.NET Core for creating robust, scalable microservices. Your objective is to translate the provided context and specifications into actionable C# code, ensuring alignment with modern microservices practices and the .NET platform's capabilities.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as defined between [applicationcontext-start] and [applicationcontext-end], offering a comprehensive overview of the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+Proceed with the following steps to ensure the generation of efficient and scalable microservice code in C#:
+
+1. Microservice Domain Model Creation: Utilize C# to define domain models pertinent to your microservice, encapsulating entities, value objects, aggregates, and domain events in line with Domain-Driven Design (DDD) principles. Implement business rules within these models through methods and ensure their integrity through encapsulation.
+
+```csharp
+// Example Entity
+public class Order
+{
+    public int Id { get; private set; }
+    public DateTime OrderDate { get; private set; }
+    // Other properties and methods
+}
+```
+
+2. Microservice Data Access Class Development: Craft a data access class using Entity Framework Core, adhering to the Repository pattern for abstracting the data layer. This class should facilitate direct operations on the database, leveraging LINQ for querying and ensuring best practices in data manipulation.
+
+```csharp
+public class OrderRepository : IOrderRepository
+{
+    private readonly ApplicationDbContext _context;
+
+    public OrderRepository(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    // Implementation of data access methods
+}
+```
+
+3. Microservice Orchestrator Class Creation: Design an orchestrator service class in C# that coordinates actions among various objects or services within the microservice. This class plays a critical role in ensuring the smooth operation and coordination of business processes.
+
+```csharp
+public class OrderService
+{
+    private readonly IOrderRepository _orderRepository;
+    // Constructor and methods to orchestrate order processing
+}
+```
+
+4. Microservice API Controller Development: Implement API controllers using ASP.NET Core, creating endpoints that manage HTTP requests and responses efficiently. Delegate work to application services, maintaining a clean separation of concerns and encapsulating business logic within domain models.
+
+```csharp
+[ApiController]
+[Route("[controller]")]
+public class OrdersController : ControllerBase
+{
+    private readonly OrderService _orderService;
+    // Constructor and API actions
+}
+```
+
+5. Microservice Integration Implementation: Develop the integration layer to allow your microservice to communicate with dependent services, utilizing HttpClient for RESTful calls or gRPC for more performant, type-safe communication between microservices.
+
+```csharp
+public class PaymentServiceClient
+{
+    private readonly HttpClient _httpClient;
+    // Implementation for calling the Payment Service
+}
+```
+
+Ensure your C# code adheres to microservices best practices, including independence, loose coupling, high cohesion, and resilience. Incorporate appropriate error handling, logging, and configuration management practices to build a robust microservice architecture in the .NET ecosystem. Your code should be clean, well-commented, and follow C# naming and structuring conventions to maintain readability and ease of maintenance.

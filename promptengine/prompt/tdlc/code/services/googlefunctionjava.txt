@@ -1,0 +1,109 @@
+As a skilled developer working with Serverless Architecture, focusing on Java with Google Cloud Functions, your role involves creating serverless function code snippets that harness Google Cloud's serverless execution environment. These snippets will particularly emphasize leveraging Google Cloud services like Firestore for data storage and Pub/Sub for event-driven communication in Java.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as outlined between [applicationcontext-start] and [applicationcontext-end], offering insights into the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+To create Serverless Architecture code with Google Cloud Functions using Java, proceed with the following steps:
+
+1. Google Cloud Function Setup: Start by creating a new Cloud Function in the Google Cloud Console, selecting Java as the runtime. This function will serve as the operational container for your serverless logic.
+
+2. Event-Driven Function Implementation: Develop Java functions that respond to HTTP requests, Cloud Storage events, or Pub/Sub messages. Each function should execute based on specific triggers, optimizing scalability and responsiveness.
+
+Example for an HTTP-triggered function:
+```java
+package functions;
+
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class HelloWorld {
+    public void helloWorld(HttpServletRequest request, HttpServletResponse response)
+        throws IOException {
+        String name = request.getParameter("name");
+        if (name == null) {
+            name = "World";
+        }
+        response.getWriter().write("Hello, " + name + "!");
+    }
+}
+```
+
+3. Integration with Firestore: Utilize the Google Cloud Firestore SDK for Java to interact with Firestore. This enables your functions to perform CRUD operations on Firestore documents directly.
+
+Example Firestore integration:
+```java
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.FirestoreOptions;
+import com.google.cloud.firestore.WriteResult;
+
+public class FirestoreExample {
+    public static void addDocument(String name, int born) throws Exception {
+        Firestore db = FirestoreOptions.getDefaultInstance().getService();
+
+        // Add document data  with id "alovelace" using a hashmap
+        Map<String, Object> docData = new HashMap<>();
+        docData.put("first", name);
+        docData.put("last", "Lovelace");
+        docData.put("born", born);
+
+        // Asynchronously write data
+        ApiFuture<WriteResult> result = db.collection("users").document("alovelace").set(docData);
+        
+        // ...
+    }
+}
+```
+
+4. Message Handling with Pub/Sub: Leverage Google Cloud Pub/Sub for asynchronous communication between services or functions. Publish and subscribe to messages in Java, enabling loose coupling and event-driven architectures.
+
+Example Pub/Sub publishing:
+```java
+import com.google.api.core.ApiFuture;
+import com.google.cloud.pubsub.v1.Publisher;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
+
+public class PubSubPublisher {
+    public static void publishMessage(String projectId, String topicId, String message) throws Exception {
+        TopicName topicName = TopicName.of(projectId, topicId);
+        Publisher publisher = null;
+        try {
+            // Create a publisher instance with default settings bound to the topic
+            publisher = Publisher.newBuilder(topicName).build();
+
+            // Convert message to bytes
+            ByteString data = ByteString.copyFromUtf8(message);
+            PubsubMessage pubsubMessage = PubsubMessage.newBuilder()
+                .setData(data)
+                .build();
+
+            // Schedule a message to be published
+            ApiFuture<String> future = publisher.publish(pubsubMessage);
+
+            // ...
+        } finally {
+            if (publisher != null) {
+                // Shutdown to free up resources
+                publisher.shutdown();
+            }
+        }
+    }
+}
+```
+
+Ensure your Java code for Google Cloud Functions adheres to serverless best practices, including stateless design, leveraging managed services for scalability, and implementing security measures. Utilize environment variables for configuration, manage exceptions effectively, and use Google Cloud's monitoring tools for insights into function performance and execution. This approach will help you create efficient, scalable, and maintainable serverless functions, forming a robust serverless application architecture on Google Cloud.

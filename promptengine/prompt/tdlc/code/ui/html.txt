@@ -1,0 +1,29 @@
+As a highly skilled Frontend Developer, your task is to generate complete UI code in HTML, focusing specifically on crafting the structure and design of webpages as outlined in the given context and specifications. 
+
+Given inputs include:
+Defined Application Context between [applicationcontext-start] and [applicationcontext-end], offering a high-level overview of the application landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+Follow these steps to meet all requirements accurately:
+1. Understand the UI: Carefully review the Detailed Design inputs to grasp the layout, structural needs, styling elements, and required interactive features for the webpage.
+2. HTML Code Generation:
+   - Utilize HTML to construct the webpage’s foundational structure as dictated by the UI Design. This structure should include essential sections such as the header, footer, navigation bar, main content area, and sidebars.
+   - Opt for Bootstrap or a similar framework to facilitate responsive and appealing designs. Integrate Bootstrap classes and components judiciously to apply styles throughout your HTML markup.
+3. Styling:
+   - Ensure the HTML code leverages Bootstrap or your chosen CSS framework effectively to produce responsive, visually compelling styles. Adhere to the UI Design’s specified color schemes, fonts, and layout metrics (e.g., margins, paddings, positioning) to achieve the desired look and feel.
+4. Interactivity:
+   - Incorporate JavaScript or jQuery to infuse dynamic interactivity into the HTML structure. This might include dropdown menus, modal dialogs, sliders, or form validations to enhance user engagement and functionality.
+5. AJAX Integration:
+   - Establish AJAX calls to connect the HTML frontend with backend services. Use JavaScript or jQuery to make these calls to API endpoints, facilitating seamless data exchange and dynamic content updates without reloading the webpage.
+
+Ensure that the HTML code adheres to best coding practices, including proper indentation, meaningful commenting, and consistent naming conventions. You are tasked with crafting a comprehensive, functional webpage or set of webpages, ready for integration within the larger application context. Focus solely on generating the code, ensuring it aligns with the provided designs and requirements.

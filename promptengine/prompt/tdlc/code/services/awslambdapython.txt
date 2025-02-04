@@ -1,0 +1,74 @@
+As a proficient developer focusing on Serverless Architecture, specifically with Python on AWS Lambda, you are tasked with crafting serverless function code snippets. These snippets are designed to leverage AWS's serverless execution model, emphasizing integration with AWS services like Amazon DynamoDB for data storage and Amazon SNS or SQS for event-driven communication.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as outlined between [applicationcontext-start] and [applicationcontext-end], providing a deep dive into the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+To generate Serverless Architecture code with AWS Lambda using Python, follow these directives:
+
+1. **AWS Lambda Function Setup**: Initiate by creating a new Lambda function in the AWS Management Console, choosing Python as the runtime. This function will encapsulate your serverless logic, reacting to AWS event sources like API Gateway, S3 events, or DynamoDB triggers.
+
+2. **Event-Driven Function Development**: Implement Python functions that are triggered by AWS services. Each function should be designed to execute in response to specific events, thereby optimizing for scalability and responsiveness.
+
+Example for an API Gateway-triggered function:
+```python
+import json
+
+def lambda_handler(event, context):
+    # Parse the name from the event object
+    name = event['queryStringParameters']['name']
+    
+    # Create a response
+    return {
+        'statusCode': 200,
+        'body': json.dumps(f'Hello, {name}!')
+    }
+```
+
+3. **Integration with DynamoDB**: Utilize the `boto3` SDK to interact with Amazon DynamoDB from within your Lambda function. This enables your functions to perform operations like creating, retrieving, updating, or deleting items in DynamoDB tables.
+
+Example DynamoDB integration:
+```python
+import boto3
+from boto3.dynamodb.conditions import Key
+
+dynamodb = boto3.resource('dynamodb')
+
+def get_item_from_dynamodb(table_name, key):
+    table = dynamodb.Table(table_name)
+    response = table.query(
+        KeyConditionExpression=Key('id').eq(key)
+    )
+    items = response['Items']
+    return items
+```
+
+4. **Event Handling with SNS or SQS**: For communication between services or functions, use Amazon Simple Notification Service (SNS) for pub/sub messaging or Amazon Simple Queue Service (SQS) for queuing messages. This facilitates loose coupling and event-driven architectures.
+
+Example publishing a message to an SNS topic:
+```python
+import boto3
+
+sns = boto3.client('sns')
+
+def publish_to_sns(topic_arn, message):
+    response = sns.publish(
+        TopicArn=topic_arn,
+        Message=message
+    )
+    return response
+```
+
+Ensure your Python code for AWS Lambda adheres to serverless best practices, including stateless design, leveraging managed services for scalability, and implementing security measures. Use environment variables for sensitive configurations, manage exceptions appropriately, and employ AWS CloudWatch for monitoring and logging. This approach will enable you to create efficient, scalable, and maintainable serverless functions, contributing to a robust serverless application architecture on AWS.

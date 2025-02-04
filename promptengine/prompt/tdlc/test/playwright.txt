@@ -1,0 +1,128 @@
+Context: You are an expert in crafting manual test scripts for software applications.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+
+Your expertise in testing methodologies will guide the development of detailed manual test scripts. Assume expertise in Testing Tool Playwright
+
+You have the following Inputs:
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+{% if functionaldesignui != "" %}
+UI Functional Design:
+[functionaldesign-start]
+{{ functionaldesignui }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesignservices != "" %}
+Services Functional Design:
+[functionaldesign-start]
+{{ functionaldesignservices }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesigndata != "" %}
+Data Functional Design:
+[functionaldesign-start]
+{{ functionaldesigndata }}
+[functionaldesign-end]
+{% endif %}
+Test Scenarios:
+[testscenario-start]
+{{ testscenario }}
+[testscenario-end]
+Test Cases:
+[testcase-start]
+{{ testcase }}
+[testcase-end]
+Test Scripts:
+[testscript-start]
+{{ testscript }}
+[testscript-end]
+
+Approach for Converting Manual Test Scripts:
+   Understanding and Analysis: Thoroughly review the provided manual test scenarios, including business process flows, user stories, and UI designs, to comprehend the test requirements fully.
+    Script Setup and Configuration:
+        Initialize a Playwright project in your preferred programming language (JavaScript, TypeScript, Python, etc.).
+        Install necessary dependencies and set up your testing environment.
+    Test File Creation:
+        Create test files that correspond to your application's features or user stories. Organize these by functional areas or testing criteria.
+    Writing Test Scripts:
+        For each test scenario, write a Playwright script that navigates through the application, interacts with elements, and asserts expected outcomes based on the manual test script.
+        Use Playwright's API to replicate user actions such as clicks, text inputs, and navigation.
+    Data-Driven Testing:
+        Implement data-driven tests using external data sources to run the same test scenarios with different data inputs, enhancing test coverage.
+    Assertions and Validations:
+        Utilize Playwright's assertion library to verify that the application's state and outputs match the expected results defined in your manual test scripts.
+    Automation and Integration:
+        Configure Playwright to run tests across multiple browsers and environments.
+        Integrate Playwright tests into your CI/CD pipeline for automated execution.
+        
+Generate only the script specific to the tool language and dont generate anything else.
+
+Example outcome:
+const { test, expect } = require('@playwright/test');
+
+test('Successful login leads to dashboard', async ({ page }) => {
+  // Navigate to login page
+  await page.goto('http://example.com/login');
+
+  // Enter login credentials
+  await page.fill('#username', 'testUser');
+  await page.fill('#password', 'testPass');
+
+  // Click login button
+  await page.click('#loginButton');
+
+  // Assert that the user is redirected to the dashboard
+  await expect(page).toHaveURL(/.*dashboard/);
+
+  // Additional assertions as needed
+});

@@ -1,0 +1,259 @@
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 2px;
+    width: auto;
+    text-align: left;
+    border: silver 1px solid;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* .accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+} */
+
+/* Functional Design Menu Styling */
+
+.tab-pane.fd-menu-tab.active {
+    color:#A100FF !important;
+    border-bottom: 3px solid #A100FF;
+    background-color: white;
+}
+
+.nav-link.active {
+    color:#A100FF !important;
+    border-bottom: 3px solid #A100FF;
+    background-color: white;
+}
+
+.dropdown-item:active {
+    background-color: #ededed !important;
+    color: black !important;
+}
+
+.dropdown-item.active {
+    background-color: #ededed !important;
+    color: black !important;
+}
+
+.dropdown-item.active {
+    background-color: #ededed !important;
+    color: black !important;
+}
+
+body {
+    font-family: graphik,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    background-color: #fff;
+}
+
+html {
+    font-family: graphik,Helvetica,Arial,sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 16px;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.input-ln {
+    width: 590px;
+    resize: none;
+}
+
+.header-hr {
+    border-style: solid;
+    border-width: 3px !important;
+    color: #A100FF;
+    opacity: 1.0 !important;
+}
+
+.bottom-shadow {
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+.generate-link {
+    border-style: none;
+    background-color: white;
+    color: #A100FF;
+    text-decoration: underline;
+    bottom: 0;
+    padding-bottom: 0px;
+}
+
+.col-6.px-0 {
+    flex: 0 0 auto;
+    width: 20%;
+}
+
+/*
+#preloader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color:#FFF;
+    background-color: #17151591;
+    z-index: 9999;
+}
+
+#preloader .preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/*
+#preloader .preloader:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #EBEBEB;
+    border-top: 1px solid #9e03ff;
+    border-radius: 50%;
+    -webkit-animation: 1s preloader linear infinite;
+    animation: 1s preloader linear infinite;
+} */
+
+#preloader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #17151591;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#preloader .content {
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+/* Add styling for the content as needed */
+#preloader .content p {
+    color: #fff;
+    font-size: 24px;
+}
+
+#preloader .preloader img {
+
+    height: 100px;
+    width: 100px;
+}
+
+@-webkit-keyframes preloader {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom Choices.js Styles */
+.choices[data-type*="select-multiple"] .choices__list--multiple .choices__item {
+    border: 1px solid #7500c0; /* Outline color for selected options */
+    border-radius: 0;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 3.75px;
+    margin-bottom: 3.75px;
+    background-color: #ffffff;
+    color: #000000;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+.choices[data-type*="select-multiple"] .choices__list--multiple .choices__item[data-deletable] {
+    padding-right: 5px;
+}
+
+.choices[data-type*="select-multiple"] .choices__list--multiple .choices__item.is-highlighted {
+    background-color: #aaa;
+    border: 1px solid #7500c0; /* Outline color for selected options */
+}
+
+.is-disabled .choices[data-type*="select-multiple"] .choices__list--multiple .choices__item {
+    background-color: #aaa;
+    border: 1px solid #919191;
+}
+.choices[data-type*="select-multiple"] .choices__inner {
+    background-color: #fff; /* Set the desired background color */
+}
+#featureInputFlushCollapseOne::placeholder {
+    color: #000000; /* Set the desired color */
+}
+
+.warning-box {
+    position: relative;
+    background-color: #dceeff;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+    border-left: #000000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10%;
+    right: 1.5%;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: #5d9eca;
+}
+
+.warning-box p {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,28 @@
+As a proficient Microservices Architect, you're tasked with generating microservices-specific code snippets based on the provided context and specifications:
+
+Application Context: [applicationcontext]
+Programming Language: [languagechoice]
+Detailed Microservice Design: [detaileddesign]
+
+
+Chain of thoughts:
+    First, it's essential to understand the detailed design thoroughly.
+    Next, think about the domain models relevant to this microservice and how they can be created using the principles of Domain-Driven Design (DDD). This includes entities, value objects, aggregates, and domain events, with business rules enforced through their methods.
+    Then, consider how to handle direct operations on the database by developing a specific data access class for this microservice. This class should adhere to the best practices of the specified programming language and design patterns.
+    To ensure smooth operation and coordination within the microservice, an orchestrator class is required. This class will coordinate actions among various objects or services.
+    The microservice also needs API controllers to manage HTTP requests and responses. These controllers should delegate work to application services and keep the business logic encapsulated within the domain models.
+    Lastly, you'll need to write code that enables your microservice to interact seamlessly with any dependent services as outlined in the detailed design. This is part of the microservice integration implementation.
+
+After meticulously understanding the microservice architecture and detailed design, accomplish the following code generation tasks:
+
+1. Microservice Domain Model Creation: Generate code for the domain models pertinent to this microservice, including entities, value objects, aggregates, and domain events following the Domain-Driven Design (DDD) principles. Enforce business rules through the methods within these models.
+
+2. Microservice Data Access Class Development: Formulate a class specifically for this microservice, handling direct operations on the database. Ensure adherence to the best practices of the specified programming language and design patterns.
+
+3. Microservice Orchestrator Class Creation: Develop a class that coordinates actions among various objects or services within this microservice, ensuring smooth operation and coordination.
+
+4. Microservice API Controller Development: Generate controllers that manage HTTP requests and responses. These controllers should delegate work to application services, keeping the business logic encapsulated within the domain models.
+
+5. Microservice Integration Implementation: Craft code that enables your microservice to interact seamlessly with any dependent services as outlined in the detailed design.
+
+Ensure your code aligns with microservices best practices including independence, loose coupling, high cohesion, and resilience. You should Generate code only with right level of inline comments.

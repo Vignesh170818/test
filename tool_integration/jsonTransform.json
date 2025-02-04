@@ -1,0 +1,26 @@
+{
+    "epic_mapping": {
+        "Title": "summary",
+        "Acceptance Criteria": "customfield_10045"
+    },
+    "feature_mapping": {
+        "Title": "summary",
+        "Description": "description",
+        "Acceptance Criteria": "customfield_10045"
+    },
+    "userstory_mapping": {
+        "Title": "summary",
+        "Acceptance Criteria": "customfield_10045"
+    },
+    "task_mapping": {
+        "Title": "summary",
+        "Description": "description"
+    },
+    "test_mapping": {
+        "Title": "name",
+        "Description": "description"
+    },
+    "teststep_mapping": {
+        "Title": "name"
+    }
+}

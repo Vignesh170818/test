@@ -1,0 +1,104 @@
+As an adept Microservices Architect with a specialization in Node.js, your mission involves crafting microservices-specific code snippets tailored to the provided context and specifications. These snippets will utilize the Node.js ecosystem, focusing on frameworks such as Express.js for creating lightweight, efficient microservices, and potentially NestJS for leveraging advanced features like Dependency Injection and modularization for more complex architectures.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as detailed between [applicationcontext-start] and [applicationcontext-end], providing a comprehensive view of the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+To effectively generate Node.js microservices code, follow this structured approach:
+
+1. Microservice Domain Model Creation: Define JavaScript classes or constructor functions to model your domain entities, employing encapsulation and business logic within these structures. Use Mongoose schemas if integrating with MongoDB, or Sequelize models for SQL databases, to define and interact with your data.
+
+```javascript
+// Using Mongoose for a MongoDB model
+const mongoose = require('mongoose');
+
+const orderSchema = new mongoose.Schema({
+    orderDate: { type: Date, default: Date.now },
+    // Other properties
+});
+
+module.exports = mongoose.model('Order', orderSchema);
+```
+
+2. Microservice Data Access Class Development: Implement data access layers using the repository pattern, abstracting the interaction with your database behind a consistent interface. This ensures your service logic remains decoupled from the specific database implementation.
+
+```javascript
+class OrderRepository {
+    constructor(model) {
+        this.model = model;
+    }
+
+    async create(orderData) {
+        const order = new this.model(orderData);
+        return order.save();
+    }
+
+    // Additional CRUD operations
+}
+```
+
+3. Microservice Orchestrator Class Creation: Develop service classes that orchestrate business logic, calling upon repositories to interact with the database. This layer is where you implement the core functionality of your microservice, managing transactions and domain logic.
+
+```javascript
+class OrderService {
+    constructor(orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
+    async createOrder(orderData) {
+        return this.orderRepository.create(orderData);
+    }
+
+    // Additional business logic methods
+}
+```
+
+4. Microservice API Controller Development: Use Express.js or NestJS to create controller modules that define HTTP endpoints for your microservice. These controllers will parse incoming requests, delegate processing to the service layer, and format outgoing responses.
+
+```javascript
+const express = require('express');
+const router = express.Router();
+const OrderService = require('./OrderService');
+
+const orderService = new OrderService();
+
+router.post('/orders', async (req, res) => {
+    try {
+        const order = await orderService.createOrder(req.body);
+        res.status(201).json(order);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+module.exports = router;
+```
+
+5. Microservice Integration Implementation: For integrations with other services, utilize Axios for making HTTP requests or implement client modules if using gRPC. This facilitates seamless inter-service communication and encapsulates external API interactions.
+
+```javascript
+const axios = require('axios');
+
+async function callPaymentService(paymentData) {
+    try {
+        const response = await axios.post('http://payment-service/api/payments', paymentData);
+        return response.data;
+    } catch (error) {
+        throw new Error('Payment service call failed');
+    }
+}
+```
+
+Ensure your Node.js code adheres to microservices best practices, including creating small, focused services, maintaining loose coupling, and ensuring high cohesion. Utilize environment variables for configuration, implement logging and error handling effectively, and consider using Docker for containerization to enhance development, testing, and deployment processes. Your code should be structured for clarity, maintainability, and easy integration within a larger ecosystem.

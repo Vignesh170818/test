@@ -1,0 +1,7 @@
+azureconfig:
+  api_key: "azurevault"
+  api_key_vault_key: "CompletionApiKey"
+  azure_endpoint: "https://genlite.openai.azure.com/"
+  api_version: "2023-03-15-preview"
+  azure_deployment: "text-embedding-ada-002"
+  modelname: "text-embedding-ada-002"

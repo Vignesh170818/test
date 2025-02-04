@@ -1,0 +1,429 @@
+body {
+    font-family: Graphik !important;
+    margin: 0px;
+    padding-bottom: 50px;
+}
+
+.headerCls {
+    height: 36px;
+    background-color: #03787c;
+    color: white;
+    font-size: 28px;
+    padding: 10px;
+    padding-left: 55px;
+    font-weight: 600;
+}
+
+.sidenav {
+    height: 100%;
+    width: 55px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #151560;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    font-size: 32px;
+    margin-left: 50px;
+    display: none;
+}
+
+.sidenav .openBtn {
+    position: absolute;
+    top: 0;
+    font-size: 32px;
+}
+
+#mySidenavExpand {
+    display: none;
+}
+
+.sidenav .navList {
+    padding: 0px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* accordian styles  start
+.accordion {
+    font-family: Graphik !important;
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #444;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    box-shadow: 0px 1px 5px 1px #50505040;
+
+}
+
+.accordion:hover {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+.active {
+    background-color: #ffffff;
+    color: #7500c0;
+    font-weight: 600;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #444;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+content: "\2212";
+} */
+
+.active {
+    background-color: #ffffff;
+    color: #7500c0;
+    font-weight: bolder;
+}
+
+.panel {
+    /* border: 1px solid lightgray; */
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow-y: scroll;
+    transition: max-height 0.2s ease-out;
+}
+
+
+/* Accordian styles end */
+.linkName {
+    display: none;
+}
+
+.inputQuery {
+    height: 32px;
+    width: 85%;
+}
+
+.custom-input {
+    height: 300px! important;
+    font-size: small;
+    width: 85%;
+    font-family: Graphik! important;
+    /* Text Area number of rows */
+    resize: none;
+    overflow: auto;
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 5px 1px #50505040;
+    padding: 5px 10px;
+}
+
+.generated-input {
+    height: 300px! important;
+    font-size: small;
+    width: 85%;
+    font-family: Graphik! important;
+    /* Text Area number of rows */
+    resize: none;
+    overflow: auto;
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 5px 1px #50505040;
+    padding: 5px 10px;
+}
+
+
+.querySection button {
+    font-size: 15px;
+    width: 12%;
+}
+
+.querySection {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#logo-brand {
+    padding: 6px 5px 7px 20px;
+    ;
+    font-size: 20px;
+    position: relative;
+    top: 4px;
+    color: #ffffff;
+    font-family: Graphik;
+    margin-left: 10px;
+    border-left: 1px solid #c0c0c0;
+}
+
+.logo-img {
+    width: 92px;
+    height: 29px;
+    margin: 0px 10px -10px 20px;
+    top: 40px;
+    left: 40px;
+}
+
+.topMenu {
+    height: 55px;
+    background: #5c0097;
+
+}
+
+.left-header {
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Graphik;
+    /* background-color: #ffffff; */
+}
+
+#preloader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* background-color:#FFF; */
+    background-color: #17151591;
+    z-index: 9999;
+}
+
+#preloader .preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#preloader .preloader:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #EBEBEB;
+    border-top: 1px solid #9e03ff;
+    border-radius: 50%;
+    -webkit-animation: 1s preloader linear infinite;
+    animation: 1s preloader linear infinite;
+}
+
+@-webkit-keyframes preloader {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+textarea {
+    border-radius: 0px;
+    border: none;
+    box-shadow: 0px 1px 5px 1px #50505040;
+    padding: 5px 10px;
+}
+
+textarea:focus-visible {
+    outline: none;
+}
+
+.btn {
+    border-radius: 15px;
+    border: none;
+    background-color: #7500c0;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    font-family: Graphik !important;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.btn:focus {
+    background-color: #5c0097;
+    outline: 1px solid #5c0097;
+    outline-offset: 2px;
+}
+
+.btn:hover {
+    background-color: #5c0097;
+}
+
+
+.bt {
+    border-radius: 25px;
+    border: none;
+    background-color: #7500c0;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    font-family: Graphik !important;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.bt:focus {
+    background-color: #5c0097;
+    outline: 1px solid #5c0097;
+    outline-offset: 2px;
+}
+
+.bt:hover {
+    background-color: #5c0097;
+}
+
+#language-choice {
+    border: none;
+    box-shadow: 0px 1px 5px 1px #50505040;
+    margin-right: 20px;
+    height: 30px;
+    width: 15%;
+}
+
+select:focus-visible {
+    outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #bcbcbc;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #6c6c6c;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+Style the buttons that are used to open the tab content
+.tab button {
+    font-family: 'Graphik';
+    font-size: small;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #bcbcbc;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    font-family: 'Graphik';
+    font-size: medium;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #bcbcbc;
+    border-top: none;
+}
+
+ .topnav {
+    background-color: #EBEBEB;
+    overflow: auto;
+    font-size: small; 
+  }
+
+.tablinks{
+    font-family: 'Graphik';
+    font-size: small;
+    background-color: #EBEBEB;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: 0.3s;
+}
+
+.paraTitle{
+    font-family: 'Graphik';
+    font-size: medium;
+    font-weight: bold;
+    color: #000000;
+}

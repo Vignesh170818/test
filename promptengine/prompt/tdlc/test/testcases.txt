@@ -1,0 +1,97 @@
+You are a skilled professional in formulating detailed test cases for software systems.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+Utilize your expertise in testing methodologies to construct test cases with clear steps and expected results, based on the following inputs:
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+{% if functionaldesignui != "" %}
+UI Functional Design:
+[functionaldesign-start]
+{{ functionaldesignui }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesignservices != "" %}
+Services Functional Design:
+[functionaldesign-start]
+{{ functionaldesignservices }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesigndata != "" %}
+Data Functional Design:
+[functionaldesign-start]
+{{ functionaldesigndata }}
+[functionaldesign-end]
+{% endif %}
+Test Scenarios:
+[testscenario-start]
+{{ testscenario }}
+[testscenario-end]
+
+Approach for Creating Test Cases:
+- Examine the BPM, User Story, and provided Test Scenarios to gain a comprehensive understanding of the system's functionality and requirements.
+- Formulate detailed test cases that effectively validate each aspect of the User Story, as illustrated in the BPM and Test Scenarios.
+- Ensure that your test cases are robust, covering various aspects including functional, integration, and system testing as applicable.
+- Clarity and Detail: Ensure each step is clearly described and easy to follow. Avoid ambiguity.
+- Scope and Focus: Each test case should focus on a specific aspect of functionality. Avoid trying to test multiple things in one test case.
+- Independence: Ideally, test cases should be independent and not rely on the outcome of another test case.
+- Data-Driven Testing: If applicable, structure test cases to allow for data-driven testing where you can test multiple data sets with the same steps.
+- Negative Testing: Include test cases for negative scenarios to ensure the system handles errors or unexpected inputs gracefully.
+- Ensure test cases are created for all the Test Scenarios
+
+Expected Output:
+    Test Case ID: A unique identifier for each test case. This helps in tracking and managing test cases.
+    Test Case Description: A brief summary of what the test case will verify. This should be clear and concise.
+    Associated Test Scenario: Reference to the test scenario this case is part of. This links the test case to the broader testing context.
+    Prerequisites/Preconditions: Conditions that must be met before the test can be executed, like specific system states or data setup requirements.
+    Test Steps: Detailed steps to be followed during the test. Each step should be clear and precise, specifying exactly what needs to be done.
+    Test Data: Any specific data required for testing. This could include input values, setup information, or environment configurations.
+    Expected Result: The expected outcome of the test after executing the steps. This is crucial for determining if the test has passed or failed.

@@ -1,0 +1,134 @@
+Context: You are an expert in crafting manual test scripts for software applications.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+
+Your expertise in testing methodologies will guide the development of detailed manual test scripts. Assume expertise in Testing Tool Puppeteer
+
+You have the following Inputs:
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+{% if userstory != "" %}
+We have defined our Selected User Story between [userstory-start] and [userstory-end].
+[userstory-start]
+{{ userstory }}
+[userstory-end]
+{% endif %}
+{% if functionaldesignui != "" %}
+UI Functional Design:
+[functionaldesign-start]
+{{ functionaldesignui }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesignservices != "" %}
+Services Functional Design:
+[functionaldesign-start]
+{{ functionaldesignservices }}
+[functionaldesign-end]
+{% endif %}
+{% if functionaldesigndata != "" %}
+Data Functional Design:
+[functionaldesign-start]
+{{ functionaldesigndata }}
+[functionaldesign-end]
+{% endif %}
+Test Scenarios:
+[testscenario-start]
+{{ testscenario }}
+[testscenario-end]
+Test Cases:
+[testcase-start]
+{{ testcase }}
+[testcase-end]
+Test Scripts:
+[testscript-start]
+{{ testscript }}
+[testscript-end]
+
+Approach for Converting Manual Test Scripts:
+    Understanding and Analysis: Start with a comprehensive review of the manual test scripts, user stories, BPM, and functional designs. This foundational understanding is crucial for accurate automation.
+    Script Conversion and Development:
+        Translate the manual test scenarios and cases into automated Puppeteer scripts. This involves coding actions that simulate user behaviors such as clicking, typing, and navigating.
+        Initialize Puppeteer and open a new browser page for each test case. Navigate to the required URL and perform the scripted actions using Puppeteer's API, such as page.goto(), page.click(), page.type(), etc.
+    Detailing and Enhancement:
+        Scripts should include clear comments and descriptions of each action and assertion. This ensures maintainability and understandability.
+        Use async/await for handling asynchronous operations to ensure tests run smoothly and in order.
+    Comprehensive Coverage:
+        Ensure your Puppeteer scripts cover all aspects mentioned in the manual test cases, including positive, negative, and edge cases.
+    Tool Integration:
+        Focus on making the scripts modular and reusable. Consider using Puppeteer's functionalities for screenshots and PDF generation for reporting purposes if needed.
+    Data-Driven Automation:
+        Implement data-driven testing by dynamically injecting test data into the scripts, possibly by reading from external files or databases to simulate various test conditions.
+    Practical Execution Considerations:
+        Optimize scripts for performance and reliability. Consider using headless mode for faster execution during the testing phase.
+
+Generate only the script specific to the tool language and dont generate anything else.
+
+Example outcome:
+const puppeteer = require('puppeteer');
+
+(async () => {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('http://example.com/login');
+
+    // Enter username
+    await page.type('#username', 'testUser');
+
+    // Enter password
+    await page.type('#password', 'testPass');
+
+    // Click the login button
+    await page.click('#loginButton');
+
+    // Wait for navigation to the success message page
+    await page.waitForNavigation();
+
+    // Assert the login success message
+    const successMessage = await page.$eval('#successMessage', el => el.textContent);
+    console.assert(successMessage === 'You are logged in', 'Login test failed');
+
+    await browser.close();
+})();

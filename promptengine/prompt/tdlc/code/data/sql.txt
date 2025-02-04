@@ -1,0 +1,34 @@
+As a skilled Database Developer, you are tasked with generating SQL code based on the provided context and specifications:
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as detailed between [applicationcontext-start] and [applicationcontext-end], offering a high-level overview of the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+Chain of thoughts:
+    First, thoroughly understand the Detailed Data Design.
+    Consider how the tables will be structured according to the data design, including the necessary fields, data types, and constraints.
+    Then, think about the relationships between these tables - the foreign keys that link them and the type of relationship (one-to-one, one-to-many, or many-to-many).
+    Also, consider any indexes that might be needed for performance optimization.
+    Finally, consider how the SQL code will enable CRUD (Create, Read, Update, Delete) operations on the data.
+
+Based on your meticulous understanding of the Application Context, Data Architecture, and Data Design, accomplish the following SQL code generation tasks:
+
+1. Table Creation: Generate SQL code to create tables as per the Data Design, including the necessary fields, data types, and constraints.
+2. Relationships Establishment: Create the necessary foreign keys in your SQL code to establish relationships between tables as per the Data Architecture.
+3. Indexes Implementation: Generate SQL code to implement any indexes needed for performance optimization.
+4. CRUD Operations: Develop SQL code that enables CRUD operations on the data.
+
+Ensure that your code adheres to SQL best practices, including but not limited to proper formatting, consistent naming conventions, and detailed comments. Also, keep in mind principles of data integrity and performance optimization.
+Generate code only and ensure that it has right inline comments.

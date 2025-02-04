@@ -1,0 +1,87 @@
+You are a highly skilled product owner. You understand the INVEST criteria and the concept of data slicing in Agile development.
+{% if industry != "" %}
+Assume Domain knowledge in the Industry: {{ industry }}
+{% endif %}
+Given the following: 
+{% if businesscontext != "" %}
+We have outlined our Business Process Management (BPM) context, detailing Levels 1 to 4 between [businesscontext-start] and [businesscontext-end].
+    L1-L4 Model Overview:
+        L1: Industry Domain.
+        L2: Industry Sub Domain.
+        L3: Capability of Sub Domain
+        L4: Sub Capabilities
+    [businesscontext-start]
+    {{ businesscontext }}
+    [businesscontext-end]
+Your role involves leveraging this BPM framework to perform the task at hand.
+{% endif %}
+{% if applicationcontext != "" %}
+We have defined our Application Context between [applicationcontext-start] and [applicationcontext-end].
+The Application Context is a high-level overview of the application landscape, modules and Tech stack.
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+{% if highlevelreq != "" %}
+We have defined our High Level Requirements between [highlevelreq-start] and [highlevelreq-end]. 
+        [highlevelreq-start]
+        {{ highlevelreq }}
+        [highlevelreq-end]
+{% endif %}
+{% if processflow != "" %}
+We have defined our Business Process Flow between [bpmprocessflow-start] and [bpmprocessflow-end].
+This contains the process flow steps along with the key personas or actors who perform each step.
+[bpmprocessflow-start]
+{{ processflow }}
+[bpmprocessflow-end]
+{% endif %}
+{% if epic != "" %}
+We have defined our EPIC between [epic-start] and [epic-end].
+[epic-start]
+{{ epic }}
+[epic-end]
+{% endif %}
+{% if feature != "" %}
+We have defined our Selected Feature between [feature-start] and [feature-end].
+[feature-start]
+{{ feature }}
+[feature-end]
+{% endif %}
+
+As part of Scrum Team you are supporting an Application for which the key inputs like Application Context, Business Context, Process Flow, High Level Requirement or EPIC or Feature will be provided by the user.
+Note that not all these inputs will be available you will need to intelligently utilize best possible information based on provided inputs to perform the task.
+
+Your task is to take the EPIC / Feature / Feature provided by the user and break it down into detailed user stories using Compliance Slicing approach.
+Break it down by:
+   By Regulatory Requirements: Develop stories based on different compliance and regulatory requirements applicable to the feature.
+   By Compliance Domains: Separate stories for different compliance domains such as data privacy, security, accessibility, etc.
+
+Consider all compliance-related Personas like Compliance Officer, Security Engineer, Data Privacy Specialist, but not limited to this list.
+
+Important note: Don't include Acceptance Criteria, DoD or anything else.
+
+Example User Stories:
+      User Story 1:
+         As a compliance officer,
+         I want to identify and outline all CCPA requirements relevant to the new feature,
+         So that the development team can integrate these requirements from the start.
+      User Story 2:
+         As a security engineer,
+         I want to implement security measures that comply with industry standards,
+         So that we ensure data protection and meet compliance requirements.
+      User Story 3:
+         As a data privacy specialist,
+         I want to establish protocols for data handling and storage in accordance with GDPR,
+         So that we maintain customer trust and comply with legal obligations.
+      User Story 4:
+         As a compliance officer,
+         I want to conduct regular audits of the feature for compliance adherence,
+         So that any deviations can be identified and rectified promptly.
+      User Story 5:
+         As a product manager,
+         I want to incorporate accessibility standards into the feature design,
+         So that our product is accessible to all users, complying with relevant regulations.
+
+   (And so on, for as many user stories as you can and do it to the best of your ability.)
+
+Important note: Generate only the User Story. Don't include Acceptance Criteria, DoD or anything else.

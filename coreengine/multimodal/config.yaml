@@ -1,0 +1,5 @@
+geminiconfig:
+  googleproject: "acn-genlite"
+  googleservicelocation: "us-central1"
+  modelname: "gemini-1.0-pro-vision"
+  json_key: "acn-genlite.json"

@@ -1,0 +1,90 @@
+As a developer skilled in Serverless Architecture, focusing on Java with AWS Lambda, your task involves crafting serverless function code snippets that utilize AWS's Lambda service. These snippets will demonstrate leveraging AWS services like Amazon DynamoDB for data storage and Amazon SNS or SQS for event-driven communication, all within a Java environment.
+
+Given inputs include:
+{% if applicationcontext != "" %}
+Application Context as detailed between [applicationcontext-start] and [applicationcontext-end], providing a comprehensive overview of the application's landscape, modules, and Tech stack:
+[applicationcontext-start]
+{{ applicationcontext }}
+[applicationcontext-end]
+{% endif %}
+High Level Design:
+[highlevel-design-start]
+{{ highleveldesign }}
+[highlevel-design-end]
+Low Level Design:
+[lowlevel-design-start]
+{{ lowleveldesign }}
+[lowlevel-design-end]
+
+For creating Serverless Architecture code with AWS Lambda using Java, follow these instructions:
+
+1. AWS Lambda Function Setup: Initiate by creating a new Lambda function in the AWS Management Console, selecting Java 8 or Java 11 as the runtime environment. Your Lambda function will serve as the container for your serverless logic.
+
+2. Event-Driven Function Development: Implement Java Lambda functions to handle events from AWS services like API Gateway, S3, or DynamoDB Streams. Design each function to respond to specific triggers, ensuring scalability and efficient resource use.
+
+Example for a simple Lambda function triggered by API Gateway:
+```java
+package example;
+
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+
+public class Handler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+    @Override
+    public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent input, Context context) {
+        APIGatewayProxyResponseEvent response = new APIGatewayProxyResponseEvent();
+        response.setStatusCode(200);
+        response.setBody("Hello from AWS Lambda using Java!");
+        return response;
+    }
+}
+```
+
+3. Integration with Amazon DynamoDB: Use the AWS SDK for Java to interact with DynamoDB. This allows your functions to perform operations like reading and writing data to DynamoDB tables directly within your Lambda functions.
+
+Example DynamoDB integration:
+```java
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
+import com.amazonaws.services.dynamodbv2.model.PutItemResult;
+
+public class DynamoDBExample {
+    private static final AmazonDynamoDB dynamoDB = AmazonDynamoDBClientBuilder.standard().build();
+
+    public static void addItem() {
+        HashMap<String,AttributeValue> itemValues = new HashMap<String,AttributeValue>();
+        itemValues.put("Id", new AttributeValue().withN("001"));
+        itemValues.put("Name", new AttributeValue("John Doe"));
+        // Add more attributes...
+
+        PutItemRequest request = new PutItemRequest().withTableName("YourTableName").withItem(itemValues);
+        PutItemResult result = dynamoDB.putItem(request);
+        // Handle result
+    }
+}
+```
+
+4. Event Messaging with Amazon SNS or SQS: Implement communication between services or Lambda functions using Amazon Simple Notification Service (SNS) or Simple Queue Service (SQS). This facilitates an event-driven architecture, allowing for loosely coupled components within your application.
+
+Example SNS publishing:
+```java
+import com.amazonaws.services.sns.AmazonSNS;
+import com.amazonaws.services.sns.AmazonSNSClientBuilder;
+import com.amazonaws.services.sns.model.PublishRequest;
+import com.amazonaws.services.sns.model.PublishResult;
+
+public class SNSTopicPublisher {
+    private static final AmazonSNS snsClient = AmazonSNSClientBuilder.defaultClient();
+
+    public static void publishToTopic(String message, String topicArn) {
+        PublishRequest publishRequest = new PublishRequest(topicArn, message);
+        PublishResult publishResult = snsClient.publish(publishRequest);
+        // Handle publish result
+    }
+}
+```
+
+Ensure your Java code for AWS Lambda adheres to serverless best practices, including stateless design, effective use of managed services for scalability, and implementing security measures. Utilize environment variables for sensitive configurations, handle exceptions properly, and monitor your Lambda functions using AWS CloudWatch to gain insights into their performance and execution. This approach ensures efficient, scalable, and maintainable serverless functions, forming a robust serverless application architecture on AWS.

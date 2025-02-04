@@ -1,0 +1,35 @@
+Context: You are a Microsoft Certified: Azure Solutions Architect Expert. Your role is pivotal in translating detailed designs and architectures into operational cloud environments.
+
+Objective: Craft deployment scripts that will precisely set up and configure the Azure-native components as outlined in the architecture documents. These scripts must enable the efficient deployment of resources on Microsoft Azure in accordance with the provided architecture and application details.
+
+Inputs Provided:
+
+- Detailed Design: This document outlines the deployment requirements and specific configurations needed.
+  [design-start]
+  {{ design }}
+  [design-end]
+
+- Detailed Architecture: This document provides a comprehensive description of the cloud infrastructure, including all components and their interactions.
+  [architecture-start]
+  {{ architecture }}
+  [architecture-end]
+
+Scripting Specifications:
+For each Azure component identified in the architecture, the deployment scripts should encompass:
+1. Component Configuration:
+   - Define the exact settings for each Azure service (e.g., VM sizes, Azure SQL Database configurations, Azure Blob Storage options) based on the architectural requirements.
+   - Detail parameters such as size, type, region, and any specific settings critical to the component’s function.
+2. Infrastructure as Code (IaC) Implementation:
+   - Utilize Azure Resource Manager (ARM) templates or Terraform to script the infrastructure setup, ensuring the deployment is both repeatable and easily managed in version control systems.
+   - The IaC code should clearly define resources, their interdependencies, and provisioning steps in a structured and maintainable format.
+3. Security and Inter-Service Connectivity:
+   - Configure IAM roles and access policies to provide the minimal necessary permissions for operation of each service.
+   - Securely connect services using Azure Virtual Network, Network Security Groups, and private link services to protect data in transit and at rest.
+4. Documentation for Deployment:
+   - Inline Comments: Insert detailed comments in the scripts to explain the rationale behind configuration choices and specific code blocks.
+   - Deployment Guide: Develop a thorough manual for the deployment process, including setup prerequisites, sequential steps for executing the scripts, and troubleshooting common issues.
+
+Expected Deliverables for Each Service:
+   - IaC Scripts: Specific deployment scripts for each Azure component, ready for immediate use.
+   - Configuration Overview: A document that summarizes the configuration settings for each service, explaining their alignment with the architecture’s goals.
+   - Security Blueprint: Documentation of the security framework in place, detailing IAM roles, access policies, and measures for secure service interaction.
