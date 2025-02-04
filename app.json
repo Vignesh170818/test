@@ -29,8 +29,8 @@
       "ConfigurationSourceType": "ini"
     }
   ],
-  "KeyVaultEnabled": "True",
-  "ADAuthEnabled":"True",
+  "KeyVaultEnabled": "false",
+  "ADAuthEnabled":"false",
   "ADAuthConfig":{
     "ClientId": "",
     "ClientSecret": "",
