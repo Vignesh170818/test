@@ -15,6 +15,17 @@ def get_time_stamp1():
     unique_id=str(uuid.uuid4())
     return datestamp+"_"+timestamp+"__"+unique_id
  
+async def download_doc(form):
+    file_dir="/home/LogFiles"
+    ts=get_time_stamp1()
+    file_path =  os.path.join(file_dir,'FSD_GenLite_Template.docx')
+    doc = Document(file_path)
+
+    file_name = f"GenLite_FSD_{ts}.docx"
+    download_data=form.ecosystem_context.data
+    save_file_path =  os.path.join(file_dir,file_name)
+    doc.save(save_file_path)
+    return save_file_path
  
 async def create_fdd_doc(form):
     ui_data = form.ui_functional_design.data

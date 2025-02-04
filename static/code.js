@@ -44,13 +44,13 @@ async function asyncCodeFunction(eventType) {
 
     let url='';
     if (eventType === 'generate') {
-         url = window.location.href.replace('\/#', '') + '/generatecode';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatecode';
     }
     else if (eventType === 'unittest') {
-         url = window.location.href.replace('\/#', '') + '/generateunittesting';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generateunittesting';
     }
     else {
-         url = window.location.href.replace('\/#', '') + '/generatecode';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatecode';
     }
 
     try {

@@ -1,5 +1,97 @@
 jQuery(document).ready(function () {
 
+    import('./download.js').then(module => {
+        const { downloadWord, downloadText, downloadPDF } = module;
+        $("#test-plan-download-word").click(function (event) {
+            var content = document.getElementById('test_plan').value;
+            if (!content) {
+                return;
+            }
+            downloadWord(content, 'TestPlan.doc');
+        });
+        $("#test-case-download-word").click(function (event) {
+            var content = document.getElementById('test_cases').value;
+            if (!content) {
+                return;
+            }
+            downloadWord(content, 'TestCases.doc');
+        });
+        $("#test-scripts-download-word").click(function (event) {
+            var content = document.getElementById('test_scripts').value;
+            if (!content) {
+                return;
+            }
+            downloadWord(content, 'TestScripts.doc');
+        });
+        $("#test-scripts-tool-download-word").click(function (event) {
+            var content = document.getElementById('tool_test_script').value;
+            if (!content) {
+                return;
+            }
+            downloadWord(content, 'TestScriptsForTool.doc');
+        });
+
+        $("#test-plan-download-txt").click(function (event) {
+            var content = document.getElementById('test_plan').value;
+            if (!content) {
+                return;
+            }
+            downloadText(content, 'TestPlan.txt');
+        });
+        $("#test-case-download-txt").click(function (event) {
+            var content = document.getElementById('test_cases').value;
+            if (!content) {
+                return;
+            }
+            downloadText(content, 'TestCases.txt');
+        });
+        $("#test-scripts-download-txt").click(function (event) {
+            var content = document.getElementById('test_scripts').value;
+            if (!content) {
+                return;
+            }
+            downloadText(content, 'TestScripts.txt');
+        });
+
+        $("#test-scripts-tool-download-txt").click(function (event) {
+            var content = document.getElementById('tool_test_script').value;
+            if (!content) {
+                return;
+            }
+            downloadText(content, 'TestScriptsForTool.txt');
+        });
+
+        $("#test-plan-download-pdf").click(function (event) {
+            var content = document.getElementById('test_plan').value;
+            if (!content) {
+                return;
+            }
+            downloadPDF(content, 'TestPlan.pdf');
+        });
+        $("#test-case-download-pdf").click(function (event) {
+            var content = document.getElementById('test_cases').value;
+            if (!content) {
+                return;
+            }
+            downloadPDF(content, 'TestCases.pdf');
+        });
+        $("#test-scripts-download-pdf").click(function (event) {
+            var content = document.getElementById('test_scripts').value;
+            if (!content) {
+                return;
+            }
+            downloadPDF(content, 'TestScripts.pdf');
+        });
+
+        $("#test-scripts-tool-download-pdf").click(function (event) {
+            var content = document.getElementById('tool_test_script').value;
+            if (!content) {
+                return;
+            }
+            downloadPDF(content, 'TestScriptsForTool.pdf');
+        });
+    });
+
     $("#generate_test_plan_button").click(function (event) {
         $("#preloader").show();
         event.preventDefault();
@@ -59,16 +151,16 @@ async function asyncTestFunction(eventType) {
     let url = '';
 
     if (eventType === 'testplan') {
-        url = window.location.href.replace('\/#', '') + '/generatetestplan';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatetestplan';
     }
     else if (eventType === 'testcase') {
-        url = window.location.href.replace('\/#', '') + '/generatetestcases';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatetestcases';
     }
     else if (eventType === 'testscript') {
-        url = window.location.href.replace('\/#', '') + '/generatetestscripts';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatetestscripts';
     }
     else if (eventType === 'tooltestscript') {
-        url = window.location.href.replace('\/#', '') + '/generatetooltestscripts';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatetooltestscripts';
     }
     
 
@@ -108,3 +200,4 @@ async function asyncTestFunction(eventType) {
         console.error('There has been a problem with your fetch operation:', error);
     }
 }
+

@@ -51,11 +51,11 @@ async function asyncEpicFunction(eventType) {
     let llmModel = document.getElementById('llm_platform_options').value;
     let entity_type = 'epic'
     document.getElementById('selected_llmmodel').value = llmModel;
-    document.getElementById('entity_type').value=entity_type;
+    document.getElementById('entity_type').value = entity_type;
     const form = document.getElementById("gen_lite"); // Make sure you have a form with this ID or collect data differently
     const formData = new FormData(form);
     const formObject = {};
-    
+
     formData.forEach((value, key) => {
         // Check if the property exists
         if (formObject.hasOwnProperty(key)) {
@@ -70,48 +70,66 @@ async function asyncEpicFunction(eventType) {
             // Property doesn't exist, so we can just set it normally
             formObject[key] = value;
         }
-    }); 
+    });
 
     const formJSON = JSON.stringify(formObject);
     // console.log(formJSON);
-    
+
     let url = '';
 
     if (eventType === 'generate') {
-         url = window.location.href.replace('\/#', '') + '/generateepic';
-        
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generateepic';
+
     }
     else if (eventType === 'getData') {
-        url = window.location.href.replace('\/#', '') + '/getentitydata';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/getentitydata';
     }
     else if (eventType === 'resetEpic') {
-        url = window.location.href.replace('\/#', '') + '/resetentitydata';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/resetentitydata';
     }
     else if (eventType === 'apply') {
-        url = window.location.href.replace('\/#', '') + '/applyepicreview';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/applyepicreview';
     }
     else if (eventType === 'review') {
-        url = window.location.href.replace('\/#', '') + '/reviewepic';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/reviewepic';
     }
     else {
-        url = window.location.href.replace('\/#', '') + '/generateepic';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generateepic';
     }
 
     try {
-                const response = await fetch(url, {
+        const response = await fetch(url, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
                 // Include CSRF token if needed
             },
-                        body: formJSON, // data can be `string` or {object}!
+            body: formJSON, // data can be `string` or {object}!
         });
 
-        if (response.ok) {
+        streamOpenAICheckBox = document.getElementById('streamOpenAICheckBox');
+
+        if (eventType === 'generate' && streamOpenAICheckBox.checked) {
+            $("#preloader").fadeOut();
+            openTab(event, 'epicTab', 'epic-link');
+            const reader = response.body.getReader();
+            let output = "";
+
+            while (true) {
+                const { done, value } = await reader.read();
+                output += new TextDecoder().decode(value);
+                document.getElementById('epic_user_story').value = output;
+                document.getElementById('epic_user_story').scrollTop = document.getElementById('epic_user_story').scrollHeight;
+                if (done) {
+                    return;
+                }
+            }
+        }
+        else if (response.ok) {
             const jsonResponse = await response.json();
             // console.log(jsonResponse);
             if (eventType === 'getData') {
-                if(jsonResponse.responsetype == "success"){
+                if (jsonResponse.responsetype == "success") {
                     document.getElementById('epic_user_story').value = jsonResponse.response.epic_user_story;
                     document.getElementById('epic_external_id').readOnly = true;
                     document.getElementById('get_epic_details').disabled = true;
@@ -122,7 +140,7 @@ async function asyncEpicFunction(eventType) {
                 }
             }
             else if (eventType === 'resetEpic') {
-                if(jsonResponse.responsetype == "success"){
+                if (jsonResponse.responsetype == "success") {
                     document.getElementById('epic_external_id').value = '';
                     document.getElementById('epic_external_id').readOnly = false;
                     document.getElementById('get_epic_details').disabled = false;
@@ -150,10 +168,12 @@ async function asyncEpicFunction(eventType) {
             }
             $("#preloader").fadeOut();
             openTab(event, 'epicTab', 'epic-link');
-        } else {
+        }
+        else {
             throw new Error('Network response was not ok.');
         }
-    } catch (error) {
+    }
+    catch (error) {
         $("#preloader").fadeOut();
         console.error('There has been a problem with your fetch operation:', error);
     }

@@ -40,11 +40,11 @@ async def generate_test_scenarios(
         userstory += form.user_story_abstract.data
         inputobj.userstory = userstory
     if form.st_key_input.data == "functional-ui":
-        inputobj.functionaldesignui = form.ui_functional_design.data
+        inputobj.functionaldesignui = form.functional_design_ui.data
     if form.st_key_input.data == "functional-services":
-        inputobj.functionaldesignservices = form.services_functional_design.data
+        inputobj.functionaldesignservices = form.functional_design_services.data
     if form.st_key_input.data == "functional-data":
-        inputobj.functionaldesigndata = form.data_functional_design.data
+        inputobj.functionaldesigndata = form.functional_design_data.data
 
     gentest = GenLiteTest(
         llmplatform=form.llm_platform_options.data,
@@ -87,12 +87,12 @@ async def generate_test_cases(
         userstory += form.user_story_abstract.data
         inputobj.userstory = userstory
     if form.st_key_input.data == "functional-ui":
-        inputobj.functionaldesignui = form.ui_functional_design.data
+        inputobj.functionaldesignui = form.functional_design_ui.data
     if form.st_key_input.data == "functional-services":
-        inputobj.functionaldesignservices = form.services_functional_design.data
+        inputobj.functionaldesignservices = form.functional_design_services.data
     if form.st_key_input.data == "functional-data":
-        inputobj.functionaldesigndata = form.data_functional_design.data
-    inputobj.testscenario = form.test_cases.data
+        inputobj.functionaldesigndata = form.functional_design_data.data
+    inputobj.testscenario = form.test_plan.data
 
     gentest = GenLiteTest(
         llmplatform=form.llm_platform_options.data,
@@ -134,11 +134,11 @@ async def generate_test_scripts(
         userstory += form.user_story_abstract.data
         inputobj.userstory = userstory
     if form.st_key_input.data == "functional-ui":
-        inputobj.functionaldesignui = form.ui_functional_design.data
+        inputobj.functionaldesignui = form.functional_design_ui.data
     if form.st_key_input.data == "functional-services":
-        inputobj.functionaldesignservices = form.services_functional_design.data
+        inputobj.functionaldesignservices = form.functional_design_services.data
     if form.st_key_input.data == "functional-data":
-        inputobj.functionaldesigndata = form.data_functional_design.data
+        inputobj.functionaldesigndata = form.functional_design_data.data
     inputobj.testscenario = form.test_plan.data
     inputobj.testcase = form.test_cases.data
 
@@ -179,11 +179,11 @@ async def generate_tool_test_scripts(
         userstory += form.user_story_abstract.data
         inputobj.userstory = userstory
     if form.st_key_input.data == "functional-ui":
-        inputobj.functionaldesignui = form.ui_functional_design.data
+        inputobj.functionaldesignui = form.functional_design_ui.data
     if form.st_key_input.data == "functional-services":
-        inputobj.functionaldesignservices = form.services_functional_design.data
+        inputobj.functionaldesignservices = form.functional_design_services.data
     if form.st_key_input.data == "functional-data":
-        inputobj.functionaldesigndata = form.data_functional_design.data
+        inputobj.functionaldesigndata = form.functional_design_data.data
     inputobj.testscenario = form.test_plan.data
     inputobj.testcase = form.test_cases.data
     inputobj.testscript = form.test_scripts.data
@@ -225,11 +225,11 @@ async def generate_test_scripts_tool(
         userstory += form.user_story_abstract.data
         inputobj.userstory = userstory
     if form.st_key_input.data == "functional-ui":
-        inputobj.functionaldesignui = form.ui_functional_design.data
+        inputobj.functionaldesignui = form.functional_design_ui.data
     if form.st_key_input.data == "functional-services":
-        inputobj.functionaldesignservices = form.services_functional_design.data
+        inputobj.functionaldesignservices = form.functional_design_services.data
     if form.st_key_input.data == "functional-data":
-        inputobj.functionaldesigndata = form.data_functional_design.data
+        inputobj.functionaldesigndata = form.functional_design_data.data
     inputobj.testscenario = form.test_plan.data
     inputobj.testcase = form.test_cases.data
     inputobj.testscript = form.test_scripts.data

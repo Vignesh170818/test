@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\appext",
+    "\\appext\\models",
+    "\\genliteappext",
+    "\\promptengine",
+    "\\promptengine\\prompt",
+    "\\promptengine\\prompt\\tdlc",
+    "\\promptengine\\prompt\\tdlc\\code",
+    "\\promptengine\\prompt\\tdlc\\code\\ui",
+    "\\static",
+    "\\templates"
+  ],
+  "SelectedNode": "\\templates\\index.html",
+  "PreviewInSolutionExplorer": false
+}

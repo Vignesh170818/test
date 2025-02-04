@@ -11,11 +11,11 @@
     transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active,
-.accordion:hover {
-    background-color: #ccc;
-}
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active,
+    .accordion:hover {
+        background-color: #ccc;
+    }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
@@ -37,14 +37,19 @@
 /* Functional Design Menu Styling */
 
 .tab-pane.fd-menu-tab.active {
-    color:#A100FF !important;
+    color: #A100FF !important;
     border-bottom: 3px solid #A100FF;
     background-color: white;
 }
 
 .nav-link.active {
-    color:#A100FF !important;
+    color: #A100FF !important;
     border-bottom: 3px solid #A100FF;
+    background-color: white;
+}
+
+.tab-pane.code-graph-tab.active {
+    color: #A100FF !important;
     background-color: white;
 }
 
@@ -64,17 +69,17 @@
 }
 
 body {
-    font-family: graphik,Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    /*font-family: graphik,Helvetica,Arial,sans-serif;*/
+    font-family: Graphik !important;
     line-height: 1.4;
     background-color: #fff;
 }
 
 html {
-    font-family: graphik,Helvetica,Arial,sans-serif;
-    -ms-text-size-adjust: 100%;
+    /*font-family: graphik,Helvetica,Arial,sans-serif;*/
+    font-family: Graphik !important;
     -webkit-text-size-adjust: 100%;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .nav-link {
@@ -88,7 +93,7 @@ html {
 
 .header-hr {
     border-style: solid;
-    border-width: 3px !important;
+    border-width: 2px !important;
     color: #A100FF;
     opacity: 1.0 !important;
 }
@@ -159,21 +164,20 @@ html {
     justify-content: center;
 }
 
-#preloader .content {
-    margin-top: 20px; /* Adjust the margin as needed */
-}
+    #preloader .content {
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
 
-/* Add styling for the content as needed */
-#preloader .content p {
-    color: #fff;
-    font-size: 24px;
-}
+        /* Add styling for the content as needed */
+        #preloader .content p {
+            color: #fff;
+            font-size: 24px;
+        }
 
-#preloader .preloader img {
-
-    height: 100px;
-    width: 100px;
-}
+    #preloader .preloader img {
+        height: 100px;
+        width: 100px;
+    }
 
 @-webkit-keyframes preloader {
     from {
@@ -214,22 +218,24 @@ html {
     box-sizing: border-box;
 }
 
-.choices[data-type*="select-multiple"] .choices__list--multiple .choices__item[data-deletable] {
-    padding-right: 5px;
-}
+    .choices[data-type*="select-multiple"] .choices__list--multiple .choices__item[data-deletable] {
+        padding-right: 5px;
+    }
 
-.choices[data-type*="select-multiple"] .choices__list--multiple .choices__item.is-highlighted {
-    background-color: #aaa;
-    border: 1px solid #7500c0; /* Outline color for selected options */
-}
+    .choices[data-type*="select-multiple"] .choices__list--multiple .choices__item.is-highlighted {
+        background-color: #aaa;
+        border: 1px solid #7500c0; /* Outline color for selected options */
+    }
 
 .is-disabled .choices[data-type*="select-multiple"] .choices__list--multiple .choices__item {
     background-color: #aaa;
     border: 1px solid #919191;
 }
+
 .choices[data-type*="select-multiple"] .choices__inner {
     background-color: #fff; /* Set the desired background color */
 }
+
 #featureInputFlushCollapseOne::placeholder {
     color: #000000; /* Set the desired color */
 }
@@ -256,4 +262,58 @@ html {
 
 .warning-box p {
     margin-bottom: 10px;
+}
+
+.app-name {
+    /*color:darkblue;*/
+    margin-top: 3px;
+    font-weight: 700;
+}
+
+.logout {
+    font-size: x-large;
+}
+
+.logo {
+    margin-left: 4%;
+}
+
+.pipe::after {
+    content: "|";
+    color: #808080;
+    font-size: 30px;
+    margin-left: 1rem;
+}
+
+.customNav {
+    padding: 0px !important;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.nav-link:hover {
+    color: #A100FF !important;
+    border-bottom: 3px solid #A100FF;
+    background-color: white;
+}
+
+.tabs {
+    margin-left: 5%;
+}
+
+.epic-inputs {
+    margin-top: 2% !important;
+}
+
+.epic-buttons {
+    margin-top: 2%;
+}
+
+.tabcontent {
+    margin-bottom: 2%;
+}
+
+#jstree {
+    overflow-x: scroll;
+    display: none;
 }

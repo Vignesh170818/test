@@ -35,7 +35,7 @@ async function asyncDeploymentFunction() {
 
     const formJSON = JSON.stringify(formObject);
 
-    const url = window.location.href.replace('\/#', '') + '/generatedeployment';
+    const url = window.location.href.replace('\/#', '').replace('#', '') + '/generatedeployment';
 
     try {
         const response = await fetch(url, {

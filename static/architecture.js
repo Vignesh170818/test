@@ -34,7 +34,7 @@ async function asyncArchFunction() {
     });
 
     const formJSON = JSON.stringify(formObject);
-    const url = window.location.href.replace('\/#', '') + '/generatearchitecture'
+    const url = window.location.href.replace('\/#', '').replace('#', '') + '/generatearchitecture'
     //let fetchURL = '/generatearchitecture';
 
     try {

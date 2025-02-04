@@ -84,6 +84,7 @@ Approach for Creating Manual Test Scripts:
 1. Review and Understand Inputs: Thoroughly analyze the BPM, User Story, Test Scenarios, and Test Cases to grasp the full scope of testing requirements.
 2. Script Development:
    - Create manual test scripts that are aligned with each Test Case derived from the Test Scenarios.
+   - Ensure one test script is generated for every test case and generating same number of test scripts as test case is mandatory
    - Ensure the scripts validate the functionality described in the User Story and BPM.
 3. Detail and Clarity: Each script should be detailed and clear, outlining exact steps to be followed, with a focus on ease of understanding and execution.
 4. Include All Scenario Aspects: Cover both positive and negative scenarios, as well as edge cases, as outlined in the Test Scenarios and Test Cases.
@@ -92,7 +93,7 @@ Approach for Creating Manual Test Scripts:
 7. Practicality: Ensure the scripts are practical for manual execution, considering real-world constraints.
 
 Expected Output:
-- Manual Test Scripts: 
+- Manual Test Script <<auto numbering>>: 
    - Script ID: A unique identifier for easy reference.
    - Description: A brief overview of the script’s objective.
    - Associated Test Scenario and Case: Linkage to the specific test scenario and case being addressed.

@@ -1,0 +1,101 @@
+{# This Jinja2 template is designed for converting C# code to Cypher Queries #}
+Role: Software Developer with Cypher Query Expertise
+
+{# Introduction to the task. #}
+Your task is to convert the following c# code into Cypher query along with please add property as `uniqueId: "{{ uniqueId }}"` for each create statement of cypher query. The original c# code is provided between `[code-start]` and `[code-end]`.
+
+{# Original Source Code Section #}
+Source Code: Provided between [code-start] and [code-end].
+[code-start]
+{{ sourcecode }}
+[code-end]
+
+{# Example Input Section #}
+Refer the example below
+Example c# code: Provided between [codeexample-start] and [codeexample-end].
+[codeexample-start]
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Define variables for length and width
+        double length = 5.0;
+        double width = 3.0;
+
+        // Calculate area
+        double area = length * width;
+
+        // Print the result
+        Console.WriteLine("The area of the rectangle is: " + area);
+    }
+}
+[codeexample-end]
+
+{# Example Output Section #}
+Example Output Cypher query: Provided between [cypheroutput-start] and [cypheroutput-end].
+[cypheroutput-start]
+CREATE (Program:Class {name: "Program"})
+CREATE (MainMethod:Method {name: "Main"})
+CREATE (length:Field {name: "length"})
+CREATE (width:Field {name: "width"})
+CREATE (area:Field {name: "area"})
+
+CREATE (Program)-[:HAS_FIELD]->(length)
+CREATE (Program)-[:HAS_FIELD]->(width)
+CREATE (Program)-[:HAS_FIELD]->(area)
+CREATE (Program)-[:HAS_METHOD]->(MainMethod)
+[cypheroutput-end]
+
+{# Instructions for Conversion #}
+Output Required:
+- Cypher Query: Convert C# code to Cypher queries. Here's a step-by-step guide to help you through the process:
+
+Step-by-Step Approach:
+1. Understand the Data Model: Before writing Cypher queries, ensure you understand the data model. Identify the nodes (entities) and relationships between them.
+
+2. Identify Query Objectives: Determine the purpose of your Cypher query. Are you querying for specific nodes, relationships, or patterns within the graph?
+
+3. Translate Data Model to Cypher: Start by identifying how your C# objects correspond to nodes and relationships in Cypher. Each class in your C# code may map to a node type in the graph.
+
+4. Mapping Classes to Nodes: For each class in your C# code representing entities, create corresponding node types in Cypher. 
+
+5. Writing Node Creation Queries: Write Cypher queries to create nodes based on your C# objects. Use the CREATE clause in Cypher to create nodes with specified properties.
+    - Here's the basic syntax:
+    - CREATE Nodes
+            Class Node: Represent each c# class.
+            Property Node: Represent each c# property.
+            Method Node: Represent each c# method.
+            Event Node: Represent each c# event.
+    - CREATE (node:Label {property1: value1, property2: value2, ...})
+    - node is the variable representing the node in the query.
+    - Label is the label assigned to the node (optional).
+    - property1, property2, etc., are properties of the node.
+    - value1, value2, etc., are the corresponding values of the properties.
+    - Ensure each create statement has atleast one property "name"
+    - Ensure there are no duplicate create statements for the same node/property
+	
+6. Mapping Relationships: If your C# code includes relationships between objects (like associations between User and other entities), map these to relationships .
+    **Define Relationship Types:**
+    - `CONTAINS`: Between namespaces and classes, classes and methods/properties
+    - `INHERITS_FROM`: Between classes
+    - `CALLS`: Between methods
+    - `HAS_PROPERTY`: Between classes and properties
+	
+7. Writing Relationship Creation Queries: Use Cypher's Create clauses to create relationships between nodes. Ensure you specify the relationship type and any properties associated with the relationship.
+    - The basic syntax for creating relationships in Cypher is as follows:
+      (node1)-[:RELATIONSHIP_TYPE]->(node2)
+    - node1 and node2 are the nodes you want to connect.
+    - RELATIONSHIP_TYPE is the type of relationship between the nodes. 
+
+Considerations:
+    - Ensure the code is clean, maintainable, and follows Cypher Query best practices.
+     - Ensure the code is not having any syntax error, follow coding standards of cypher
+     - DO NOT Create Cypher queries for Console.Log(), Console.Clear(), Console.WriteLine() and Console.ReadLine() methods of c# code
+     - Ensure the uniqueId property is added to each node created in the cypher query
+    
+Proceed with these instructions to accurately convert the provided C# code into cypher queries.
+
+Output only the cypher query without any additional explanations, comments, or text.
+

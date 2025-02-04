@@ -6,39 +6,40 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://{{cdnjsdomain}}/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet"/>    
+    <link href="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://{{cdnjsdomain}}/ajax/libs/jstree/3.3.16/themes/default/style.min.css"
-        integrity="sha512-A5OJVuNqxRragmJeYTW19bnw9M2WyxoshScX/rGTgZYj5hRXuqwZ+1AVn2d6wYTZPzPXxDeAGlae0XwTQdXjQA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-A5OJVuNqxRragmJeYTW19bnw9M2WyxoshScX/rGTgZYj5hRXuqwZ+1AVn2d6wYTZPzPXxDeAGlae0XwTQdXjQA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://{{cdnjsdelivrdomain}}/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://{{cdnjsdelivrdomain}}/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/dompurify/3.0.9/purify.min.js"
-        integrity="sha512-9+ilAOeXY8qy2bw/h51MmliNNHvdyhTpLIlqDmVpD26z8VjVJsUJtk5rhbDIUvYiD+EpGoAu0xTa7MhZohFQjA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-9+ilAOeXY8qy2bw/h51MmliNNHvdyhTpLIlqDmVpD26z8VjVJsUJtk5rhbDIUvYiD+EpGoAu0xTa7MhZohFQjA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://{{cdnjsdomain}}/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/styles/choices.min.css">
     <link rel="stylesheet" href="https://{{cdnjsdelivrdomain}}/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+          integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <link rel="stylesheet" href="https://{{cdnjsdomain}}/ajax/libs/vis/4.21.0/vis.min.css"
-        integrity="sha512-8OVtKyemDe8Koi/74dnSJughhkwnzqq217zUtUumyvx0Z0kF6H0YYFobH2kEYjKMNq2xNQyN64dnleqecTSL0A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-8OVtKyemDe8Koi/74dnSJughhkwnzqq217zUtUumyvx0Z0kF6H0YYFobH2kEYjKMNq2xNQyN64dnleqecTSL0A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 
     <script src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 
     <script src="https://{{cdnjsdomain}}/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://{{cdnjsdomain}}/ajax/libs/jstree/3.3.16/jstree.min.js" integrity="sha512-ekwRoEshEqHU64D4luhOv/WNmhml94P8X5LnZd9FNOiOfSKgkY12cDFz3ZC6Ws+7wjMPQ4bPf94d+zZ3cOjlig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+
     <script src="https://{{cdnjsdomain}}/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <script src="https://{{cdnjsdelivrdomain}}/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
-    
+
     <script type="text/javascript" src="{{ url_for('static', filename='gen_lite.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='businesscontext.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='applicationcontext.js') }}"></script>
@@ -53,37 +54,42 @@
     <script type="text/javascript" src="{{ url_for('static', filename='deployment.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='treeview.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='wireframe.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='download.js') }}"></script>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='CodeGraph.js') }}"></script>
 
     <script src="https://{{cdnjsdomain}}/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"
-        integrity="sha512-UOAbtqPrOrvc9bjvRKJtvGYoMkml/4BockSMZElZu2hLLSVC52J0o8tmdLcRt1wdS7/Rh286cENnsBjbrOvCSw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-UOAbtqPrOrvc9bjvRKJtvGYoMkml/4BockSMZElZu2hLLSVC52J0o8tmdLcRt1wdS7/Rh286cENnsBjbrOvCSw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdelivrdomain}}/npm/html-docx-js@0.3.1/dist/html-docx.min.js"
-        integrity="sha384-EI1uyAP0h6Pn2ECsfsTs3bmpGFqHq2JYOb0g3bMGnd5xuR4xIB7LbCgWolJmVUbz"
-        crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+            integrity="sha384-EI1uyAP0h6Pn2ECsfsTs3bmpGFqHq2JYOb0g3bMGnd5xuR4xIB7LbCgWolJmVUbz"
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/prism.min.js"
-        integrity="sha512-axJX7DJduStuBB8ePC8ryGzacZPr3rdLaIDZitiEgWWk2gsXxEFlm4UW0iNzj2h3wp5mOylgHAzBzM4nRSvTZA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-axJX7DJduStuBB8ePC8ryGzacZPr3rdLaIDZitiEgWWk2gsXxEFlm4UW0iNzj2h3wp5mOylgHAzBzM4nRSvTZA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/components/prism-csharp.min.js"
-        integrity="sha512-rt23WbuhlKUMRxGkKxQBE1kmIxImQNS67ljyevzs40iFvtKsLeJI/Pgq2FQAbrWWA4pnqZ/cKDjUdCGyRdHIug=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-rt23WbuhlKUMRxGkKxQBE1kmIxImQNS67ljyevzs40iFvtKsLeJI/Pgq2FQAbrWWA4pnqZ/cKDjUdCGyRdHIug=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/components/prism-python.min.js"
-        integrity="sha512-nvWJ2DdGeQzxIYP5eo2mqC+kXLYlH4QZ/AWYZ/yDc5EqM74jiC5lxJ+8d+6zI/H9MlsIIjrJsaRTgLtvo+Jy6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-nvWJ2DdGeQzxIYP5eo2mqC+kXLYlH4QZ/AWYZ/yDc5EqM74jiC5lxJ+8d+6zI/H9MlsIIjrJsaRTgLtvo+Jy6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/components/prism-typescript.min.js"
-        integrity="sha512-e4smaHPddT6FVjotyoNPbIve/Kt1ZemUQY8E+CDxsM3cXZ9zA43qHE8BFXjgWJcbatCz+hyVCgYBbqCPtXoe9A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-e4smaHPddT6FVjotyoNPbIve/Kt1ZemUQY8E+CDxsM3cXZ9zA43qHE8BFXjgWJcbatCz+hyVCgYBbqCPtXoe9A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.24.1/components/prism-jsx.min.js"
-        integrity="sha512-KNvdEaPrmTihMKmH/8CeHfMskGdt5WaPyMoNWVkg39w9/itQA68/tNPi2zcczyr2RvRprXai8aH8zftj89Jg1g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-KNvdEaPrmTihMKmH/8CeHfMskGdt5WaPyMoNWVkg39w9/itQA68/tNPi2zcczyr2RvRprXai8aH8zftj89Jg1g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.29.0/components/prism-sql.js"
-        integrity="sha512-NC7EOjwHwgY3UA5ZFoiPXkr8/yr0de1v3vcfDU+rwBNjGEwxU570+rq+TPmnNHQ9QKww2tl5seMboQk73eF+Uw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-NC7EOjwHwgY3UA5ZFoiPXkr8/yr0de1v3vcfDU+rwBNjGEwxU570+rq+TPmnNHQ9QKww2tl5seMboQk73eF+Uw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <script src="https://{{cdnjsdelivrdomain}}/npm/mermaid@10.5.0/dist/mermaid.min.js"
         integrity="sha512-8tJiFwaX7ssyuxi5wrre7/LSLg94WKrYZpXUt55ptI5kXbVgmzUH+HRBBMJt+vwoxLS3TMn9uJnlqKk1OWZpCA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="https://{{cdnjsdomain}}/ajax/libs/prism/1.29.0/components/prism-cshtml.js"
-        integrity="sha512-7diKMPVtIlnEQbd5IhXxgutfuuT4Z65XdIhwFWAsqRsLKh8VGR1RLkLGMBhFh5jOTvCNlDqvShZ1Kidj2uZwHw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-7diKMPVtIlnEQbd5IhXxgutfuuT4Z65XdIhwFWAsqRsLKh8VGR1RLkLGMBhFh5jOTvCNlDqvShZ1Kidj2uZwHw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -101,13 +107,13 @@
         <input type="hidden" id="currentevent">
         <input type="hidden" id="session_timeout" value="{{session_timeout}}">
         <div class="bottom-shadow">
-            <nav class="navbar navbar-white bg-white d-flex flex-row justify-content-between">
-                <div class="d-flex flex-row align-items-center">
-                    <a class="navbar-brand px-3" href="#">
-                        <img src="{{ url_for('static', filename='logo.png') }}" alt="" height="24"
-                            class="d-inline-block align-text-top">
+            <nav class="navbar navbar-white bg-white d-flex flex-row justify-content-between customNav">
+                <div class="d-flex flex-row align-items-center logo">
+                    <a class="navbar-brand pipe" href="#">
+                        <img src="{{ url_for('static', filename='accn-logo.png') }}" alt="" height="45"
+                             class="d-inline-block align-text-center" style="padding-bottom:inherit;">
                     </a>
-                    <h6 class="text-dark align-middle p-0 m-0">Gen Lite - TDLC</h6>
+                    <span class="app-name">Gen Lite-TDLC</span>
                 </div>
                 <div class="d-flex flex-row align-items-center">
                     <div class="mx-3">{{form.llm_platform_options.label}}</div>
@@ -116,7 +122,7 @@
                             let llmModel = document.getElementById('llm_platform_options').value;
                             document.getElementById('selected_llmmodel').value = llmModel;
                             console.log("Model selected: " + document.getElementById('selected_llmmodel').value);
-                            
+
                             llmModel = llmModel.trim();
                             llmModel = DOMPurify.sanitize(llmModel);
                             const postData = new FormData();
@@ -147,66 +153,124 @@
                         {% endif %}
                         {% endfor %}
                     </select>
+                    <span class="mx-3 logout">
+                        <a href="/core/logout" id="logout"> <i class="bi bi-power"></i></a>
+                    </span>
                 </div>
             </nav>
 
-            <hr class="header-hr mt-0" />
 
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link header-tab" id="input-link" href="#"
-                        onclick="openTab(event, 'inputTab', 'input-link')">Input</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="business-context-link" href="#"
-                        onclick="openTab(event, 'businessContextTab', 'business-context-link')">Business
-                        Context</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="epic-link" href="#"
-                        onclick="openTab(event, 'epicTab', 'epic-link')">EPIC</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="feature-link" href="#"
-                        onclick="openTab(event, 'featuresTab', 'feature-link')">Features</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="user-story-link" href="#"
-                        onclick="openTab(event, 'userStoriesTab', 'user-story-link')">User Stories</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="fd-link" href="#"
-                        onclick="openTab(event, 'functionalDesignTab', 'fd-link')">Design</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="code-link" href="#"
-                        onclick="openTab(event, 'codeTab', 'code-link')">Code</a></li>
-                <li class="nav-item"><a class="nav-link header-tab" id="st-link" href="#"
-                        onclick="openTab(event, 'systemTestingTab', 'st-link')">Testing</a></li>
+            <hr class="header-hr mt-0" />
+            <div class="">
+
+            </div>
+
+            <ul class="nav tabs">
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="input-link" href="#"
+                       onclick="openTab(event, 'inputTab', 'input-link')">Input</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="business-context-link" href="#"
+                       onclick="openTab(event, 'businessContextTab', 'business-context-link')">
+                        Business
+                        Context
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="epic-link" href="#"
+                       onclick="openTab(event, 'epicTab', 'epic-link')">EPIC</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="feature-link" href="#"
+                       onclick="openTab(event, 'featuresTab', 'feature-link')">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="user-story-link" href="#"
+                       onclick="openTab(event, 'userStoriesTab', 'user-story-link')">User Stories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="fd-link" href="#"
+                       onclick="openTab(event, 'functionalDesignTab', 'fd-link')">Design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="code-link" href="#"
+                       onclick="openTab(event, 'codeTab', 'code-link')">Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link header-tab" id="st-link" href="#"
+                       onclick="openTab(event, 'systemTestingTab', 'st-link')">Testing</a>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                       data-bs-toggle="dropdown" aria-expanded="false">More</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item header-tab" id="component-diagram-link" href="#"
-                            onclick="openTab(event, 'componentDiagramTab', 'component-diagram-link')">Component
-                            Diagram</a>
+                           onclick="openTab(event, 'componentDiagramTab', 'component-diagram-link')">
+                            Component
+                            Diagram
+                        </a>
                         <a class="dropdown-item header-tab" id="arch-link" href="#"
-                            onclick="openTab(event, 'archTab', 'arch-link')">Architecture</a>
+                           onclick="openTab(event, 'archTab', 'arch-link')">Architecture</a>
                         <a class="dropdown-item header-tab" id="deployment-link" href="#"
-                            onclick="openTab(event, 'deploymentTab', 'deployment-link')">Deployment</a>
+                           onclick="openTab(event, 'deploymentTab', 'deployment-link')">Deployment</a>
                         <a class="dropdown-item header-tab" id="tree-link" href="#"
-                            onclick="openTab(event, 'treeViewTab', 'tree-link')">BPM - Tree View</a>
+                           onclick="openTab(event, 'treeViewTab', 'tree-link')">BPM - Tree View</a>
                     </div>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link header-tab" href="#" id="popoverButton">Explain</a>
+                <li class="nav-item" style="display:none;" id="com-dia">
+                    <a class="nav-link header-tab" href="#" id="add-active">Component Diagram</a>
+                </li>
+                <li class="nav-item" style="display:none;" id="arch">
+                    <a class="nav-link header-tab" href="#" id="add-active1">Architecture</a>
+                </li>
+                <li class="nav-item" style="display:none;" id="dep">
+                    <a class="nav-link header-tab" href="#" id="add-active2">Deployment</a>
+                </li>
+                <li class="nav-item" style="display:none;" id="bpmTree">
+                    <a class="nav-link header-tab" href="#" id="add-active3">BPM - Tree View</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link header-tab" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Explain</a>
+                </li>
+                <!--<li class="nav-item">
                     <a class="nav-link header-tab" href="/core/logout" id="logout">Logout</a>
-                </li>
+                </li>-->
                 {{form.selected_tab(class="form-control", id="selected_tab")}}
                 {{form.selected_tab(class="form-control", id="selected_link")}}
                 {{form.selected_llmmodel(class="form-control", id="selected_link")}}
                 {{form.selected_tab(class="form-control", id="popovercontent")}}
             </ul>
         </div>
-
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Explanation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="displaycontent">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Understood</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="infopopover" id="infopopover">
             <span class="close" id="closePopover">&times;</span>
             <div id="displaycontent">
-
+                Hello
             </div>
             <script>
-                document.getElementById('displaycontent').innerHTML = document.getElementById('popovercontent').value;
+                var modalContent = document.getElementById('displaycontent').innerHTML;
+                console.log(modalContent);
+                modalContent = document.getElementById('popovercontent').value;
             </script>
         </div>
         <style>
@@ -215,7 +279,6 @@
                 border: 1px solid #ccc;
                 background-color: #fff;
                 padding: 10px;
-                width: auto;
                 max-width: 80%;
                 height: auto;
                 display: none;
@@ -231,7 +294,7 @@
         </style>
         <script>
             // Get the button that opens the popover
-            var btn = document.getElementById("popoverButton");
+            //var btn = document.getElementById("popoverButton");
 
             // Get the popover
             var popover = document.getElementById("infopopover");
@@ -240,12 +303,12 @@
             var span = document.getElementById("closePopover");
 
             // When the user clicks on the button, open the popover
-            btn.onclick = function () {
-                popover.style.display = "block";
-                // Position the popover - Adjust as needed
-                popover.style.left = btn.offsetLeft + "px";
-                popover.style.top = btn.offsetTop + btn.offsetHeight + "px";
-            }
+            //btn.onclick = function () {
+            //    popover.style.display = "block";
+            //    // Position the popover - Adjust as needed
+            //    popover.style.left = btn.offsetLeft + "px";
+            //    popover.style.top = btn.offsetTop + btn.offsetHeight + "px";
+            //}
 
             // btn.onmouseover = function() {
             //     popover.style.display = "block";
@@ -267,658 +330,132 @@
             }
         </script>
 
-        <div class="container-fluid bg-light pt-4">
+        <div class="container-fluid bg-light">
             <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="inputTab" class="tabcontent">
+                <div class="col-10" style="margin-bottom:1.5rem;">
+                    <div id="inputTab" class="tabcontent pt-4">
                         <div class="container bg-white px-5 pb-4">
                             <div class="row">
-                                <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Input</p>
+                                <!--  <p class="h3 mx-0 px-0 pt-4 pb-2">Input</p>-->
                             </div>
                             <div class="row">
-                                <div class="px-0 pt-4 pb-2">{{ form.industry.label }}</div>
+                                <div class="px-0 pt-4 pb-2">
+                                    {{ form.industry.label }}&nbsp;<span style="color:red;">*</span>&nbsp;
+                                    <i style="font-size:small;" title="Select Industry" class="bi bi-info-circle"></i>
+                                </div>
                                 {{ form.industry(class="form-select", id="industry") }}
                             </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">{{ form.ecosystem_context.label }}</div>
-                                {{ form.ecosystem_context(class="form-control", rows="15") }}
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">{{ form.scope_vision.label }}</div>
-                                {{ form.scope_vision(class="form-control", rows="5") }}
-                            </div>
-                            <div class="row pt-4 pb-4">
-                                <div class="col-6 px-0">
-                                    {{ form.get_business_context_button(class="btn btn-dark w-100", type="button")}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            <div class="row" id="ecosystemContext">
+                                <div class="px-0 pt-4 pb-2">
+                                    {{ form.ecosystem_context.label }}&nbsp;<span style="color:red;">*</span>&nbsp;
+                                    <i style="font-size:small;" title="Enter ecosystem context. Usually, it gets auto generated in line with the selected Industry." class="bi bi-info-circle"></i>
+                                    <div style="float:right;font-size:smaller" id="countDefault">0/15000 characters</div>
+                                    <div style="float: right; font-size: smaller" id="count"></div>
+                                    <div style="float:right;margin-right:15px;font-size:smaller;">
+                                        <i id="ecosystem-context-download-word" class="bi bi-file-earmark-word" style="cursor: pointer;"></i>
+                                    </div>
+                                    <div style="float:right;margin-right:15px;font-size:smaller;">
+                                        <i id="ecosystem-context-download-txt" class="bi bi-file-richtext" style="cursor: pointer;"></i>
+                                    </div>
 
-            <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="businessContextTab" class="tabcontent">
-                        <div id="businessContextTab1">
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Business Context</p>
+                                    <div style="float:right;margin-right:15px;font-size:smaller;">
+                                        <i id="ecosystem-context-download-pdf" class="bi bi-file-earmark-pdf" style="cursor: pointer;"></i>
+                                    </div>
+
+                                    {{ form.ecosystem_context(class="form-control", id="ecosystem_context", rows="10") }}
                                 </div>
+
+                                <script>
+                                document.getElementById('ecosystem_context').onmouseover= function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len);
+                                    document.getElementById('countDefault').style.display = "none";
+                                    document.getElementById('count').innerHTML = len + "/15000 characters";
+
+                                };
+                                </script>
                                 <div class="row">
-                                    <div class="px-0 pt-4 pb-2">{{ form.business_process_mapping.label }}</div>
-                                    {{ form.business_process_mapping(class="form-control", rows="10") }}
+                                    <div class="px-0 pt-4 pb-2">
+                                        {{ form.scope_vision.label }}&nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size:small;" class="bi bi-info-circle" title="Enter Scope/Vision/HLR"></i>
+                                        <div style="float: right; font-size: smaller;" id="countDefault1">0/15000 characters</div>
+
+                                        <div style="float: right; font-size: smaller" id="count1"></div>
+
+                                    </div>
+                                    {{ form.scope_vision(class="form-control", rows="5") }}
                                 </div>
-                                <div class="row">
-                                    <div class="px-0 pt-4 pb-2">{{ form.process_flow_mapping.label }}</div>
-                                    {{ form.process_flow_mapping(class="form-control", rows="10") }}
-                                </div>
+
+                                <script>
+                                document.getElementById('scope_vision').onkeyup = function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len)
+                                    document.getElementById('countDefault1').style.display = "none";
+
+                                    document.getElementById('count1').innerHTML = len + "/15000 characters";
+
+                                };
+                                </script>
                                 <div class="row pt-4 pb-4">
                                     <div class="col-6 px-0">
-                                        {{ form.generate_epic_button(class="btn btn-dark w-100", type="button")}}
+                                        {{ form.get_business_context_button(class="btn btn-dark w-100", type="button")}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="epicTab" class="tabcontent">
-                        <div id="epicTab1">
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">EPIC Inputs</p>
-                                    <div>
-                                        {{ form.epic_input_multi(class="form-select", id="epic_input_multi") }}
-                                    </div>
-                                    <script
-                                        src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-                                    <script>
-                                        new Choices(document.querySelector("#epic_input_multi"), { /* options */ });
-                                    </script>
-
-                                    <div class="row pt-4">
-                                        <input type="button" id="generate_epic_button1" class="btn btn-dark px-4"
-                                            style="margin-top: 5px; margin-bottom: 5px; width: 20%;" value="Generate EPIC">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <div class="row pt-4">
-                                        <p class="h5 px-0 pt-4 pb-2" style="color: #7500c0;">EPIC External Id: {{ form.epic_external_id(class="input-ln", style="width: 30% ; height:35px;") }}
-                                        {{ form.get_epic_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}
-                                        {{ form.reset_epic_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">{{ form.epic_user_story.label
-                                        }}</p>
-                                    {{ form.epic_user_story(class="form-control", rows="10") }}
-                                    <div class="row pt-4"> 
-                                        <input type="button" id="generate_feature_fromepic_button" class="btn btn-dark px-4"
-                                            style="margin-top: 5px; margin-bottom: 5px; width: 20%;" value="Generate Features">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">EPIC Review</p>
-                                </div>
-                                <div class="row">
-                                    <div class="px-0 pt-4 pb-2">{{ form.epic_persona_type.label }}</div>
-                                    {{ form.epic_persona_type(class="form-select") }}
-                                    <div class="row pt-4"> {{ form.gen_epic_review_button(class="btn btn-dark px-4", type="button",
-                                        style="margin-top: 5px;
-                                        margin-bottom: 5px; width: 23%;") }}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="px-0 pt-4 pb-2">{{ form.epic_review_comments.label }}</div>
-                                    {{ form.epic_review_comments(class="form-control", rows="5") }}
-                                    <div class="row pt-4"> {{ form.apply_epic_review_button(class="btn btn-dark px-4", type="button",
-                                        style="margin-top: 5px;
-                                        margin-bottom: 5px; width: 23%;") }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="featuresTab" class="tabcontent">
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Features Inputs</p>
-
-                                <div>
-                                    {{ form.features_input_multi(class="form-select", id="features_input_multi") }}
-                                </div>
-                                <script
-                                    src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-                                <script>
-                                    new Choices(document.querySelector("#features_input_multi"), { /* options */ });
-                                </script>
-
-                                <div class="row pt-4">
-                                    {{ form.generate_feature_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                    margin-bottom: 5px; width: 20%;") }}
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <div class="row pt-4">
-                                    <p class="h5 px-0 pt-4 pb-2" style="color: #7500c0;">Feature External Id: {{ form.feature_external_id(class="input-ln", style="width: 30% ; height:35px;") }}
-                                    {{ form.get_feature_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}
-                                    {{ form.reset_feature_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Features List</p>
-                                {{ form.features_list(class="form-control", rows="5") }}
-                                <div class="px-0 pt-4 pb-2">{{form.selected_feature.label}}</div>
-                                {{ form.selected_feature(class="form-control", rows="5") }}
-                                <div class="row pt-4">
-                                    {{ form.expand_feature_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                    margin-bottom: 5px; width: 20%;") }}
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Feature Abstract</p>
-                                {{ form.feature_user_story(class="form-control", rows="10") }}
-                                <input type="button" id="generate_userstories_fromfeature_button" class="btn btn-dark px-4"
-                                            style="margin-top: 5px; margin-bottom: 5px; width: 20%;" value="Generate User Stories">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="userStoriesTab" class="tabcontent">
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">User Stories Inputs</p>
-                                <div>
-                                    {{ form.userstories_input_multi(class="form-select", id="userstories_input_multi")
-                                    }}
-                                </div>
-                                <script
-                                    src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-                                <script>
-                                    new Choices(document.querySelector("#userstories_input_multi"), { /* options */ });
-                                </script>
-                                <div class="px-0 pt-4 pb-2">{{form.slicingmethod.label}}</div>
-                                {{ form.slicingmethod(class="form-select") }}
-                                <div class="row pt-4">
-                                    {{ form.generate_user_stories_button(class="btn btn-dark px-4", type="button", style="margin-top:
-                                    5px;
-                                    margin-bottom: 5px; width: 20%;") }}
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <div class="row pt-4">
-                                    <p class="h5 px-0 pt-4 pb-2" style="color: #7500c0;">User Story External Id: {{ form.user_story_external_id(class="input-ln", style="width: 30% ; height:35px;") }}
-                                    {{ form.get_user_story_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}
-                                    {{ form.reset_user_story_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">User Stories List</p>
-                                {{ form.user_stories_list(class="form-control", rows="5") }}
-                                <div class="px-0 pt-4 pb-2">{{form.selected_user_story.label}}</div>
-                                {{ form.selected_user_story(class="form-control", rows="3") }}
-                                <div class="row pt-4">
-                                    {{ form.expand_user_story_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                    margin-bottom: 5px; width: 20%;") }}
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">User Story Abstract</p>
-                                {{ form.user_story_abstract(class="form-control", rows="8") }}
-                                <div class="row pt-4" id="show_user_request">
-                                    User Request ID: {{ form.user_request_id(class="form-control",style="margin-top: 10px;margin-bottom:10px", rows="1") }}
-                                </div>
-                                <div class="row pt-4" id="show_status">
-                                    Status Response: {{ form.status_response(class="form-control",style="margin-top: 10px;margin-bottom:10px", rows="3") }}
-                                </div>
-                                <div class="row pt-4">
-                                    {{ form.consolidate_workitems_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                        margin-bottom: 5px; margin-right:5px; width: 25%;") }}
-                                    {{ form.push_to_alm_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                        margin-bottom: 5px; margin-right:5px; width: 20%;") }}
-                                        
-                                    {{ form.merge_status_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                        margin-bottom: 5px; margin-right:5px; width: 20%;") }}
-
-                                    {{ form.show_download(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
-                                        margin-bottom: 5px; margin-right:5px; width: 20%;") }}
-
-                                    <a href="{{ url_for('download_tool_queue')}}" id ="download_json_atag" style='text-decoration: none; display: none;'>Download JSON</a>
-                                    <div class="col-4 px-0">
-                                        <a class="btn btn-dark w-100" style="margin-top: 5px; margin-bottom: 5px;"
-                                            href="#" onclick="openTab(event, 'functionalDesignTab', 'fd-link')">Next:
-                                            Generate Functional Design</a>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="functionalDesignTab" class="tabcontent">
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Functional Design</p>
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">{{ form.fd_input.label }}</div>
-                                {{ form.fd_input(class="form-control") }}
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">Generate Types of Functional Design</div>
-                                <div class="p-0">
-                                    <div class="form-check form-check-inline">
-                                        {{form.uifuncdesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.uifuncdesigncheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.servicesfuncdesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.servicesfuncdesigncheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.datafuncdesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.datafuncdesigncheck.label }}</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <ul class="nav pt-4" id="fd-input-menu" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="fd-from-input-tab" data-bs-toggle="tab"
-                                            data-bs-target="#fd-from-input" role="tab" aria-controls="fd-from-input"
-                                            aria-selected="true" type="button">Functional Design from Inputs</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="fd-from-image-tab" data-bs-toggle="tab"
-                                            data-bs-target="#fd-from-image" role="tab" aria-controls="fd-from-image"
-                                            aria-selected="false" type="button">Functional Design from Image</a>
-                                    </li>
-                                </ul>
-
-                                <hr />
-
-                                <div class="tab-content bg-white">
-                                    <div class="px-0 tab-pane fd-input-menu-tab active bg-white" id="fd-from-input"
-                                        role="tabpanel" aria-labelledby="fd-from-input">
-                                        <div>
-                                            <div class="px-0 pb-2">{{ form.fd_input_multi.label }}</div>
-                                            <div class="p-0">
-                                                {{ form.fd_input_multi(class="form-select", id="fd_input_multi") }}
-                                            </div>
-                                            <script
-                                                src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-                                            <script>
-                                                new Choices(document.querySelector("#fd_input_multi"), { /* options */ });
-                                            </script>
-                                        </div>
-                                    </div>
-                                    <div class="px-0 tab-pane fd-input-menu-tab bg-white" id="fd-from-image"
-                                        role="tabpanel" aria-labelledby="fd-from-image">
-                                        <div>
-                                            <div class="px-0 pb-2">Generate Functional Design from Image</div>
-                                            <input type="file" name="wireframe_image" id="wireframe_image"
-                                                accept="image/*" class="form-control" />
-                                            <button id="generate_fd_from_image_button" class="btn btn-dark"
-                                                type="button">Generate Functional Design from Image</button>
-                                            <!-- <script>
-                                                document.getElementById('generate_fd_from_image_button').addEventListener('click', function () {
-                                                    var imageInput = document.getElementById('wireframe_image');
-                                                    var file = imageInput.files[0];
-
-                                                    if (file) {
-                                                        var formData = new FormData();
-                                                        formData.append('image', file);
-
-                                                        fetch('/uploadwireframe', {
-                                                            method: 'POST',
-                                                            body: formData
-                                                        })
-                                                            .then(response => response.text())
-                                                            .then(data => {
-                                                                document.getElementById('ui_functional_design').value = data;
-                                                            })
-                                                            .catch(error => {
-                                                                console.error('Error:', error);
-                                                            });
-                                                    } else {
-                                                        alert('Please select an image to upload.');
-                                                    }
-                                                });
-                                            </script> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row pt-4 pb-4">
-                                <div class="col-6 px-0">
-                                    {{ form.generate_functional_design_button(class="btn btn-dark", type="button")}}
-                                </div>
-                                <div class="col-6 px-0">
-                                {{ form.download_functional_design_button(class="btn btn-dark", type="button", id="fdd_download")}}  
-                                </div>
-                            
-                            <a href="{{ url_for('download_file_fdd')}}" id ="download_fdd_atag" style='text-decoration: none; display: none;'>Download</a>
-                            </div>
-                            <div class="row pb-4">
-                                <ul class="nav" id="fd-menu" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="ui-fd-tab" data-bs-toggle="tab"
-                                            data-bs-target="#ui-fd" role="tab" aria-controls="ui-fd"
-                                            aria-selected="true" type="button">{{ form.ui_functional_design.label }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="services-fd-tab" data-bs-toggle="tab"
-                                            data-bs-target="#services-fd" role="tab" aria-controls="services-fd"
-                                            aria-selected="false" type="button">{{ form.services_functional_design.label
-                                            }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="data-fd-tab" data-bs-toggle="tab"
-                                            data-bs-target="#data-fd" role="tab" aria-controls="data-fd"
-                                            aria-selected="false" type="button">{{ form.data_functional_design.label
-                                            }}</a>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-content pt-3">
-                                    <div class="tab-pane fd-menu-tab active" id="ui-fd" role="tabpanel"
-                                        aria-labelledby="ui-fd-tab">
-                                        {{ form.ui_functional_design(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane fd-menu-tab" id="services-fd" role="tabpanel"
-                                        aria-labelledby="services-fd-tab">
-                                        {{ form.services_functional_design(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane fd-menu-tab" id="data-fd" role="tabpanel"
-                                        aria-labelledby="data-fd-tab">
-                                        {{ form.data_functional_design(class="form-control", rows="20") }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="container bg-white px-5 my-4">
-                            <div class="row">
-                                <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">High Level Design</p>
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">Generate Types of High Level Design</div>
-                                <div class="p-0">
-                                    <div class="form-check form-check-inline">
-                                        {{form.uihlddesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.uihlddesigncheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.serviceshlddesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.serviceshlddesigncheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.datahlddesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.datahlddesigncheck.label }}</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row py-4">
-                                <div class="col-6 px-0">
-                                    {{ form.generate_high_level_design_button(class="btn btn-dark") }}
-                                </div>
-                                <div class="col-6 px-0">
-                                    {{ form.download_highlevel_design_button(class="btn btn-dark", type="button",id="hld_download")}}  
-                                </div>
-                                <a href="{{ url_for('download_file_hld')}}" id ="download_hld_atag" style='text-decoration: none; display: none;'>Download</a>
-                            </div>
-                            <div class="row pb-4">
-                                <ul class="nav" id="hld-menu" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="ui-hld-tab" data-bs-toggle="tab"
-                                            data-bs-target="#ui-hld" role="tab" aria-controls="ui-hld"
-                                            aria-selected="true" type="button">{{ form.ui_high_level_design.label }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="services-hld-tab" data-bs-toggle="tab"
-                                            data-bs-target="#services-hld" role="tab" aria-controls="services-hld"
-                                            aria-selected="false" type="button">{{ form.services_high_level_design.label
-                                            }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="data-hld-tab" data-bs-toggle="tab"
-                                            data-bs-target="#data-hld" role="tab" aria-controls="data-hld"
-                                            aria-selected="false" type="button">{{ form.data_high_level_design.label
-                                            }}</a>
-                                    </li>
-                                </ul>
-
-                                <hr />
-
-                                <div class="tab-content pt-3">
-                                    <div class="tab-pane hld-menu-tab active" id="ui-hld" role="tabpanel"
-                                        aria-labelledby="ui-hld-tab">
-                                        {{ form.ui_high_level_design(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane hld-menu-tab" id="services-hld" role="tabpanel"
-                                        aria-labelledby="services-hld-tab">
-                                        {{ form.services_high_level_design(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane hld-menu-tab" id="data-hld" role="tabpanel"
-                                        aria-labelledby="data-hld-tab">
-                                        {{ form.data_high_level_design(class="form-control", rows="20") }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="container bg-white px-5 my-4">
-                            <div class="row">
-                                <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Low Level Design</p>
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">Generate Types of Low Level Design</div>
-                                <div class="p-0">
-                                    <div class="form-check form-check-inline">
-                                        {{form.uidddesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.uidddesigncheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.servicesdddesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.servicesdddesigncheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.datadddesigncheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.datadddesigncheck.label }}</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row py-4">
-                                <div class="col-6 px-0">
-                                    {{ form.generate_detailed_design_button(class="btn btn-dark") }}
-                                </div>
-                                <div class="col-6 px-0">
-                                    {{ form.download_detailed_design_button(class="btn btn-dark", type="button",id="dld_download")}}  
-                                </div>
-                                <a href="{{ url_for('download_file_dld')}}" id ="download_dld_atag" style='text-decoration: none; display: none;'>Download</a>
-                            </div>
-                            <div class="row pb-4">
-                                <ul class="nav" id="dd-menu" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="ui-dd-tab" data-bs-toggle="tab"
-                                            data-bs-target="#ui-dd" role="tab" aria-controls="ui-dd"
-                                            aria-selected="true" type="button">{{ form.ui_detailed_design.label }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="services-dd-tab" data-bs-toggle="tab"
-                                            data-bs-target="#services-dd" role="tab" aria-controls="services-dd"
-                                            aria-selected="false" type="button">{{ form.services_detailed_design.label
-                                            }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="data-dd-tab" data-bs-toggle="tab"
-                                            data-bs-target="#data-dd" role="tab" aria-controls="data-dd"
-                                            aria-selected="false" type="button">{{ form.data_detailed_design.label
-                                            }}</a>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-content pt-3">
-                                    <div class="tab-pane dd-menu-tab active" id="ui-dd" role="tabpanel"
-                                        aria-labelledby="ui-dd-tab">
-                                        {{ form.ui_detailed_design(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane dd-menu-tab" id="services-dd" role="tabpanel"
-                                        aria-labelledby="services-dd-tab">
-                                        {{ form.services_detailed_design(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane dd-menu-tab" id="data-dd" role="tabpanel"
-                                        aria-labelledby="data-dd-tab">
-                                        {{ form.data_detailed_design(class="form-control", rows="20") }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-md-center">
-                <div class="col-10">
-                    <div id="archTab" class="tabcontent">
-                        <div class="container bg-white px-5">
-                            <div class="row">
-                                <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Architecture</p>
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">{{ form.platform_choice.label }}</div>
-                                {{form.platform_choice(class="form-select")}}
-                            </div>
-                            <div class="row">
-                                <div class="px-0 pt-4 pb-2">Generate Types of Architecture</div>
-                                <div class="p-0">
-                                    <div class="form-check form-check-inline">
-                                        {{form.uiarchcheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.uiarchcheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.servicesarchcheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.servicesarchcheck.label }}</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        {{form.dataarchcheck(class="form-check-input")}}
-                                        <label class="form-check-label">{{ form.dataarchcheck.label }}</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row py-4">
-                                <div class="col-6 px-0">
-                                    {{ form.generate_architecture_button(class="btn btn-dark") }}
-                                </div>
-                            </div>
-                            <div class="row pb-4">
-                                <ul class="nav" id="code-menu" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" id="ui-arch-tab" data-bs-toggle="tab"
-                                            data-bs-target="#ui-arch" role="tab" aria-controls="ui-arch"
-                                            aria-selected="true" type="button">{{ form.architecture_ui.label }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="services-arch-tab" data-bs-toggle="tab"
-                                            data-bs-target="#services-arch" role="tab" aria-controls="services-arch"
-                                            aria-selected="false" type="button">{{ form.architecture_services.label
-                                            }}</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="data-arch-tab" data-bs-toggle="tab"
-                                            data-bs-target="#data-arch" role="tab" aria-controls="data-arch"
-                                            aria-selected="false" type="button">{{ form.architecture_data.label }}</a>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-content pt-3">
-                                    <div class="tab-pane arch-menu-tab active" id="ui-arch" role="tabpanel"
-                                        aria-labelledby="ui-arch-tab">
-                                        {{ form.architecture_ui(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane arch-menu-tab" id="services-arch" role="tabpanel"
-                                        aria-labelledby="services-arch-tab">
-                                        {{ form.architecture_services(class="form-control", rows="20") }}
-                                    </div>
-                                    <div class="tab-pane arch-menu-tab" id="data-arch" role="tabpanel"
-                                        aria-labelledby="data-arch-tab">
-                                        {{ form.architecture_data(class="form-control", rows="20") }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row justify-content-md-center">
                     <div class="col-10">
-                        <div id="componentDiagramTab" class="tabcontent">
-                            <div class="container bg-white px-5 my-4">
-                                <div class="row">
-                                    <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Component Diagram</p>
-                                </div>
-                                <div class="row py-4">
-                                    <div class="col-6 px-0">
-                                        {{ form.generate_component_diagram_button(class="btn btn-dark", type="button") }}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="px-0 pt-4 pb-2"> Component Diagram *AI Generated</div>
+                        <div id="businessContextTab" class="tabcontent">
+                            <div id="businessContextTab1">
+                                <div class="container bg-white px-5">
                                     <div class="row">
-                                        {{ form.component_diagram(class="form-control", rows=20) }}
+                                        <!--  <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Business Context</p>-->
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <script >
-                                        mermaid.initialize({ startOnLoad: false });
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">
+                                            {{ form.business_process_mapping.label }}&nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size:small;" title="Business Process Mapping" class="bi bi-info-circle"></i>
+                                            <div style="float:right;font-size:smaller" id="countDefault2">0/15000 characters</div>
+                                            <div style="float: right; font-size: smaller" id="count2"></div>
+                                        </div>
+
+                                        {{ form.business_process_mapping(class="form-control", rows="10") }}
+                                    </div>
+                                    <script>
+                                    document.getElementById('business_process_mapping').onkeyup = function (val) {
+                                        console.log(val);
+                                        var len = val.target.value.length;
+                                        console.log(len);
+                                        document.getElementById('countDefault2').style.display = "none";
+                                        document.getElementById('count2').innerHTML = len + "/15000 characters";
+
+                                    };
                                     </script>
-                                    <pre class="mermaid" id="mermaidDiagram">
-                                    </pre>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">
+                                            {{ form.process_flow_mapping.label }}&nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size:small;" title="Process Flo" class="bi bi-info-circle"></i>
+                                            <div style="float:right;font-size:smaller" id="countDefault3">0/15000 characters</div>
+                                            <div style="float: right; font-size: smaller" id="count3"></div>
+                                        </div>
+                                        {{ form.process_flow_mapping(class="form-control", rows="10") }}
+                                    </div>
+                                    <script>
+                                    document.getElementById('process_flow_mapping').onkeyup = function (val) {
+                                        console.log(val);
+                                        var len = val.target.value.length;
+                                        console.log(len);
+                                        document.getElementById('countDefault3').style.display = "none";
+                                        document.getElementById('count3').innerHTML = len + "/15000 characters";
+
+                                    };
+                                    </script>
+                                    <div class="row pt-4 pb-4">
+                                        <div class="col-6 px-0">
+                                            {{ form.generate_epic_button(class="btn btn-dark w-100", type="button")}}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -927,170 +464,1195 @@
 
                 <div class="row justify-content-md-center">
                     <div class="col-10">
-                        <div id="codeTab" class="tabcontent">
+                        <div id="epicTab" class="tabcontent">
+                            <div id="epicTab1">
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                        <p class="pt-4 pb-2">Select Inputs</p>
+                                        <div>
+                                            {{ form.epic_input_multi(class="form-select", id="epic_input_multi") }}
+                                        </div>
+                                        <script src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+                                        <script>
+                                        new Choices(document.querySelector("#epic_input_multi"), { /* options */ });
+                                        </script>
+
+                                        <div class="row pt-4" style="display: flex; ">
+                                            <input type="button" id="generate_epic_button1" class="btn btn-dark"
+                                                   style="margin-top: 5px; margin-bottom: 15px; width: 20%;" value="Generate EPIC">
+                                            <div class="form-check form-check-inline" style="margin-bottom: 10px; width: auto; align-content: center; margin-left: 35px">
+                                                {{form.streamOpenAICheckBox(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.streamOpenAICheckBox.label }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                        <div class="row epic-inputs">
+                                            <p class="pb-2">
+
+                                                External Id &nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size: small;" title="Select External ID" class="bi bi-info-circle"></i>
+                                                <span style="font-size: smaller;margin-left:7%;" id="countDefault4">0/15 characters</span>
+                                                <span style="font-size: smaller; margin-left: 7%;" id="count4"></span>
+                                                <div>
+
+                                                    {{ form.epic_external_id(class="input-ln", style="width: 30% ; height:35px;") }}
+
+                                                </div>
+                                                <div class="epic-buttons">
+                                                    {{ form.get_epic_details(class="btn btn-dark px-4", type="button",style="margin-top: 10px;margin-bottom: 5px;font-size:12px; width: 15%;") }}
+                                                    {{ form.reset_epic_details(class="btn btn-dark px-4", type="button",style="margin-top: 10px;margin-bottom: 5px;font-size:12px; width: 15%;") }}
+                                                </div>
+
+                                                <script>
+                                                document.getElementById('epic_external_id').onkeyup = function (val) {
+                                                    console.log(val);
+                                                    var len = val.target.value.length;
+                                                    console.log(len);
+                                                    document.getElementById('countDefault4').style.display = "none";
+                                                    document.getElementById('count4').innerHTML = len + "/15 characters";
+
+                                                };
+                                                document.getElementById('reset_epic_details').onclick = function (val) {
+                                                    var len = 0;
+                                                    document.getElementById('count4').innerHTML = len + "/15 characters";
+                                                };
+                                                </script>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                        <p class="px-0 pt-4 pb-2">
+                                            {{
+ form.epic_user_story.label
+                                            }}
+                                            <span style="float: right;font-size:smaller" id="countDefault5">0/15000 characters</span>
+                                            <span style="float: right; font-size: smaller" id="count5"></span>
+
+                                        </p>
+                                        {{ form.epic_user_story(class="form-control", rows="10") }}
+                                        <div class="row pt-4">
+                                            <input type="button" id="generate_feature_fromepic_button" class="btn btn-dark px-4"
+                                                   style="margin-top: 5px; margin-bottom: 15px; width: 20%;" value="Generate Features">
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                document.getElementById('epic_user_story').onkeyup = function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len);
+                                    document.getElementById('countDefault5').style.display = "none";
+                                    document.getElementById('count5').innerHTML = len + "/15000 characters";
+
+                                };
+                                </script>
+                                <br>
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                        <p class="px-0 pt-4 pb-2 fw-bold">Review</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">{{ form.epic_persona_type.label }}</div>
+                                        {{ form.epic_persona_type(class="form-select") }}
+                                        <div class="row pt-4">
+                                            {{
+form.gen_epic_review_button(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 25%;")
+                                            }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">
+                                            {{ form.epic_review_comments.label }}
+                                            <div style="float: right;font-size:smaller" id="countDefault6">0/15000 characters</div>
+                                            <div style="float: right; font-size: smaller" id="count6"></div>
+                                        </div>
+
+                                        {{ form.epic_review_comments(class="form-control", rows="5") }}
+                                        <div class="row pt-4">
+                                            {{
+ form.apply_epic_review_button(class="btn btn-dark px-4", type="button",
+                                        style="margin-top: 5px;
+                                        margin-bottom: 15px; width: 23%;")
+                                            }}
+                                        </div>
+                                    </div>
+                                    <script>
+                                    document.getElementById('epic_review_comments').onmouseover= function (val) {
+                                        console.log(val);
+                                        var len = val.target.value.length;
+                                        console.log(len);
+                                        document.getElementById('countDefault6').style.display = "none";
+                                        document.getElementById('count6').innerHTML = len + "/15000 characters";
+
+                                    };
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <div id="featuresTab" class="tabcontent">
                             <div class="container bg-white px-5">
                                 <div class="row">
-                                    <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Code</p>
+                                    <p class="pt-4 pb-2">Features Inputs</p>
+
+                                    <div>
+                                        {{ form.features_input_multi(class="form-select", id="features_input_multi") }}
+                                    </div>
+                                    <script src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+                                    <script>
+                                    new Choices(document.querySelector("#features_input_multi"), { /* options */ });
+                                    </script>
+
+                                    <div class="row pt-4">
+                                        {{
+ form.generate_feature_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                    margin-bottom: 15px; width: 25%;")
+                                        }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <div class="row">
+                                        <p class="pt-4 pb-2">
+                                            Feature External Id &nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size:small;" title="Enter external ID" class="bi bi-info-circle"></i>
+                                            <span style="font-size: smaller;margin-left:2%;" id="countDefault_feature">0/15 characters</span>
+                                            <span style="font-size: smaller; margin-left:2%;" id="count_feature"></span>
+                                            <div>
+                                                {{ form.feature_external_id(class="input-ln", style="width: 30% ; height:35px;") }}
+
+                                            </div>
+                                            <div class="epic-buttons">
+                                                {{ form.get_feature_details(class="btn btn-dark px-2", type="button",style="margin-top: 10px;margin-bottom: 5px; width: 15%;font-size:12px;") }}
+                                                {{ form.reset_feature_details(class="btn btn-dark px-2", type="button",style="margin-top: 10px;margin-bottom: 5px; width: 17%;font-size:12px;") }}
+                                            </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                            document.getElementById('feature_external_id').onkeyup = function (val) {
+                                console.log(val);
+                                var len = val.target.value.length;
+                                console.log(len);
+                                document.getElementById('countDefault_feature').style.display = "none";
+                                document.getElementById('count_feature').innerHTML = len + "/15 characters";
+
+                            };
+                            document.getElementById('reset_feature_details').onclick = function (val) {
+                                var len = 0;
+                                document.getElementById('count_feature').innerHTML = len + "/15 characters";
+                            };
+                            </script>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="px-0 pt-4 pb-2">
+                                        Features List
+                                        <span style="margin-left:75%;font-size: smaller;" id="countDefault_feature1">0/15000 characters</span>
+                                        <span style="margin-left:75%;font-size: smaller;" id="count_feature1"></span>
+                                    </p>
+                                    {{ form.features_list(class="form-control", rows="5") }}
+
+                                    <div class="px-0 pt-4 pb-2">
+                                        {{form.selected_feature.label}}
+                                        <span style="margin-left:72%;font-size: smaller;" id="countDefault_feature2">0/15000 characters</span>
+                                        <span style="margin-left:72%;font-size: smaller;" id="count_feature2"></span>
+
+
+                                    </div>
+                                    {{ form.selected_feature(class="form-control", rows="5") }}
+
+                                    <div class="row pt-4">
+                                        {{
+ form.expand_feature_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                    margin-bottom: 15px; width: 20%;")
+                                        }}
+                                    </div>
+                                    <script>
+                                    document.getElementById('features_list').onkeyup = function (val) {
+                                        console.log(val);
+                                        var len = val.target.value.length;
+                                        console.log(len);
+                                        document.getElementById('countDefault_feature1').style.display = "none";
+                                        document.getElementById('count_feature1').innerHTML = len + "/15000 characters";
+
+                                    };
+                                    document.getElementById('selected_feature').onkeyup = function (val) {
+                                        console.log(val);
+                                        var len = val.target.value.length;
+                                        console.log(len);
+                                        document.getElementById('countDefault_feature2').style.display = "none";
+                                        document.getElementById('count_feature2').innerHTML = len + "/15000 characters";
+
+                                    };
+
+                                    </script>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="px-0 pt-4 pb-2">
+                                        Feature Abstract
+                                        <span style="margin-left:72%;font-size: smaller;" id="countDefault_feature3">0/15000 characters</span>
+                                        <span style="margin-left:72%;font-size: smaller;" id="count_feature3"></span>
+
+                                    </p>
+
+                                    {{ form.feature_user_story(class="form-control", rows="10") }}
+
+                                    <input type="button" id="generate_userstories_fromfeature_button" class="btn btn-dark px-4"
+                                           style="margin-top: 15px; margin-bottom: 15px; width: 25%;" value="Generate User Stories" />
+                                </div>
+                                <script>
+                                document.getElementById('feature_user_story').onkeyup = function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len);
+                                    document.getElementById('countDefault_feature3').style.display = "none";
+                                    document.getElementById('count_feature3').innerHTML = len + "/15000 characters";
+
+                                };
+                                </script>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <div id="userStoriesTab" class="tabcontent">
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="pt-4 pb-2">User Stories Inputs</p>
+                                    <div>
+                                        {{form.userstories_input_multi(class="form-select", id="userstories_input_multi")}}
+                                    </div>
+                                    <script src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+                                    <script>
+                                    new Choices(document.querySelector("#userstories_input_multi"), { /* options */ });
+                                    </script>
+                                    <div class="pt-4 pb-2">{{form.slicingmethod.label}}</div>
+                                    {{ form.slicingmethod(class="form-select") }}
+                                    <div class="row pt-4">
+                                        {{
+form.generate_user_stories_button(class="btn btn-dark px-4", type="button", style="margin-top:
+                                   5px;
+                                   margin-bottom: 15px; width: 25%;")
+                                        }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <div class="row pt-4">
+                                        <p class="pb-2">
+                                            User Story External Id &nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size: small;" title="Enter User Story External ID" class="bi bi-info-circle"></i>
+                                            <span style="font-size: smaller;margin-left:0.5%;" id="countDefault10">0/15 characters</span>
+                                            <span style="font-size: smaller; margin-left: 0.5%;" id="count10"></span>
+                                            <div>{{ form.user_story_external_id(class="input-ln", style="width: 30% ; height:35px;") }}</div>
+                                            <div class="epic-buttons">
+                                                {{ form.get_user_story_details(class="btn btn-dark px-4", type="button",style="margin-top: 15px;margin-bottom: 5px;font-size:12px; width: 20%;") }}
+                                                {{ form.reset_user_story_details(class="btn btn-dark px-4", type="button",style="margin-top: 15px;margin-bottom: 5px;font-size:12px; width: 20%;") }}
+                                            </div>
+                                        </p>
+                                    </div>
+                                    <script>
+                                    document.getElementById('user_story_external_id').onkeyup = function (val) {
+                                        console.log(val);
+                                        var len = val.target.value.length;
+                                        console.log(len);
+                                        document.getElementById('countDefault10').style.display = "none";
+                                        document.getElementById('count10').innerHTML = len + "/15 characters";
+
+                                    };
+                                    document.getElementById('reset_user_story_details').onclick = function (val) {
+                                        var len = 0;
+                                        document.getElementById('count10').innerHTML = len + "/15 characters";
+                                    };
+                                    </script>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="px-0 pb-2 pt-4">
+                                        User Stories List
+                                        <span style="font-size: smaller;margin-left:72%;" id="countDefault11">0/15000 characters</span>
+                                        <span style="font-size: smaller; margin-left: 72%;" id="count11"></span>
+
+                                    </p>
+                                    {{ form.user_stories_list(class="form-control", rows="5") }}
+                                    <div class="px-0 pt-4 pb-2">
+                                        {{form.selected_user_story.label}}
+                                        <div style="font-size: smaller;float:right;" id="countDefault12">0/15000 characters</div>
+                                        <div style="font-size: smaller; float: right;" id="count12"></div>
+
+                                    </div>
+                                    {{ form.selected_user_story(class="form-control", rows="3") }}
+                                    <div class="row pt-4">
+                                        {{
+form.expand_user_story_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                   margin-bottom: 15px; width: 20%;")
+                                        }}
+                                    </div>
+                                </div>
+                                <script>
+                                document.getElementById('user_stories_list').onkeyup = function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len);
+                                    document.getElementById('countDefault11').style.display = "none";
+                                    document.getElementById('count11').innerHTML = len + "/15000 characters";
+
+                                };
+                                document.getElementById('selected_user_story').onkeyup = function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len);
+                                    document.getElementById('countDefault12').style.display = "none";
+                                    document.getElementById('count12').innerHTML = len + "/15000 characters";
+
+                                };
+                                </script>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="px-0 pt-4 pb-2">
+                                        User Story Abstract
+                                        <span style="font-size: smaller;margin-left:70%;" id="countDefault11">0/15000 characters</span>
+                                        <span style="font-size: smaller; margin-left: 70%;" id="count11"></span>
+                                    </p>
+                                    {{ form.user_story_abstract(class="form-control", rows="8") }}
+                                    <div class="row pt-4" id="show_user_request">
+                                        User Request ID: {{ form.user_request_id(class="form-control",style="margin-top: 10px;margin-bottom:10px", rows="1") }}
+                                    </div>
+                                    <div class="row pt-4" id="show_status">
+                                        Status Response: {{ form.status_response(class="form-control",style="margin-top: 10px;margin-bottom:10px", rows="3") }}
+                                    </div>
+                                    <div class="row pt-4">
+                                        {{
+form.consolidate_workitems_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                       margin-bottom: 15px; margin-right:5px; width: 25%;")
+                                        }}
+                                        {{
+form.push_to_alm_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                       margin-bottom: 15px; margin-right:5px; width: 20%;")
+                                        }}
+
+                                        {{
+form.merge_status_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                       margin-bottom: 15px; margin-right:5px; width: 20%;")
+                                        }}
+
+                                        {{
+form.show_download(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                       margin-bottom: 15px; margin-right:5px; width: 20%;")
+                                        }}
+
+                                        <a href="{{ url_for('download_tool_queue')}}" id="download_json_atag" style='text-decoration: none; display: none;'>Download JSON</a>
+                                        <div class="col-4 px-0">
+                                            <a class="btn btn-dark w-100" style="margin-top: 5px; margin-bottom: 15px;"
+                                               href="#" onclick="openTab(event, 'functionalDesignTab', 'fd-link')">
+                                                Next:
+                                                Generate Functional Design
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                document.getElementById('user_story_abstract').onkeyup = function (val) {
+                                    console.log(val);
+                                    var len = val.target.value.length;
+                                    console.log(len);
+                                    document.getElementById('countDefault13').style.display = "none";
+                                    document.getElementById('count13').innerHTML = len + "/15000 characters";
+
+                                };
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <div id="userStoriesTab" class="tabcontent">
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="pt-4 pb-2">User Stories Inputs</p>
+                                    <div>
+                                        {{
+ form.userstories_input_multi(class="form-select", id="userstories_input_multi")
+                                        }}
+                                    </div>
+                                    <script src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+                                    <script>
+                                    new Choices(document.querySelector("#userstories_input_multi"), { /* options */ });
+                                    </script>
+                                    <div class="px-0 pt-4 pb-2">{{form.slicingmethod.label}}</div>
+                                    {{ form.slicingmethod(class="form-select") }}
+                                    <div class="row pt-4">
+                                        {{
+ form.generate_user_stories_button(class="btn btn-dark px-4", type="button", style="margin-top:
+                                    5px;
+                                    margin-bottom: 5px; width: 20%;")
+                                        }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <div class="row pt-4">
+                                        <p class="h5 px-0 pt-4 pb-2" style="color: #7500c0;">
+                                            User Story External Id: {{ form.user_story_external_id(class="input-ln", style="width: 30% ; height:35px;") }}
+                                            {{ form.get_user_story_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}
+                                            {{ form.reset_user_story_details(class="btn btn-dark px-4", type="button",style="margin-top: 5px;margin-bottom: 5px; width: 23%;") }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="px-0 pt-4 pb-2">User Stories List</p>
+                                    {{ form.user_stories_list(class="form-control", rows="5") }}
+                                    <div class="px-0 pt-4 pb-2">{{form.selected_user_story.label}}</div>
+                                    {{ form.selected_user_story(class="form-control", rows="3") }}
+                                    <div class="row pt-4">
+                                        {{
+ form.expand_user_story_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                    margin-bottom: 15px; width: 20%;")
+                                        }}
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">User Story Abstract</p>
+                                    {{ form.user_story_abstract(class="form-control", rows="8") }}
+                                    <div class="row pt-4" id="show_user_request">
+                                        User Request ID: {{ form.user_request_id(class="form-control",style="margin-top: 10px;margin-bottom:10px", rows="1") }}
+                                    </div>
+                                    <div class="row pt-4" id="show_status">
+                                        Status Response: {{ form.status_response(class="form-control",style="margin-top: 10px;margin-bottom:10px", rows="3") }}
+                                    </div>
+                                    <div class="row pt-4">
+                                        {{
+ form.consolidate_workitems_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                        margin-bottom: 5px; margin-right:5px; width: 25%;")
+                                        }}
+                                        {{
+ form.push_to_alm_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                        margin-bottom: 5px; margin-right:5px; width: 20%;")
+                                        }}
+
+                                        {{
+ form.merge_status_button(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                        margin-bottom: 5px; margin-right:5px; width: 20%;")
+                                        }}
+
+                                        {{
+ form.show_download(class="btn btn-dark px-4", type="button", style="margin-top: 5px;
+                                        margin-bottom: 5px; margin-right:5px; width: 20%;")
+                                        }}
+
+                                        <a href="{{ url_for('download_tool_queue')}}" id="download_json_atag" style='text-decoration: none; display: none;'>Download JSON</a>
+                                        <div class="col-4 px-0">
+                                            <a class="btn btn-dark w-100" style="margin-top: 5px; margin-bottom: 5px;"
+                                               href="#" onclick="openTab(event, 'functionalDesignTab', 'fd-link')">
+                                                Next:
+                                                Generate Functional Design
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <div id="functionalDesignTab" class="tabcontent">
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                    <!--   <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Functional Design</p>-->
                                 </div>
                                 <div class="row">
-                                    <div class="px-0 pt-4 pb-2">{{ form.frontend_code_language.label }}</div>
-                                    {{ form.frontend_code_language(class="form-select") }}
+                                    <div class="px-0 pt-4 pb-2">{{ form.fd_input.label }}</div>
+                                    {{ form.fd_input(class="form-control") }}
                                 </div>
                                 <div class="row">
-                                    <div class="px-0 pt-4 pb-2">{{ form.code_language.label }}</div>
-                                    {{ form.code_language(class="form-select") }}
-                                </div>
-                                <div class="row">
-                                    <div class="px-0 pt-4 pb-2">Generate Types of Code</div>
+                                    <div class="px-0 pt-4 pb-2">Generate Types of Functional Design</div>
                                     <div class="p-0">
                                         <div class="form-check form-check-inline">
-                                            {{form.uicodecheck(class="form-check-input")}}
-                                            <label class="form-check-label">{{ form.uicodecheck.label }}</label>
+                                            {{form.uifuncdesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.uifuncdesigncheck.label }}</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            {{form.servicescodecheck(class="form-check-input")}}
-                                            <label class="form-check-label">{{ form.servicescodecheck.label }}</label>
+                                            {{form.servicesfuncdesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.servicesfuncdesigncheck.label }}</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            {{form.datacodecheck(class="form-check-input")}}
-                                            <label class="form-check-label">{{ form.datacodecheck.label }}</label>
+                                            {{form.datafuncdesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.datafuncdesigncheck.label }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <ul class="nav pt-4" id="fd-input-menu" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="fd-from-input-tab" data-bs-toggle="tab"
+                                               data-bs-target="#fd-from-input" role="tab" aria-controls="fd-from-input"
+                                               aria-selected="true" type="button">Functional Design from Inputs</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="fd-from-image-tab" data-bs-toggle="tab"
+                                               data-bs-target="#fd-from-image" role="tab" aria-controls="fd-from-image"
+                                               aria-selected="false" type="button">Functional Design from Image</a>
+                                        </li>
+                                    </ul>
+
+                                    <hr />
+
+                                    <div class="tab-content bg-white">
+                                        <div class="px-0 tab-pane fd-input-menu-tab active bg-white" id="fd-from-input"
+                                             role="tabpanel" aria-labelledby="fd-from-input">
+                                            <div>
+                                                <div class="px-0 pb-2">{{ form.fd_input_multi.label }}</div>
+                                                <div class="p-0">
+                                                    {{ form.fd_input_multi(class="form-select", id="fd_input_multi") }}
+                                                </div>
+                                                <script src="https://{{cdnjsdelivrdomain}}/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+                                                <script>
+                                                new Choices(document.querySelector("#fd_input_multi"), { /* options */ });
+                                                </script>
+                                            </div>
+                                        </div>
+                                        <div class="px-0 tab-pane fd-input-menu-tab bg-white" id="fd-from-image"
+                                             role="tabpanel" aria-labelledby="fd-from-image">
+                                            <div>
+                                                <div class="px-0 pb-2">Generate Functional Design from Image</div>
+                                                <input type="file" name="wireframe_image" id="wireframe_image"
+                                                       accept="image/*" class="form-control" />
+                                                <button id="generate_fd_from_image_button" class="btn btn-dark mt-3"
+                                                        type="button">
+                                                    Generate Functional Design from Image
+                                                </button>
+                                                <!-- <script>
+                                                    document.getElementById('generate_fd_from_image_button').addEventListener('click', function () {
+                                                        var imageInput = document.getElementById('wireframe_image');
+                                                        var file = imageInput.files[0];
+
+                                                        if (file) {
+                                                            var formData = new FormData();
+                                                            formData.append('image', file);
+
+                                                            fetch('/uploadwireframe', {
+                                                                method: 'POST',
+                                                                body: formData
+                                                            })
+                                                                .then(response => response.text())
+                                                                .then(data => {
+                                                                    document.getElementById('ui_functional_design').value = data;
+                                                                })
+                                                                .catch(error => {
+                                                                    console.error('Error:', error);
+                                                                });
+                                                        } else {
+                                                            alert('Please select an image to upload.');
+                                                        }
+                                                    });
+                                                </script> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 pb-4" style="display:flex;gap:1%;">
+                                    <div class="">
+                                        {{ form.generate_functional_design_button(class="btn btn-dark", type="button")}}
+                                    </div>
+                                    <div class="">
+                                        {{ form.download_functional_design_button(class="btn btn-dark", type="button", id="fdd_download")}}
+                                    </div>
+
+                                    <a href="{{ url_for('download_file_fdd')}}" id="download_fdd_atag" style='text-decoration: none; display: none;'>Download</a>
+                                </div>
+                                <div class="row pb-4">
+                                    <ul class="nav" id="fd-menu" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="ui-fd-tab" data-bs-toggle="tab"
+                                               data-bs-target="#ui-fd" role="tab" aria-controls="ui-fd"
+                                               aria-selected="true" type="button">{{ form.ui_functional_design.label }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="services-fd-tab" data-bs-toggle="tab"
+                                               data-bs-target="#services-fd" role="tab" aria-controls="services-fd"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.services_functional_design.label
+                                                }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="data-fd-tab" data-bs-toggle="tab"
+                                               data-bs-target="#data-fd" role="tab" aria-controls="data-fd"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.data_functional_design.label
+                                                }}
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content pt-3">
+                                        <div class="tab-pane fd-menu-tab active" id="ui-fd" role="tabpanel"
+                                             aria-labelledby="ui-fd-tab">
+                                            {{ form.ui_functional_design(class="form-control", rows="20") }}
+                                        </div>
+                                        <div class="tab-pane fd-menu-tab" id="services-fd" role="tabpanel"
+                                             aria-labelledby="services-fd-tab">
+                                            {{ form.services_functional_design(class="form-control", rows="20") }}
+                                        </div>
+                                        <div class="tab-pane fd-menu-tab" id="data-fd" role="tabpanel"
+                                             aria-labelledby="data-fd-tab">
+                                            {{ form.data_functional_design(class="form-control", rows="20") }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container bg-white px-5 my-4">
+                                <div class="row">
+                                    <p class="mx-0 px-0 pt-4 pb-2 fw-bold">High Level Design</p>
+                                </div>
+                                <div class="row">
+                                    <div class="px-0 pt-4 pb-2">Generate Types of High Level Design</div>
+                                    <div class="p-0">
+                                        <div class="form-check form-check-inline">
+                                            {{form.uihlddesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.uihlddesigncheck.label }}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            {{form.serviceshlddesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.serviceshlddesigncheck.label }}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            {{form.datahlddesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.datahlddesigncheck.label }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-4" style="display:flex;gap:1%">
+                                    <div class="">
+                                        {{ form.generate_high_level_design_button(class="btn btn-dark", type="button") }}
+                                    </div>
+                                    <div class="">
+                                        {{ form.download_highlevel_design_button(class="btn btn-dark", type="button",id="hld_download")}}
+                                    </div>
+                                    <a href="{{ url_for('download_file_hld')}}" id="download_hld_atag" style='text-decoration: none; display: none;'>Download</a>
+                                </div>
+                                <div class="row pb-4">
+                                    <ul class="nav" id="hld-menu" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="ui-hld-tab" data-bs-toggle="tab"
+                                               data-bs-target="#ui-hld" role="tab" aria-controls="ui-hld"
+                                               aria-selected="true" type="button">{{ form.ui_high_level_design.label }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="services-hld-tab" data-bs-toggle="tab"
+                                               data-bs-target="#services-hld" role="tab" aria-controls="services-hld"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.services_high_level_design.label
+                                                }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="data-hld-tab" data-bs-toggle="tab"
+                                               data-bs-target="#data-hld" role="tab" aria-controls="data-hld"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.data_high_level_design.label
+                                                }}
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <hr />
+
+                                    <div class="tab-content pt-3">
+                                        <div class="tab-pane hld-menu-tab active" id="ui-hld" role="tabpanel"
+                                             aria-labelledby="ui-hld-tab">
+                                            {{ form.ui_high_level_design(class="form-control", rows="20") }}
+                                        </div>
+                                        <div class="tab-pane hld-menu-tab" id="services-hld" role="tabpanel"
+                                             aria-labelledby="services-hld-tab">
+                                            {{ form.services_high_level_design(class="form-control", rows="20") }}
+                                        </div>
+                                        <div class="tab-pane hld-menu-tab" id="data-hld" role="tabpanel"
+                                             aria-labelledby="data-hld-tab">
+                                            {{ form.data_high_level_design(class="form-control", rows="20") }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container bg-white px-5 my-4">
+                                <div class="row">
+                                    <p class="mx-0 px-0 pt-4 pb-2 fw-bold">Low Level Design</p>
+                                </div>
+                                <div class="row">
+                                    <div class="px-0 pt-4 pb-2">Generate Types of Low Level Design</div>
+                                    <div class="p-0">
+                                        <div class="form-check form-check-inline">
+                                            {{form.uidddesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.uidddesigncheck.label }}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            {{form.servicesdddesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.servicesdddesigncheck.label }}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            {{form.datadddesigncheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.datadddesigncheck.label }}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-4" style="display:flex;gap:1%;">
+                                    <div class="">
+                                        {{ form.generate_detailed_design_button(class="btn btn-dark", type="button") }}
+                                    </div>
+                                    <div class="">
+                                        {{ form.download_detailed_design_button(class="btn btn-dark", type="button",id="dld_download")}}
+                                    </div>
+                                    <a href="{{ url_for('download_file_dld')}}" id="download_dld_atag" style='text-decoration: none; display: none;'>Download</a>
+                                </div>
+                                <div class="row pb-4">
+                                    <ul class="nav" id="dd-menu" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="ui-dd-tab" data-bs-toggle="tab"
+                                               data-bs-target="#ui-dd" role="tab" aria-controls="ui-dd"
+                                               aria-selected="true" type="button">{{ form.ui_detailed_design.label }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="services-dd-tab" data-bs-toggle="tab"
+                                               data-bs-target="#services-dd" role="tab" aria-controls="services-dd"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.services_detailed_design.label
+                                                }}
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="data-dd-tab" data-bs-toggle="tab"
+                                               data-bs-target="#data-dd" role="tab" aria-controls="data-dd"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.data_detailed_design.label
+                                                }}
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content pt-3">
+                                        <div class="tab-pane dd-menu-tab active" id="ui-dd" role="tabpanel"
+                                             aria-labelledby="ui-dd-tab">
+                                            {{ form.ui_detailed_design(class="form-control", rows="20") }}
+                                        </div>
+                                        <div class="tab-pane dd-menu-tab" id="services-dd" role="tabpanel"
+                                             aria-labelledby="services-dd-tab">
+                                            {{ form.services_detailed_design(class="form-control", rows="20") }}
+                                        </div>
+                                        <div class="tab-pane dd-menu-tab" id="data-dd" role="tabpanel"
+                                             aria-labelledby="data-dd-tab">
+                                            {{ form.data_detailed_design(class="form-control", rows="20") }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col-10">
+                        <div id="archTab" class="tabcontent">
+                            <div class="container bg-white px-5">
+                                <div class="row">
+                                </div>
+                                <div class="row">
+                                    <div class="px-0 pt-4 pb-2">{{ form.platform_choice.label }}</div>
+                                    {{form.platform_choice(class="form-select")}}
+                                </div>
+                                <div class="row">
+                                    <div class="px-0 pt-4 pb-2">Generate Types of Architecture</div>
+                                    <div class="p-0">
+                                        <div class="form-check form-check-inline">
+                                            {{form.uiarchcheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.uiarchcheck.label }}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            {{form.servicesarchcheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.servicesarchcheck.label }}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            {{form.dataarchcheck(class="form-check-input")}}
+                                            <label class="form-check-label">{{ form.dataarchcheck.label }}</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row py-4">
                                     <div class="col-6 px-0">
-                                        {{ form.generate_code_button(class="btn btn-dark", type="button") }}
+                                        {{ form.generate_architecture_button(class="btn btn-dark", type="button") }}
                                     </div>
                                 </div>
                                 <div class="row pb-4">
                                     <ul class="nav" id="code-menu" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="ui-code-tab" data-bs-toggle="tab"
-                                                data-bs-target="#ui-code" role="tab" aria-controls="ui-code"
-                                                aria-selected="true" type="button">{{ form.ui_code.label }}</a>
+                                            <a class="nav-link active" id="ui-arch-tab" data-bs-toggle="tab"
+                                               data-bs-target="#ui-arch" role="tab" aria-controls="ui-arch"
+                                               aria-selected="true" type="button">{{ form.architecture_ui.label }}</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="services-code-tab" data-bs-toggle="tab"
-                                                data-bs-target="#services-code" role="tab" aria-controls="services-code"
-                                                aria-selected="false" type="button">{{ form.services_code.label }}</a>
+                                            <a class="nav-link" id="services-arch-tab" data-bs-toggle="tab"
+                                               data-bs-target="#services-arch" role="tab" aria-controls="services-arch"
+                                               aria-selected="false" type="button">
+                                                {{
+ form.architecture_services.label
+                                                }}
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="data-code-tab" data-bs-toggle="tab"
-                                                data-bs-target="#data-code" role="tab" aria-controls="data-code"
-                                                aria-selected="false" type="button">{{ form.data_code.label }}</a>
+                                            <a class="nav-link" id="data-arch-tab" data-bs-toggle="tab"
+                                               data-bs-target="#data-arch" role="tab" aria-controls="data-arch"
+                                               aria-selected="false" type="button">{{ form.architecture_data.label }}</a>
                                         </li>
                                     </ul>
 
                                     <div class="tab-content pt-3">
-                                        <div class="tab-pane code-menu-tab active" id="ui-code" role="tabpanel"
-                                            aria-labelledby="ui-code-tab">
-                                            {{ form.ui_code(class="form-control", rows="20") }}
+                                        <div class="tab-pane arch-menu-tab active" id="ui-arch" role="tabpanel"
+                                             aria-labelledby="ui-arch-tab">
+                                            {{ form.architecture_ui(class="form-control", rows="20") }}
                                         </div>
-                                        <div class="tab-pane code-menu-tab" id="services-code" role="tabpanel"
-                                            aria-labelledby="services-code-tab">
-                                            {{ form.services_code(class="form-control", rows="20") }}
+                                        <div class="tab-pane arch-menu-tab" id="services-arch" role="tabpanel"
+                                             aria-labelledby="services-arch-tab">
+                                            {{ form.architecture_services(class="form-control", rows="20") }}
                                         </div>
-                                        <div class="tab-pane code-menu-tab" id="data-code" role="tabpanel"
-                                            aria-labelledby="data-code-tab">
-                                            {{ form.data_code(class="form-control", rows="20") }}
+                                        <div class="tab-pane arch-menu-tab" id="data-arch" role="tabpanel"
+                                             aria-labelledby="data-arch-tab">
+                                            {{ form.architecture_data(class="form-control", rows="20") }}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row justify-content-md-center">
-                    <div class="col-10">
-                        <div id="systemTestingTab" class="tabcontent">
-                            <div class="container bg-white px-5 pb-4">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">System Testing Input</p>
-                                    <div class="px-0 pt-4 pb-2">{{ form.st_key_input.label }}</div>
-                                    {{ form.st_key_input(class="form-control") }}
+                    <div class="row justify-content-md-center">
+                        <div class="col-10">
+                            <div id="componentDiagramTab" class="tabcontent">
+                                <div class="container bg-white px-5 my-4">
 
-                                    <div class="pt-4 pb-2"> {{ form.st_input_multi.label }} (Optional) </div>
 
-                                    <div class="p-0">
-                                        {% for value, label in form.st_input_multi.choices %}
-                                        <div class="form-check form-check-inline"
-                                            data-checked="{{ form.st_input_multi.data | default([]) | join(',')}}">
-                                            <input class="form-check-input" name="st_input_multi" type="checkbox"
-                                                id="{{ value }}" value="{{ value }}" {% if value in
-                                                form.st_input_multi.data %} checked {% endif %}>
-                                            <label class="form-check-label" for="{{ value }}">{{ label }}</label>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">
+                                            Component Diagram *AI Generated
+                                            <span style="margin-left:61%;">
+                                                {{ form.generate_component_diagram_button(class="btn btn-dark", type="button") }}
+                                            </span>
                                         </div>
-                                        {% endfor %}
+                                        <div class="row">
+                                            {{ form.component_diagram(class="form-control", rows=20) }}
+                                        </div>
                                     </div>
+                                    <div class="row">
+                                        <script>
+                                        mermaid.initialize({ startOnLoad: false });
+                                        </script>
+                                        <pre class="mermaid" id="mermaidDiagram">
+                                    </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <div class="col-md-3 pt-4">
-                                        {{ form.generate_test_plan_button(class="btn btn-dark w-100") }}
+                    <div class="row justify-content-md-center">
+                        <div class="col-10">
+                            <div id="codeTab" class="tabcontent">
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                        <!-- <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Code</p>-->
+                                    </div>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">{{ form.frontend_code_language.label }}</div>
+                                        {{ form.frontend_code_language(class="form-select") }}
+                                    </div>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">{{ form.code_language.label }}</div>
+                                        {{ form.code_language(class="form-select") }}
+                                    </div>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">Generate Types of Code</div>
+                                        <div class="p-0">
+                                            <div class="form-check form-check-inline">
+                                                {{form.uicodecheck(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.uicodecheck.label }}</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                {{form.servicescodecheck(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.servicescodecheck.label }}</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                {{form.datacodecheck(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.datacodecheck.label }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row py-4">
+                                        <div class="col-6 px-0">
+                                            {{ form.generate_code_button(class="btn btn-dark", type="button") }}
+                                        </div>
+                                    </div>
+                                    <div class="row pb-4">
+                                        <ul class="nav" id="code-menu" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="ui-code-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#ui-code" role="tab" aria-controls="ui-code"
+                                                   aria-selected="true" type="button">{{ form.ui_code.label }}</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="services-code-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#services-code" role="tab" aria-controls="services-code"
+                                                   aria-selected="false" type="button">{{ form.services_code.label }}</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="data-code-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#data-code" role="tab" aria-controls="data-code"
+                                                   aria-selected="false" type="button">{{ form.data_code.label }}</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content pt-3">
+                                            <div class="tab-pane code-menu-tab active" id="ui-code" role="tabpanel"
+                                                 aria-labelledby="ui-code-tab">
+                                                {{ form.ui_code(class="form-control", rows="20") }}
+                                            </div>
+                                            <div class="tab-pane code-menu-tab" id="services-code" role="tabpanel"
+                                                 aria-labelledby="services-code-tab">
+                                                {{ form.services_code(class="form-control", rows="20") }}
+                                            </div>
+                                            <div class="tab-pane code-menu-tab" id="data-code" role="tabpanel"
+                                                 aria-labelledby="data-code-tab">
+                                                {{ form.data_code(class="form-control", rows="20") }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row py-4">
+                                        <div class="col-6 px-0">
+                                            <button type="button" class="btn btn-dark" id="codeFileUploadSubmit">
+                                                Generate
+                                                Graph
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="unique_name">
+                                    <div id ="codegraph" class="row pb-4" style="display: none;">
+                                        <ul class="nav" id="code-menu" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="services-code-graph-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#services-code-graph" role="tab" aria-controls="services-code-graph"
+                                                   aria-selected="true" type="button">Services Code</a>
+                                            </li>
+                                        </ul>
+                                        <!--<label class="form-check-label">Service Code</label>-->
+                                        <div class="tab-content pt-3">
+                                            <div class="tab-pane code-graph-tab active" id="services-code-graph" role="tabpanel"
+                                                 aria-labelledby="services-code-graph-tab">
+                                                <p id="errormsg" style="color:red"></p>
+                                                <iframe id='codeiframe' height='400px' width="100%"></iframe>
+                                            </div>
+                                        </div>
+                                        <!--<input type="hidden" id="unique_name">
+        <p id="errormsg" style="color:red"></p>
+        <iframe id='codeiframe' height='500px'></iframe>-->
+                                    </div>
+                                    <!--<div class="row pb-4">
+        <div class="tab-content pt-3">
+        </div>
+    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-md-center">
+                        <div class="col-10">
+                            <div id="systemTestingTab" class="tabcontent">
+                                <div class="container bg-white px-5 pb-4">
+                                    <div class="row">
+                                        <!-- <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">System Testing Input</p>-->
+                                        <div class="px-0 pt-4 pb-2">{{ form.st_key_input.label }}</div>
+                                        {{ form.st_key_input(class="form-control") }}
+
+                                        <div class="pt-4 pb-2"> {{ form.st_input_multi.label }} (Optional) </div>
+
+                                        <div class="p-0">
+                                            {% for value, label in form.st_input_multi.choices %}
+                                            <div class="form-check form-check-inline"
+                                                 data-checked="{{ form.st_input_multi.data | default([]) | join(',')}}">
+                                                <input class="form-check-input" name="st_input_multi" type="checkbox"
+                                                       id="{{ value }}" value="{{ value }}" {% if value in
+                                                       form.st_input_multi.data %} checked {% endif %}>
+                                                <label class="form-check-label" for="{{ value }}">{{ label }}</label>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="col-md-3 pt-4">
+                                            {{ form.generate_test_plan_button(class="btn btn-dark w-100", type="button") }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5 pb-4">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Test Plan</p>
-                                    <div class="px-0 pt-4 pb-2">{{ form.test_plan.label }} *AI Generated</div>
-                                    {{ form.test_plan(class="form-control", rows="5") }}
-                                    <div class="col-md-3 pt-4">{{ form.generate_test_cases_button(class="btn btn-dark
-                                        w-100") }}</div>
+                                <br>
+                                <div class="container bg-white px-5 pb-4">
+                                    <div class="row">
+                                        <!--<p class="px-0 pt-4 pb-2">Test Plan</p>-->
+                                        <div class="px-0 pt-4 pb-2">
+                                            {{ form.test_plan.label }} *AI Generated
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-plan-download-word" class="bi bi-file-earmark-word" style="cursor: pointer;"></i>
+                                            </div>
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-plan-download-txt" class="bi bi-file-richtext" style="cursor: pointer;"></i>
+                                            </div>
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-plan-download-pdf" class="bi bi-file-earmark-pdf" style="cursor: pointer;"></i>
+                                            </div>
+                                        </div>
+                                        {{ form.test_plan(class="form-control", rows="5") }}
+                                    <div class="col-md-3 pt-4">
+                                        {{form.generate_test_cases_button(class="btn btn-dark w-100", type="button")}}
+                                    </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5 pb-4">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Test Cases</p>
-                                    <div class="px-0 pt-4 pb-2">{{ form.test_cases.label }} *AI Generated</div>
-                                    {{ form.test_cases(class="form-control", rows="5") }}
-                                    <div class="col-md-3 px-0 pt-4">{{ form.generate_test_scripts_button(class="btn
-                                        btn-dark w-100") }}</div>
+                                <br>
+                                <div class="container bg-white px-5 pb-4">
+                                    <div class="row">
+                                        <!--<p class="px-0 pt-4 pb-2">Test Cases</p>-->
+                                        <div class="px-0 pt-4 pb-2">
+                                            {{ form.test_cases.label }} *AI Generated
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-case-download-word" class="bi bi-file-earmark-word" style="cursor: pointer;"></i>
+                                            </div>
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-case-download-txt" class="bi bi-file-richtext" style="cursor: pointer;"></i>
+                                            </div>
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-case-download-pdf" class="bi bi-file-earmark-pdf" style="cursor: pointer;"></i>
+                                            </div>
+                                        </div>
+                                        {{ form.test_cases(class="form-control", rows="5") }}
+                                    <div class="col-md-3 px-0 pt-4">
+                                        {{
+ form.generate_test_scripts_button(class="btn
+                                        btn-dark w-100" , type="button")
+                                        }}
+                                    </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5 pb-4">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Test Scripts</p>
-                                    <div class="px-0 pt-4 pb-2">{{ form.test_scripts.label }} *AI Generated</div>
-                                    {{ form.test_scripts(class="form-control", rows="5") }}
+                                <br>
+                                <div class="container bg-white px-5 pb-4">
+                                    <div class="row">
+                                        <!-- <p class="px-0 pt-4 pb-2">Test Scripts</p>-->
+                                        <div class="px-0 pt-4 pb-2">
+                                            {{ form.test_scripts.label }} *AI Generated
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-scripts-download-word" class="bi bi-file-earmark-word" style="cursor: pointer;"></i>
+                                            </div>
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-scripts-download-txt" class="bi bi-file-richtext" style="cursor: pointer;"></i>
+                                            </div>
+                                            <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                <i id="test-scripts-download-pdf" class="bi bi-file-earmark-pdf" style="cursor: pointer;"></i>
+                                            </div>
+                                        </div>
+                                        {{ form.test_scripts(class="form-control", rows="5") }}
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="container bg-white px-5 pb-4">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Test Tool</p>
-                                    <div class="accordion accordion-flush" id="accordionFlushExample"
-                                        style="border-left: none; border-right: none; background-color: white;">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingOne"
-                                                style="border: none; background-color: white;">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                                    aria-expanded="false" aria-controls="flush-collapseOne"
-                                                    style="border: none; color: #000; background-color: white">
-                                                    {{ form.system_test_tool.label }}
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                                aria-labelledby="flush-headingOne"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="row">
-                                                    <div class="pt-4 pb-2">Test Tool</div>
-                                                    <div class="col-md-6">
-                                                        {{form.system_test_tool(class="form-select", style="margin-top:
-                                                        5px;")}}
-                                                    </div>
-                                                    <div class="col-md-3 px-0 pt-4">
-                                                        {{ form.generate_tool_test_scripts_button(class="btn btn-dark
+                                <br>
+                                <div class="container bg-white px-5 pb-4">
+                                    <div class="row pt-4">
+                                        <!--<p class="px-0 pt-4 pb-2">Test Tool</p>-->
+                                        <div class="accordion accordion-flush" id="accordionFlushExample"
+                                             style="border-left: none; border-right: none; background-color: white;">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="flush-headingOne"
+                                                    style="border: none; background-color: white;">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                                            aria-expanded="false" aria-controls="flush-collapseOne"
+                                                            style="border: none; color: #000; background-color: white">
+                                                        {{ form.system_test_tool.label }}
+                                                    </button>
+                                                </h2>
+                                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                                     aria-labelledby="flush-headingOne"
+                                                     data-bs-parent="#accordionFlushExample">
+                                                    <div class="row">
+                                                        <div class="pt-4 pb-2">Test Tool</div>
+                                                        <div class="col-md-6">
+                                                            {{
+form.system_test_tool(class="form-select", style="margin-top:
+                                                        5px;")
+                                                            }}
+                                                        </div>
+                                                        <div class="col-md-3 px-0">
+                                                            {{
+ form.generate_tool_test_scripts_button(class="btn btn-dark
                                                         px-4 w-100", style="margin-top: 5px;
-                                                        margin-bottom: 5px;") }}
+                                                        margin-bottom: 5px;" , type="button")
+                                                            }}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="pt-4 pb-2">Test Scripts for Tool (*AI Generated)</div>
-                                                <div class="accordion-body">
-                                                    {{form.tool_test_script(class="form-control", rows="5")}}
+                                                    <div class="pt-4 pb-2">
+                                                        Test Scripts for Tool (*AI Generated)
+                                                        <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                            <i id="test-scripts-tool-download-word" class="bi bi-file-earmark-word" style="cursor: pointer;"></i>
+                                                        </div>
+                                                        <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                            <i id="test-scripts-tool-download-txt" class="bi bi-file-richtext" style="cursor: pointer;"></i>
+                                                        </div>
+                                                        <div style="float:right;margin-right:15px;font-size:smaller;">
+                                                            <i id="test-scripts-tool-download-pdf" class="bi bi-file-earmark-pdf" style="cursor: pointer;"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-body">
+                                                        {{form.tool_test_script(class="form-control", rows="5")}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1099,126 +1661,121 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row justify-content-md-center">
-                    <div class="col-10">
-                        <div id="deploymentTab" class="tabcontent">
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <p class="h3 mx-0 px-0 pt-4 pb-2" style="color: #7500c0;">Deployment</p>
-                                </div>
-                                <div class="row">
-                                    <div class="px-0 pt-4 pb-2">Generate Types of Deployment Scripts</div>
-                                    <div class="p-0">
-                                        <div class="form-check form-check-inline">
-                                            {{form.uideploymentcheck(class="form-check-input")}}
-                                            <label class="form-check-label">{{ form.uideploymentcheck.label }}</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            {{form.servicesdeploymentcheck(class="form-check-input")}}
-                                            <label class="form-check-label">{{ form.servicesdeploymentcheck.label }}</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            {{form.datadeploymentcheck(class="form-check-input")}}
-                                            <label class="form-check-label">{{ form.datadeploymentcheck.label }}</label>
+                    <div class="row justify-content-md-center">
+                        <div class="col-10">
+                            <div id="deploymentTab" class="tabcontent">
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                    </div>
+                                    <div class="row">
+                                        <div class="px-0 pt-4 pb-2">Generate Types of Deployment Scripts</div>
+                                        <div class="p-0">
+                                            <div class="form-check form-check-inline">
+                                                {{form.uideploymentcheck(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.uideploymentcheck.label }}</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                {{form.servicesdeploymentcheck(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.servicesdeploymentcheck.label }}</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                {{form.datadeploymentcheck(class="form-check-input")}}
+                                                <label class="form-check-label">{{ form.datadeploymentcheck.label }}</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row py-4">
-                                    <div class="col-6 px-0">
-                                        {{ form.generate_deployment_button(class="btn btn-dark") }}
+                                    <div class="row py-4">
+                                        <div class="col-6 px-0">
+                                            {{ form.generate_deployment_button(class="btn btn-dark" , type="button") }}
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row pb-4">
-                                    <ul class="nav" id="deploy-menu" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="ui-deploy-tab" data-bs-toggle="tab"
-                                                data-bs-target="#ui-deploy" role="tab" aria-controls="ui-deploy"
-                                                aria-selected="true" type="button">{{ form.deployment_strategy_ui.label
-                                                }}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="services-deploy-tab" data-bs-toggle="tab"
-                                                data-bs-target="#services-deploy" role="tab"
-                                                aria-controls="services-deploy" aria-selected="false" type="button">{{
-                                                form.deployment_strategy_services.label }}</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="data-deploy-tab" data-bs-toggle="tab"
-                                                data-bs-target="#data-deploy" role="tab" aria-controls="data-deploy"
-                                                aria-selected="false" type="button">{{
-                                                form.deployment_strategy_data.label }}</a>
-                                        </li>
-                                    </ul>
+                                    <div class="row pb-4">
+                                        <ul class="nav" id="deploy-menu" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="ui-deploy-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#ui-deploy" role="tab" aria-controls="ui-deploy"
+                                                   aria-selected="true" type="button">
+                                                    {{
+ form.deployment_strategy_ui.label
+                                                    }}
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="services-deploy-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#services-deploy" role="tab"
+                                                   aria-controls="services-deploy" aria-selected="false" type="button">
+                                                    {{
+                                                form.deployment_strategy_services.label
+                                                    }}
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="data-deploy-tab" data-bs-toggle="tab"
+                                                   data-bs-target="#data-deploy" role="tab" aria-controls="data-deploy"
+                                                   aria-selected="false" type="button">
+                                                    {{
+                                                form.deployment_strategy_data.label
+                                                    }}
+                                                </a>
+                                            </li>
+                                        </ul>
 
-                                    <div class="tab-content pt-3">
-                                        <div class="tab-pane deploy-menu-tab active" id="ui-deploy" role="tabpanel"
-                                            aria-labelledby="ui-deploy-tab">
-                                            {{ form.deployment_strategy_ui(class="form-control", rows="20") }}
-                                        </div>
-                                        <div class="tab-pane deploy-menu-tab" id="services-deploy" role="tabpanel"
-                                            aria-labelledby="services-deploy-tab">
-                                            {{ form.deployment_strategy_services(class="form-control", rows="20") }}
-                                        </div>
-                                        <div class="tab-pane deploy-menu-tab" id="data-deploy" role="tabpanel"
-                                            aria-labelledby="data-deploy-tab">
-                                            {{ form.deployment_strategy_data(class="form-control", rows="20") }}
+                                        <div class="tab-content pt-3">
+                                            <div class="tab-pane deploy-menu-tab active" id="ui-deploy" role="tabpanel"
+                                                 aria-labelledby="ui-deploy-tab">
+                                                {{ form.deployment_strategy_ui(class="form-control", rows="20") }}
+                                            </div>
+                                            <div class="tab-pane deploy-menu-tab" id="services-deploy" role="tabpanel"
+                                                 aria-labelledby="services-deploy-tab">
+                                                {{ form.deployment_strategy_services(class="form-control", rows="20") }}
+                                            </div>
+                                            <div class="tab-pane deploy-menu-tab" id="data-deploy" role="tabpanel"
+                                                 aria-labelledby="data-deploy-tab">
+                                                {{ form.deployment_strategy_data(class="form-control", rows="20") }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row justify-content-md-center">
-                    <div class="col-10">
-                        <div id="treeViewTab" class="tabcontent">
-                            <div class="container bg-white px-5">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">BPM - Tree View</p>
-                                    <div class="px-0 pt-4 pb-2">{{ form.treeviewindustry.label }}</div>
-                                    {{ form.treeviewindustry(class="form-select", id="treeviewindustry") }}
-                                    <button id="loadTreeView" class="btn btn-dark" type="button"
-                                        style="margin-top: 5px; margin-bottom: 5px; width: 20%;">Load Tree View</button>
+
+                    <div class="row justify-content-md-center">
+                        <div class="col-10">
+                            <div id="treeViewTab" class="tabcontent">
+                                <div class="container bg-white px-5">
+                                    <div class="row">
+                                        <div class="pt-4 pb-2">{{ form.treeviewindustry.label }}&nbsp;<span style="color:red;">*</span>&nbsp; <i style="font-size: small;" title="Select Industry" class="bi bi-info-circle"></i></div>
+                                        <div style="display:flex;gap:2%" class="pb-4">
+                                            <div style="width:82%">
+                                                {{ form.treeviewindustry(class="form-select", id="treeviewindustry") }}
+                                            </div>
+                                            <button id="loadTreeView" class="btn btn-dark" type="button" onclick="loadTree()">
+                                                Load Tree View
+                                            </button>
+                                        </div>
+                                        <script>
+                                        function loadTree() {
+                                            document.getElementById('jstree').style.display = "block";
+                                            document.getElementById('add-active3').classList.add('active');
+                                        }
+                                        </script>
+                                    </div>
                                 </div>
+                                <br>
+
+                                <div id="jstree" class="container bg-white px-2 py-4"></div>
+                                <!--</div>-->
+                                <!--</div>-->
+
                             </div>
-                            <br>
-                            <div class="container bg-white px-5 my-4">
-                                <div class="row">
-                                    <p class="h3 px-0 pt-4 pb-2" style="color: #7500c0;">Tree View</p>
-                                    <div class="px-0 pt-4 pb-2">Tree View</div>
-                                    <!-- <script>
-                                        document.getElementById('loadTreeView').addEventListener('click', function () {
-
-                                            var selectedValue = document.getElementById('treeviewindustry').value;
-                                            $.ajax({
-                                                type: "POST",
-                                                url: "/data",
-                                                contentType: 'application/json',  // Set the content type to application/json
-                                                data: JSON.stringify({            // Stringify the data object
-                                                    treeviewindustry: selectedValue
-                                                }),
-                                                success: function (result) {
-                                                    $('#jstree').jstree("destroy").empty();
-                                                    $('#jstree').jstree({ 'core': { 'data': result.response } });
-                                                },
-                                                error: function (result) {
-                                                    alert(result.responseText);
-                                                }
-                                            });
-
-                                        });        
-                                    </script> -->
-                                    <div id="jstree"></div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div id='preloader'>
                 <div class='preloader'>
@@ -1230,55 +1787,70 @@
             </div>
 
             <script>
-                currentTab = document.getElementById("selected_tab").value;
-                currentLink = document.getElementById("selected_link").value;
-                openTab(event, currentTab, currentLink);
+            currentTab = document.getElementById("selected_tab").value;
+            currentLink = document.getElementById("selected_link").value;
+            openTab(event, currentTab, currentLink);
             </script>
 
             <br>
             <div class="container">
                 <div class="warning-box">
-                    <span class="close-btn" onclick="closeBox()" style="font-size: large; font-weight: 300;">X</span>
+                    <span class="close-btn" onclick="closeBox()" style="font-size: small; font-weight: 300;">X</span>
                     <p style="font-weight: 400;">NOTE:</p>
-                    <p>The content generated by artificial intelligence (AI) tools or platforms, including but not
+                    <p style="font-size:small;">
+                        The content generated by artificial intelligence (AI) tools or platforms, including but not
                         limited to
                         any text, data, information, or predictions, is provided "as is" without warranty of any
-                        kind.</p>
+                        kind.
+                    </p>
                 </div>
             </div>
 
             <script>
-                function closeBox() {
-                    var box = document.querySelector('.warning-box');
-                    box.style.display = 'none';
-                }
+            currentTab = document.getElementById("selected_tab").value;
+            currentLink = document.getElementById("selected_link").value;
+            openTab(event, currentTab, currentLink);
+            </script>
+
+            <br>
+
+            <script>
+            function closeBox() {
+                var box = document.querySelector('.warning-box');
+                box.style.display = 'none';
+            }
             </script>
             <br>
-            <div class="row" style="width: auto; bottom: 0; background-color: white; padding-top: 3%; margin-top: 5%;">
+
+            <div class="row" style="width: auto; bottom: 0; background-color: white; margin-right: 2%; margin-left: 2%;padding-left:3rem;padding-right:3rem;">
                 <div class="col-sm">
                     <div class="row">
-                        <div class="col col-sm-4">
+                        <div class="col col-sm-2">
                             <img src="{{ url_for('static', filename='logo.png') }}" alt="" height="24"
-                                class="d-inline-block align-text-top">
+                                 class="d-inline-block align-text-top" style="margin-top: 7px;">
                         </div>
                         <div class="col">
-                            <p style="font-size: larger;">Gen Lite</p>
+                            <p style="font-size: larger; padding-top: 12px;"><span style="font-size:large !important;color:grey;margin-left:1rem;">| &nbsp;&nbsp;</span>GenLite</p>
+
                         </div>
                     </div>
 
-                    <p style="font-size: smaller; color: #676767;">Copyright 2001-2024 Accenture. Accenture
-                        confidential. For internal use only.</p>
+                    <p style="font-size: smaller; color: #676767;">
+                        Copyright 2001-2024 Accenture.
+                        <br />Accenture confidential. For internal use only.
+                    </p>
                     <p style="font-size: smaller; color: #676767;">Terms of Use | Privacy Statement</p>
                 </div>
                 <div class="col-sm">
-                    <div class="row">
-                        <div class="col-sm">
+                    <div class="row" style="font-size:smaller;">
+                        <div class="col-sm" style="margin-top: 20px;">
                             <p>About</p>
                             <p>Contact us</p>
-                            <p>FAQ</p>
+                            <p>Help Guide</p>
                         </div>
-                        <div class="col-sm">
-                            <p>Feedback</p>
+                        <div class="col-sm" style="margin-top: 20px;">
+                            <p>Request Support</p>
+                            <p>Do you have any questions? Do <br />you require support? Do you want to provide <br />general feedback?</p>
                         </div>
                     </div>
                 </div>

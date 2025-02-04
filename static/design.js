@@ -5,21 +5,21 @@ jQuery(document).ready(function () {
         event.preventDefault();
         await asyncDesignFunction('functional');
         checkAndDisableButton('functional');
-        
+
     }
     );
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         // Function to check if all specified textareas with a specific id are empty
-        
-    
+
+
         // Check and disable the button on document load
         checkAndDisableButton('functional');
         checkAndDisableButton('highlevel');
         checkAndDisableButton('lowlevel');
-    
+
     });
-    
+
 
     $("#generate_high_level_design_button").click(async function (event) {
         $("#preloader").show();
@@ -54,39 +54,96 @@ jQuery(document).ready(function () {
         await DownloadDesignFunction('lowlevel');
     }
     );
+    $("#download-word").click(async function (event) {
+        $("#preloader").show();
+        //event.preventDefault();
+        //await DownloadDesignFunctionec('ecosystemContext');
+        var elHtml = document.getElementById("ecosystem_context").value;
+        var link = document.createElement('a');
+        var mimeType = 'application/msword' || 'text/plain';
+
+        link.setAttribute('download', 'ecosystem_context');
+        link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
+        link.click();
+        $("#preloader").fadeOut();
+
+    }
+
+    );
+
+    $("#download-txt").click(async function (event) {
+        $("#preloader").show();
+        //event.preventDefault();
+        //await DownloadDesignFunctionec('ecosystemContext');
+        var elHtml = document.getElementById("ecosystem_context").value;
+        var link = document.createElement('a');
+        var mimeType = 'text/plain';
+
+        link.setAttribute('download', 'ecosystem_context');
+        link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
+        link.click();
+        $("#preloader").fadeOut();
+
+    }
+
+    );
+
+    $("#download_ecosystem_context_button").click(function () {
+        var elHtml = document.getElementById("ecosystem_context").value;
+
+        // Create a new jsPDF instance
+        const { jsPDF } = window.jspdf;
+        var doc = new jsPDF('p', 'pt', 'a4');
+
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+
+        // Set some basic styles
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(12);
+
+        // Split the text into lines that fit within the page width
+        var lines = doc.splitTextToSize(elHtml, pageWidth - 40); // 40 is for the margins
+
+        doc.text(lines, 20, 30); // 20 and 30 are the margins from left and top
+
+        doc.save("ecosystem_context.pdf");
+    });
+
+
 
 })
 
 function checkAndDisableButton(event) {
     let isEmpty = false;
-    
+
     if (event === 'functional') {
 
         isEmpty = $(`#ui_functional_design`).val().trim() === '' &&
-                  $(`#services_functional_design`).val().trim() === '' &&
-                  $(`#data_functional_design`).val().trim() === '';
+            $(`#services_functional_design`).val().trim() === '' &&
+            $(`#data_functional_design`).val().trim() === '';
 
-        if (isEmpty) {$('#fdd_download').prop('disabled', true);} 
-        else {$('#fdd_download').prop('disabled', false);}
-    } 
+        if (isEmpty) { $('#fdd_download').prop('disabled', true); }
+        else { $('#fdd_download').prop('disabled', false); }
+    }
     else if (event === 'highlevel') {
         isEmpty = $(`#ui_high_level_design`).val().trim() === '' &&
-                  $(`#services_high_level_design`).val().trim() === '' &&
-                  $(`#data_high_level_design`).val().trim() === '';
+            $(`#services_high_level_design`).val().trim() === '' &&
+            $(`#data_high_level_design`).val().trim() === '';
 
-        if (isEmpty) {$('#hld_download').prop('disabled', true);} 
-        else {$('#hld_download').prop('disabled', false);}
-    } 
+        if (isEmpty) { $('#hld_download').prop('disabled', true); }
+        else { $('#hld_download').prop('disabled', false); }
+    }
     else if (event === 'lowlevel') {
         isEmpty = $(`#ui_detailed_design`).val().trim() === '' &&
-                  $(`#services_detailed_design`).val().trim() === '' &&
-                  $(`#data_detailed_design`).val().trim() === '';
-        if (isEmpty) {$('#dld_download').prop('disabled', true);} 
-        else {$('#dld_download').prop('disabled', false);}
+            $(`#services_detailed_design`).val().trim() === '' &&
+            $(`#data_detailed_design`).val().trim() === '';
+        if (isEmpty) { $('#dld_download').prop('disabled', true); }
+        else { $('#dld_download').prop('disabled', false); }
     }
 
-    
-    
+
+
 }
 
 
@@ -97,7 +154,7 @@ async function asyncDesignFunction(eventType) {
     const form = document.getElementById("gen_lite"); // Make sure you have a form with this ID or collect data differently
     const formData = new FormData(form);
     const formObject = {};
-    
+
     formData.forEach((value, key) => {
         // Check if the property exists
         if (formObject.hasOwnProperty(key)) {
@@ -115,20 +172,20 @@ async function asyncDesignFunction(eventType) {
     });
 
     const formJSON = JSON.stringify(formObject);
-    
-    let url ='';
+
+    let url = '';
     if (eventType === 'functional') {
-         url = window.location.href.replace('\/#', '') + '/generatefunctionaldesign';
-         console.log("Generate Func Design URL IS", url)
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatefunctionaldesign';
+        console.log("Generate Func Design URL IS", url)
     }
     else if (eventType === 'highlevel') {
-         url = window.location.href.replace('\/#', '') + '/generatehighleveldesign';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatehighleveldesign';
     }
     else if (eventType === 'lowlevel') {
-         url = window.location.href.replace('\/#', '') + '/generatedetaileddesign';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatedetaileddesign';
     }
     else {
-         url = window.location.href.replace('\/#', '') + '/generatefunctionaldesign';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatefunctionaldesign';
     }
 
     try {
@@ -201,15 +258,17 @@ async function asyncDesignFunction(eventType) {
     }
 }
 
+async function DownloadDesignFunctionec() {
 
+}
 async function DownloadDesignFunction(eventType) {
- 
+
     // Assuming you still want to collect data from a form, or you can define your data directly
     // For direct definition, skip this part and define your `formJSON` directly
     const form = document.getElementById("gen_lite"); // Make sure you have a form with this ID or collect data differently
     const formData = new FormData(form);
     const formObject = {};
-   
+
     formData.forEach((value, key) => {
         // Check if the property exists
         if (formObject.hasOwnProperty(key)) {
@@ -225,26 +284,26 @@ async function DownloadDesignFunction(eventType) {
             formObject[key] = value;
         }
     });
- 
+
     const formJSON = JSON.stringify(formObject);
-   
-    let url ='';
+
+    let url = '';
     if (eventType === 'functional') {
-         url = window.location.href.replace('\/#', '') + '/download_fdd';
-         console.log("Generate Func Design URL IS", url)
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/download_fdd';
+        console.log("Generate Func Design URL IS", url)
     }
     else if (eventType === 'highlevel') {
-         url = window.location.href.replace('\/#', '') + '/download_hld';
-         console.log("Generate High Level Design URL IS", url)
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/download_hld';
+        console.log("Generate High Level Design URL IS", url)
     }
     else if (eventType === 'lowlevel') {
-        url = window.location.href.replace('\/#', '') + '/download_dld';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/download_dld';
         console.log("Generate High Level Design URL IS", url)
     }
     else {
-         url = window.location.href.replace('\/#', '') + '/download_fdd';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/download_fdd';
     }
- 
+
     try {
         const response = await fetch(url, {
             method: 'POST', // or 'PUT'
@@ -254,11 +313,11 @@ async function DownloadDesignFunction(eventType) {
             },
             body: formJSON, // data can be `string` or {object}!
         });
- 
+
         if (response.ok) {
             const jsonResponse = await response.json();
             // console.log(jsonResponse);
- 
+
             if (eventType === 'functional') {
                 // if jsonResponse.uidesign is not empty, then set the value of the textarea
                 if (jsonResponse.filepath != '') {
@@ -289,7 +348,7 @@ async function DownloadDesignFunction(eventType) {
                     document.getElementById("download_dld_atag").href = url
                     document.getElementById("download_dld_atag").click()
                 }
-                
+
             }
             else {
                 if (jsonResponse.uidesign != '') {

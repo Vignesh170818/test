@@ -68,19 +68,19 @@ async function asyncFeatureFunction(eventType) {
     let url = '';
 
     if (eventType === 'generate') {
-        url = window.location.href.replace('\/#', '') + '/generatefeature';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatefeature';
     }
     else if (eventType === 'getData') {
-        url = window.location.href.replace('\/#', '') + '/getentitydata';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/getentitydata';
     }
     else if (eventType === 'resetFeature') {
-        url = window.location.href.replace('\/#', '') + '/resetentitydata';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/resetentitydata';
     }
     else if (eventType === 'expand') {
-        url = window.location.href.replace('\/#', '') + '/expandfeature';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/expandfeature';
     }
     else {
-        url = window.location.href.replace('\/#', '') + '/generatefeature';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generatefeature';
     }
 
     try {

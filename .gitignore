@@ -110,7 +110,8 @@ ENV/
 env.bak/
 venv.bak/
 win-venv
-.dev 
+.dev
+
 
 # Spyder project settings
 .spyderproject
@@ -150,6 +151,7 @@ cython_debug/
 *.tmp
 *.bak
 *.db
+*.pkl 
 
 # OS generated files
 .DS_Store
@@ -164,3 +166,4 @@ workdir
 
 #ignoring flask session 
 /flask_session
+/.vs/254680_GenLite_Core/FileContentIndex

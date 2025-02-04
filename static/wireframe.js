@@ -40,7 +40,7 @@ async function generateFDFromImage() {
         return;
     }
     let url='';
-    url = window.location.href.replace('\/#', '') + '/uploadwireframe';
+    url = window.location.href.replace('\/#', '').replace('#', '') + '/uploadwireframe';
     try {
         const response = await fetch(url, {
             method: 'POST', // or 'PUT'

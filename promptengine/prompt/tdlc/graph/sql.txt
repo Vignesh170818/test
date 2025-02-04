@@ -1,0 +1,158 @@
+{# This Jinja2 template is designed for converting sql queries to Cypher Queries #}  
+Role: Software Developer with Cypher Query Expertise  
+&nbsp;  
+{# Introduction to the task. #}  
+Your task is to convert the following sql queries code into Cypher query and add property `uniqueId: "{{ uniqueId }}"` for each create statement. The original sql queries are provided between `[code-start]` and `[code-end]`.  
+&nbsp;  
+{# Original Source Code Section #}  
+Source Code: Provided between [code-start] and [code-end].  
+[code-start]  
+{{ sourcecode }}
+[code-end]  
+
+{# Example Input Section #}  
+Refer the example below  
+Example sql queries: Provided between [codeexample-start] and [codeexample-end].  
+[codeexample-start]  
+
+-- Table 1: Portfolio
+CREATE TABLE Portfolio (
+    portfolio_id INT PRIMARY KEY,
+    name VARCHAR(255),
+    description VARCHAR(255),
+    creation_date DATE
+);
+ 
+[codeexample-end]  
+
+{# Example Output Section #}  
+Example Output Cypher query: Provided between [cypheroutput-start] and [cypheroutput-end].  
+[cypheroutput-start]  
+CREATE (Portfolio:Create {name: "Portfolio"})
+CREATE (portfolio_id:Field {name: "portfolio_id"})
+CREATE (name:Field {name: "name"})
+CREATE (description:Field {name: "description"})
+CREATE (creation_date:Field {name: "creation_date"})
+CREATE (Portfolio)-[:HAS_FIELD]->(portfolio_id)
+CREATE (Portfolio)-[:HAS_FIELD]->(name)
+CREATE (Portfolio)-[:HAS_FIELD]->(description)
+CREATE (Portfolio)-[:HAS_FIELD]->(creation_date)
+
+[cypheroutput-end]  
+  
+{# Instructions for Conversion #}  
+Output Required:  
+- Cypher Query: Convert sql queries to Cypher queries. Here's a step-by-step guide to help you through the process:  
+ 
+Step-by-Step Approach:  
+1. Understand the Data Models :  
+		Relational Database (SQL): Uses tables, rows, columns, and foreign keys.  
+		Graph Database (Cypher): Uses nodes (entities), relationships (edges), and properties (attributes).  
+2. Map SQL Components to Cypher Components :  
+		Tables become Node Labels.  
+		Rows become Nodes.  
+		Columns become Node Properties.  
+		Foreign Keys become Relationships.  
+3. Create Nodes and Relationships :  
+		SQL Table Creation  
+			CREATE TABLE Portfolio (  
+				portfolio_id INT PRIMARY KEY,  
+				name VARCHAR(255),  
+				description VARCHAR(255),  
+				creation_date DATE  
+			);  
+		Cypher Equivalent  
+			// Creating a Portfolio node  
+			CREATE (Portfolio:Create {name: "Portfolio"})
+			CREATE (portfolio_id:Field {name: "portfolio_id"})
+			CREATE (name:Field {name: "name"})
+			CREATE (description:Field {name: "description"})
+			CREATE (creation_date:Field {name: "creation_date"})
+			CREATE (Portfolio)-[:HAS_FIELD]->(portfolio_id)
+			CREATE (Portfolio)-[:HAS_FIELD]->(name)
+			CREATE (Portfolio)-[:HAS_FIELD]->(description)
+			CREATE (Portfolio)-[:HAS_FIELD]->(creation_date)
+
+4. Inserting Data :  
+		SQL Insert  
+			INSERT INTO Portfolio (portfolio_id, name, description, creation_date)  
+			VALUES (1, 'My Portfolio', 'This is my investment portfolio', '2022-01-01');  
+		Cypher Equivalent  
+			CREATE (p:Portfolio {portfolio_id: 1, name: 'My Portfolio', description: 'This is my investment portfolio', creation_date: date('2022-01-01')});  
+5. Reading Data :  
+		SQL Select  
+			SELECT * FROM Portfolio WHERE portfolio_id = 1;  
+		Cypher Equivalent  
+			MATCH (p:Portfolio {portfolio_id: 1})  
+			RETURN p;  
+6. Updating Data :  
+		SQL Update  
+			UPDATE Portfolio SET name = 'New Portfolio Name' WHERE portfolio_id = 1;  
+		Cypher Equivalent	  
+			MATCH (p:Portfolio {portfolio_id: 1})  
+			SET p.name = 'New Portfolio Name';  
+7. Deleting Data :  
+		SQL Delete  
+			DELETE FROM Portfolio WHERE portfolio_id = 1;  
+		Cypher Equivalent  
+			MATCH (p:Portfolio {portfolio_id: 1})  
+			DETACH DELETE p;  
+8. Creating Relationships :  
+		SQL Foreign Key Relationship  
+			ALTER TABLE Investment  
+			ADD CONSTRAINT FK_Investment_Portfolio  
+			FOREIGN KEY (portfolio_id) REFERENCES Portfolio(portfolio_id);  
+		Cypher Equivalent - When creating an investment node, establish a relationship to the portfolio node.  
+			MATCH (p:Portfolio {portfolio_id: 1})  
+			CREATE (i:Investment {investment_id: 1, name: 'Apple Inc.', ticker_symbol: 'AAPL', quantity: 100, purchase_price: 150.50, purchase_date: date('2022-01-01')})  
+			CREATE (i)-[:BELONGS_TO]->(p);  
+9. Indexes :  
+		SQL Indexes  
+			CREATE INDEX idx_portfolio_id ON Portfolio (portfolio_id);  
+		Cypher Equivalent  
+			CREATE INDEX FOR (p:Portfolio) ON (p.portfolio_id);  
+10. Complex Queries :   
+		SQL Join  
+			SELECT e.name, d.name  
+			FROM employees e  
+			JOIN departments d ON e.department_id = d.id  
+			WHERE e.age > 30;  
+		Cypher Equivalent  
+			MATCH (e:Employee)-[:WORKS_IN]->(d:Department)  
+			WHERE e.age > 30  
+			RETURN e.name, d.name;  
+&nbsp;  
+11. Writing Node Creation Queries: Write Cypher queries to create nodes based on your sql queries objects. Use the CREATE clause in Cypher to create nodes with specified properties.  
+    - Here's the basic syntax:  
+    - CREATE Nodes  
+            Class Node: Represent each c# class.  
+            Property Node: Represent each c# property.  
+            Method Node: Represent each c# method.  
+            Event Node: Represent each c# event.  
+    - CREATE (node:Label {property1: value1, property2: value2, ...})  
+    - node is the variable representing the node in the query.  
+    - Label is the label assigned to the node (optional).  
+    - property1, property2, etc., are properties of the node.  
+    - value1, value2, etc., are the corresponding values of the properties.  
+    - Ensure each create statement has atleast one property "name"  
+	  
+12. Mapping Relationships: If your sql queries includes relationships between objects (like associations between User and other entities), map these to relationships .  
+    **Define Relationship Types:**  
+    - `CONTAINS`: Between namespaces and classes, classes and methods/properties  
+    - `INHERITS_FROM`: Between classes  
+    - `CALLS`: Between methods  
+    - `HAS_PROPERTY`: Between classes and properties  
+	  
+13. Writing Relationship Creation Queries: Use Cypher's Create clauses to create relationships between nodes. Ensure you specify the relationship type and any properties associated with the relationship.  
+    - The basic syntax for creating relationships in Cypher is as follows:  
+      (node1)-[:RELATIONSHIP_TYPE]->(node2)  
+    - node1 and node2 are the nodes you want to connect.  
+    - RELATIONSHIP_TYPE is the type of relationship between the nodes.   
+  
+Considerations:  
+    - Ensure the code is clean, maintainable, and follows Cypher Query best practices.  
+     - Ensure the code is not having any syntax error, follow coding standards of cypher  
+&nbsp;  
+Proceed with these instructions to accurately convert the provided sql queries into cypher queries.  
+&nbsp;  
+Output only the cypher query without any additional explanations, comments, or text  

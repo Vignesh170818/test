@@ -1,5 +1,30 @@
 jQuery(document).ready(function () {
 
+    import('./download.js').then(module => {
+        const { downloadWord, downloadText, downloadPDF } = module;
+
+        $('#ecosystem-context-download-word').click(function (event) {
+            const content = document.getElementById('ecosystem_context').value;
+            if (!content) {
+                return;
+            }
+            downloadWord(content, 'EcosystemContext.doc');
+        });
+        $('#ecosystem-context-download-txt').click(function (event) {
+            const content = document.getElementById('ecosystem_context').value;
+            if (!content) {
+                return;
+            }
+            downloadText(content, 'EcosystemContext.txt');
+        });
+        $('#ecosystem-context-download-pdf').click(function (event) {
+            const content = document.getElementById('ecosystem_context').value;
+            if (!content) {
+                return;
+            }
+            downloadPDF(content, 'EcosystemContext.pdf');
+        });
+    });
     $("#industry").change(function (event) {
         $("#preloader").show();
         event.preventDefault();
@@ -7,8 +32,8 @@ jQuery(document).ready(function () {
         changeApplicationContext();
     }
     );
-})
 
+});
 async function changeApplicationContext() {
 
     // Assuming you still want to collect data from a form, or you can define your data directly
@@ -16,7 +41,7 @@ async function changeApplicationContext() {
     const form = document.getElementById("gen_lite"); // Make sure you have a form with this ID or collect data differently
     const formData = new FormData(form);
     const formObject = {};
-    
+
     formData.forEach((value, key) => {
         // Check if the property exists
         if (formObject.hasOwnProperty(key)) {
@@ -37,7 +62,7 @@ async function changeApplicationContext() {
 
     try {
         //const url = window.location.href.replace(/\/$/, '')
-        url = window.location.href.replace('\/#', '')+'/changeapplicationcontext'
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/changeapplicationcontext'
         const response = await fetch(url, {
             method: 'POST', // or 'PUT'
             headers: {
@@ -62,4 +87,24 @@ async function changeApplicationContext() {
         $("#preloader").fadeOut();
         console.error('There has been a problem with your fetch operation:', error);
     }
+}
+
+async function demoFromHTML() {
+    var doc = new jsPDF();
+    var elementHandler = {
+        '#ecosys': function (element, renderer) {
+            return true;
+}
+    };
+    var source = window.document.getElementsById("ecosystem_context")[0];
+    doc.fromHTML(
+        source,
+        15,
+        15,
+        {
+            'width': 180, 'elementHandlers': elementHandler
+        });
+
+    doc.output("dataurlnewwindow");
+
 }

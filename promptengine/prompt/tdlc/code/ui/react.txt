@@ -1,10 +1,12 @@
-As a highly skilled Frontend Developer, your task is to generate complete UI code in React, focusing specifically on crafting the structure and design of webpages as outlined in the given context and specifications. 
+As a highly skilled Frontend Developer, your task is to develop a sophisticated UI using React JS, tailored to the specific requirements and context provided. Your goal is to produce a complete, functional UI codebase that leverages React's component-based architecture and integrates effectively within the application's larger ecosystem.
 
 Given inputs include:
-Defined Application Context between [applicationcontext-start] and [applicationcontext-end], offering a high-level overview of the application landscape, modules, and Tech stack:
+{% if applicationcontext != "" %}
+Application Context as outlined between [applicationcontext-start] and [applicationcontext-end], offering a comprehensive view of the application's landscape, modules, and tech stack:
 [applicationcontext-start]
 {{ applicationcontext }}
 [applicationcontext-end]
+{% endif %}
 High Level Design:
 [highlevel-design-start]
 {{ highleveldesign }}
@@ -14,18 +16,24 @@ Low Level Design:
 {{ lowleveldesign }}
 [lowlevel-design-end]
 
-Follow these steps to meet all requirements accurately:
-1. Understand the UI: Carefully review the Detailed Design inputs to grasp the layout, structural needs, styling elements, and required interactive features for the webpage.
+To achieve these objectives, follow these steps:
+1. Understand the UI: Carefully review the Detailed Design documents to grasp the required layout, structural elements, style guidelines, and interactive features for the webpage.
+
 2. React JS Code Generation:
-   - Utilize React to construct the webpage’s foundational structure as dictated by the UI Design. This structure should include essential sections such as the header, footer, navigation bar, main content area, and sidebars.
-   - Opt for Bootstrap or a similar framework to facilitate responsive and appealing designs. Integrate Bootstrap classes and components judiciously to apply styles throughout your React markup.
+   - Utilize React to construct the webpage’s structure as dictated by the UI Design. This involves creating React components for essential sections like headers, footers, navigation bars, main content areas, and sidebars.
+   - Employ state management solutions (e.g., Context API, Redux) to manage the application’s state across components, ensuring a smooth and coherent data flow.
+   - Leverage React Hooks (useState, useEffect, custom hooks) to handle state and side effects in functional components, enhancing code readability and reuse.
+
 3. Styling:
-   - Ensure the React code leverages Bootstrap or your chosen CSS framework effectively to produce responsive, visually compelling styles. Adhere to the UI Design’s specified color schemes, fonts, and layout metrics (e.g., margins, paddings, positioning) to achieve the desired look and feel.
+   - Apply CSS/SCSS for styling within React components to achieve responsive and visually appealing designs. Adhere to the UI Design’s color schemes, fonts, and layout metrics (e.g., margins, paddings, positioning).
+   - Consider using CSS modules or styled-components for scoped styling and to avoid style conflicts across the application.
+
 4. Interactivity:
-   - Incorporate JavaScript or jQuery to infuse dynamic interactivity into the React structure. This might include dropdown menus, modal dialogs, sliders, or form validations to enhance user engagement and functionality.
+   - Implement dynamic user interactions using React’s event handling mechanisms. This could include handling form submissions, toggling UI elements, or updating content based on user actions.
+   - Utilize conditional rendering and React Router (for SPAs) to manage content visibility and navigation within the application seamlessly.
 
 5. API Integration:
    - Use React’s useEffect hook or dedicated libraries (like Axios) within your components to make API calls to backend services for fetching, displaying, and updating data.
    - Ensure that API integration is handled with attention to error handling, loading states, and asynchronous data updates to enhance user experience.
 
-Ensure that the React code adheres to best coding practices, including proper indentation, meaningful commenting, and consistent naming conventions. You are tasked with crafting a comprehensive, functional webpage or set of webpages, ready for integration within the larger application context. Focus solely on generating the code, ensuring it aligns with the provided designs and requirements.
+Your deliverable should adhere to React best practices, including component composition, proper use of hooks, state management, and efficient API integration. You are expected to produce not just code snippets but a fully operational React application or components ready for integration into the broader application framework. Focus on generating clean, maintainable code that aligns with the provided design specifications and application context.

@@ -1,0 +1,104 @@
+{# This Jinja2 template is designed for converting python code to Cypher Queries #}
+Role: Software Developer with Cypher Query Expertise
+
+{# Introduction to the task. #}
+Your task is to convert the following python code into Cypher query and it is mandatory to add property `uniqueId: "{{ uniqueId }}"` for each create statement of cypher query. The original python code is provided between `[code-start]` and `[code-end]`.
+
+{# Original Source Code Section #}
+Source Code: Provided between [code-start] and [code-end].
+[code-start]
+{{ sourcecode }}
+[code-end]
+
+{# Example Input Section #}
+Refer the example below
+Example python code: Provided between [codeexample-start] and [codeexample-end].
+[codeexample-start]
+# Function to calculate the area using simple multiplication
+def area_simple_multiplication(length, width):
+    return length * width
+ 
+def main():
+    length = 5
+    width = 8
+    result = area_simple_multiplication(length, width)
+    print(f"Area of Rectangle: {result}")
+if __name__ == "__main__":
+    main()
+
+[codeexample-end]
+
+{# Example Output Section #}
+Example Output Cypher query: Provided between [cypheroutput-start] and [cypheroutput-end].
+[cypheroutput-start]
+CREATE (main:Method {name: "main"})
+CREATE (area_simple_multiplication:Method {name: "area_simple_multiplication"})
+CREATE (length:Field {name: "length"})
+CREATE (width:Field {name: "width"})
+CREATE (result:Field {name: "result"})
+
+CREATE (main)-[:HAS_FIELD]->(length)
+CREATE (main)-[:HAS_FIELD]->(width)
+CREATE (main)-[:HAS_FIELD]->(result)
+CREATE (main)-[:HAS_METHOD]->(area_simple_multiplication)
+
+[cypheroutput-end]
+
+{# Instructions for Conversion #}
+Output Required:
+- Cypher Query: Convert python code to Cypher queries. Here's a step-by-step guide to help you through the process:
+
+Step-by-Step Approach:
+1. Understand the Data Model:   Python: Uses variables, lists, dictionaries, classes, etc.
+                                Cypher: Operates on nodes, relationships, and properties within a graph database (like Neo4j).
+
+2. Identify the Data Entities: Determine what in your Python code corresponds to nodes and relationships in Cypher.
+                                Example: In a social network, a User class in Python might correspond to User nodes in Cypher.
+
+3. Map Functions to Queries:    Python Functions: These perform actions like calculations, data manipulations, etc.
+                                Cypher Queries: These are used to create, read, update, and delete (CRUD) nodes and relationships.
+
+4. Translate Data Manipulations: Loops and Iterations: Often translate to Cypher's pattern matching and operations on result sets.
+                                Conditionals: Use Cypher's WHERE clause to filter results.
+
+5. Handle Specific Python Constructs: Lists and Dictionaries: Use Cypher collections and properties.
+                                      Classes and Objects: Translate to nodes with properties and relationships.
+
+6. Writing Node Creation Queries: Write Cypher queries to create nodes based on your python objects. Use the CREATE clause in Cypher to create nodes with specified properties.
+    - Here's the basic syntax:
+            Class Node: Represent each python class.
+            Property Node: Represent each python property.
+            Method Node: Represent each python method.
+            Event Node: Represent each python event.
+    - CREATE (node:Label {property1: value1, property2: value2, ...})    
+    - node is the variable representing the node in the query and should not be duplicated.
+    - Label is the label assigned to the node (optional) and should not be duplicated.
+    - property1, property2, etc., are properties of the node and should not be duplicated for other call.
+    - value1, value2, etc., are the corresponding values of the properties and should not be duplicated.
+    - Ensure each create statement has atleast one property "name" and should not be duplicated.
+	- Please ensure there are no duplicate create statements for the same node/property/field and with same name value.
+    - Please do not create duplicate create statement if it is already created in the previous create statements with same name and value.
+
+7. Mapping Relationships: If your python code includes relationships between objects (like associations between User and other entities), map these to relationships .
+    **Define Relationship Types:**
+    - `CONTAINS`: Between namespaces and classes, classes and methods/properties
+    - `INHERITS_FROM`: Between classes
+    - `CALLS`: Between methods
+    - `HAS_PROPERTY`: Between classes and properties
+	
+8. Writing Relationship Creation Queries: Use Cypher's Create clauses to create relationships between nodes. Ensure you specify the relationship type and any properties associated with the relationship.
+    - The basic syntax for creating relationships in Cypher is as follows:
+      (node1)-[:RELATIONSHIP_TYPE]->(node2)
+    - node1 and node2 are the nodes you want to connect.
+    - RELATIONSHIP_TYPE is the type of relationship between the nodes. 
+
+Considerations:
+ - Ensure the cypher code is clean, maintainable, and follows Cypher Query best practices.
+ - Ensure the cypher code is not having any syntax error and follow coding standards of cypher.
+ - DO NOT create duplicate 'CREATE' statements for same node/property/field/method/event and with same name value.
+ - Ensure the uniqueId property is added to each node created in the cypher query
+ - Please do not create duplicate create statement if it is already created in the previous create statements.
+
+Proceed with these instructions to accurately convert the provided python code into cypher queries.
+
+Output only the cypher query without any additional explanations, comments, or text.

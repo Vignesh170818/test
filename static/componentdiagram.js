@@ -35,7 +35,7 @@ async function asyncComponentDiagramFunction() {
 
     const formJSON = JSON.stringify(formObject);
 
-    const url = window.location.href.replace('\/#', '') +'/generatecomponentdiagram';
+    const url = window.location.href.replace('\/#', '').replace('#', '') +'/generatecomponentdiagram';
 
     try {
         const response = await fetch(url, {

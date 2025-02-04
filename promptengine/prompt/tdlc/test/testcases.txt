@@ -78,14 +78,14 @@ Test Scenarios:
 
 Approach for Creating Test Cases:
 - Examine the BPM, User Story, and provided Test Scenarios to gain a comprehensive understanding of the system's functionality and requirements.
-- Formulate detailed test cases that effectively validate each aspect of the User Story, as illustrated in the BPM and Test Scenarios.
+- Formulate detailed test cases that effectively validate each aspect of the Test Scenarios, as illustrated in the BPM and User Story.
 - Ensure that your test cases are robust, covering various aspects including functional, integration, and system testing as applicable.
 - Clarity and Detail: Ensure each step is clearly described and easy to follow. Avoid ambiguity.
 - Scope and Focus: Each test case should focus on a specific aspect of functionality. Avoid trying to test multiple things in one test case.
 - Independence: Ideally, test cases should be independent and not rely on the outcome of another test case.
 - Data-Driven Testing: If applicable, structure test cases to allow for data-driven testing where you can test multiple data sets with the same steps.
 - Negative Testing: Include test cases for negative scenarios to ensure the system handles errors or unexpected inputs gracefully.
-- Ensure test cases are created for all the Test Scenarios
+- Ensure atleast one test case is created for each and every Test Scenario
 
 Expected Output:
     Test Case ID: A unique identifier for each test case. This helps in tracking and managing test cases.

@@ -1,0 +1,93 @@
+{# This Jinja2 template is designed for converting abap code to Cypher Queries #}
+Role: Software Developer with Cypher Query Expertise
+
+{# Introduction to the task. #}
+Your task is to convert the following abap code into Cypher query and add property `uniqueId: "{{ uniqueId }}"` for each create statement. The original abap code is provided between `[code-start]` and `[code-end]`.
+
+{# Original Source Code Section #}
+Source Code: Provided between [code-start] and [code-end].
+[code-start]
+{{ sourcecode }}
+[code-end]
+
+{# Example Input Section #}
+Refer the example below
+Example abap code: Provided between [codeexample-start] and [codeexample-end].
+[codeexample-start]
+REPORT zadd_two_numbers_simple.
+
+DATA: num1 TYPE i,
+      num2 TYPE i,
+      sum  TYPE i.
+
+START-OF-SELECTION.
+  WRITE 'Enter the first number: '.
+  READ DATASET 'num1' INTO num1.
+  WRITE 'Enter the second number: '.
+  READ DATASET 'num2' INTO num2.
+
+  sum = num1 + num2.
+
+  WRITE: / 'The sum of', num1, 'and', num2, 'is', sum.
+[codeexample-end]
+
+{# Example Output Section #}
+Example Output Cypher query: Provided between [cypheroutput-start] and [cypheroutput-end].
+[cypheroutput-start]
+CREATE (num1:Number {value: 1}) 
+CREATE (num2:Number {value: 2})
+
+CREATE (num1)-[:ADDED_TO]->(num2)
+
+CREATE (sum:Number {value: num1.value + num2.value})
+
+CREATE (num1)-[:RESULT_OF]->(sum)
+CREATE (num2)-[:RESULT_OF]->(sum)
+[cypheroutput-end]
+
+{# Instructions for Conversion #}
+Output Required:
+- Cypher Query: Convert abap code to Cypher queries. Here's a step-by-step guide to help you through the process:
+
+Step-by-Step Approach:
+1. Understand the Data Model:   Identify the purpose of the ABAP code.
+                                Determine the database operations being performed (e.g., SELECT, INSERT, UPDATE, DELETE).
+                                Note the structure of the data being manipulated (tables, fields, relationships).
+2. Map ABAP Data Structures to Neo4j Graph Model :  Tables and Fields: ABAP tables and fields need to be mapped to nodes and properties in Neo4j.
+                                                    Relationships: Any foreign key relationships in ABAP should be translated to relationships in Neo4j.
+                                                    Entities: Identify the main entities in the ABAP code and how they correspond to nodes in the graph.
+3. Identify Key Operations: Data Retrieval (SELECT): Identify the ABAP SELECT statements and understand the filtering, sorting, and joining criteria.
+                            Data Manipulation (INSERT, UPDATE, DELETE): Determine how data is being inserted, updated, or deleted.
+4. Translate to Cypher Queries: SELECT: Use Cypher's MATCH and RETURN clauses to retrieve data.
+                                INSERT: Use Cypher's CREATE clause to add nodes and relationships.
+                                UPDATE: Use Cypher's SET clause to update properties on nodes and relationships.
+                                DELETE: Use Cypher's DELETE clause to remove nodes and relationships.
+5. Writing Node Creation Queries: Write Cypher queries to create nodes based on your abap objects. Use the CREATE clause in Cypher to create nodes with specified properties.
+    - Here's the basic syntax:
+    - CREATE (node:Label {property1: value1, property2: value2, ...})
+    - node is the variable representing the node in the query.
+    - Label is the label assigned to the node (optional).
+    - property1, property2, etc., are properties of the node.
+    - value1, value2, etc., are the corresponding values of the properties.
+	
+6. Mapping Relationships: If your abap code includes relationships between objects (like associations between User and other entities), map these to relationships .
+    **Define Relationship Types:**
+    - `CONTAINS`: Between namespaces and classes, classes and methods/properties
+    - `INHERITS_FROM`: Between classes
+    - `CALLS`: Between methods
+    - `HAS_PROPERTY`: Between classes and properties
+	
+7. Writing Relationship Creation Queries: Use Cypher's Create clauses to create relationships between nodes. Ensure you specify the relationship type and any properties associated with the relationship.
+    - The basic syntax for creating relationships in Cypher is as follows:
+      (node1)-[:RELATIONSHIP_TYPE]->(node2)
+    - node1 and node2 are the nodes you want to connect.
+    - RELATIONSHIP_TYPE is the type of relationship between the nodes. 
+
+Considerations:
+ - Ensure the code is clean, maintainable, and follows Cypher Query best practices.
+ - Ensure the code is not having any syntax error, follow coding standards of cypher
+ - DO NOT Create Cypher queries for Console.Log(), Console.Clear(), Console.WriteLine() and Console.ReadLine() methods of abap code
+
+Proceed with these instructions to accurately convert the provided abap code into cypher queries.
+
+Output only the cypher query without any additional explanations, comments, or text

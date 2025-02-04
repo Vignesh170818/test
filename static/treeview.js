@@ -35,7 +35,7 @@ async function asyncTreeViewFunction() {
 
     const formJSON = JSON.stringify(formObject);
 
-    let url = window.location.href.replace('\/#', '') + '/bpmtreeview';
+    let url = window.location.href.replace('\/#', '').replace('#', '') + '/bpmtreeview';
 
     try {
         const response = await fetch(url, {

@@ -40,11 +40,11 @@ class GenLiteMainForm(FlaskForm):
     #businessContextTab related fields
     get_business_context_button = SubmitField('Get Business Context')
     business_process_mapping = TextAreaField(
-        'Business Process Mapping (*Vector Mapped)',
+        'Business Process Mapping (Vector Mapped)',
         validators=[Length(max=15000)]
         )
     process_flow_mapping = TextAreaField(
-        'Process Flow Mapping (*AI Generated)',
+        'Process Flow Mapping (AI Generated)',
         validators=[Length(max=15000)]
         )
     treeviewindustry = GenLiteAppExtension().load_industry()
@@ -64,7 +64,7 @@ class GenLiteMainForm(FlaskForm):
 
     #epicTab related fields
     generate_epic_button = SubmitField('Generate EPIC')
-    epic_review_comments = TextAreaField('EPIC Review Comments',validators=[Length(max=15000)])
+    epic_review_comments = TextAreaField('Review Comments',validators=[Length(max=15000)])
     epic_persona_type = SelectField('Persona Type', choices=[
         ('dummy', 'Select Persona Type'),
         ('technical', 'Tech Oriented'),
@@ -88,7 +88,7 @@ class GenLiteMainForm(FlaskForm):
         ],
         default=['applicationcontext', 'businesscontext', 'scopevision']
         )
-    epic_user_story = TextAreaField('EPIC Abstract',validators=[Length(max=15000)])
+    epic_user_story = TextAreaField('Abstract',validators=[Length(max=15000)])
     epicInputFlushCollapseOne = SelectMultipleField('', choices=[])
 
     #featuresTab related fields
@@ -366,6 +366,10 @@ class GenLiteMainForm(FlaskForm):
 
     generate_data_code_button = SubmitField('Generate Data Code')
     data_code = TextAreaField("Data Code",validators=[Length(max=15000)])
+    
+    generate_code_graph_button = SubmitField('Generate Code Graph')
+    data_code_graph = TextAreaField("Code Graph",validators=[Length(max=15000)])
+
 
     #unitTestingTab related fields
     unit_test_tool = SelectField('Test Tool', choices=[
@@ -504,7 +508,7 @@ class GenLiteMainForm(FlaskForm):
     popovercontent = HiddenField('Popover Content')
 
     #componentDiagramTab related fields
-    generate_component_diagram_button = SubmitField('Generate Component Diagram')
+    generate_component_diagram_button = SubmitField('Generate')
     component_diagram = TextAreaField('Component Diagram')
 
     #code map related fields
@@ -555,8 +559,13 @@ class GenLiteMainForm(FlaskForm):
     tobe_code = TextAreaField('Modified Code',validators=[Length(max=15000)])
     push_code_button = SubmitField('Push Code to Repo')
 
+    #Stream CheckBox
+    streamOpenAICheckBox = BooleanField('Stream Output', default=False)
+
     # List of Hidden Fields
     currentevent = HiddenField('Current Event')
     selected_tab = HiddenField('Selected Tab')
     selected_link = HiddenField('Selected Link')
     selected_llmmodel = HiddenField('Selected LLM Model')
+    unique_name = HiddenField('Unique Name Graph')
+    

@@ -3,6 +3,7 @@ import logging
 from coreengine.textcompletion.azurecompletion import AzureGPT35Completion, AzureGPT4Completion
 from coreengine.textcompletion.googlecompletion import GoogleBisonCompletion, GoogleGeminiCompletion
 from coreengine.textcompletion.awscompletion import AWSTitanCompletion
+from appext.models.form import GenLiteMainForm
 
 logger=logging.getLogger("GenLiteApp")
 
@@ -32,12 +33,13 @@ class GenliteCompletion:
             logger.info("AWS Titan")
             self.completionmodel = AWSTitanCompletion()
 
-    def generate_artifact(self, systemprompt):
+    def generate_artifact(self, systemprompt, form: GenLiteMainForm = None):
         '''Generate Artifact'''
         logger.info("Generating Artifact")
         returnresponse = None
-
-        if self.completionmodel is not None:
+        if self.completionmodel is not None and form and form.streamOpenAICheckBox.data:
+            returnresponse = self.completionmodel.generateStream(systemprompt)
+        elif self.completionmodel is not None:
             returnresponse = self.completionmodel.generate(systemprompt)
         else:
             logger.error("LLM Model not supported. Please select a valid LLM Model.")

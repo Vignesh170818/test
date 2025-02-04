@@ -90,15 +90,20 @@ Tool in which these test scripts needs to be created: {{ tool }}
 Approach for Converting Manual Test Scripts:
     Understanding and Analysis: Deep dive into provided inputs to understand the scope and requirements for automated testing.
     Script Conversion and Development:
-        Convert manual test scenarios and cases into automated scripts, aligning with user stories and BPM.
+        Convert all manual test scripts and cases into automated scripts,in context with user stories and BPM.
         Develop automated scripts using the syntax and frameworks provided by the specified tools (e.g., Selenium WebDriver for browser interactions or JMeter for HTTP requests and performance metrics).
     Detailing and Enhancement: Ensure scripts are well-documented and clear, detailing actions, validations, and expected results for automation.
     Comprehensive Coverage: Adapt scripts to cover all defined scenarios, including positive, negative, and edge cases.
     Tool Integration: Leverage the capabilities of the specified tool to ensure scripts can run independently and integrate seamlessly with the test environment.
     Data-Driven Automation: Utilize data-driven techniques to feed diverse datasets into the automated tests, enhancing coverage and robustness.
     Practical Execution Considerations: Develop scripts with execution efficiency in mind, optimizing for runtime, resource utilization, and maintenance.
+    Ensure that each test script is handled independently, regardless of the number of scripts provided.
+    Generating code for each and every test step in Test script is mandatory.
 
-Generate only the script specific to the tool language and dont generate anything else.
+Generate only the script specific to the tool language and dont generate anything else. 
+Note: Example outcome is just a template. Provide modified code according to Manual test scripts. 
+
+Example outcome:
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.By;
@@ -111,23 +116,41 @@ public class AutomatedTestScript {
         WebDriver driver = new ChromeDriver();
 
         try {
-            // Navigate to the page
-            driver.get("http://example.com/login");
+            // Script ATS001: Accessing Advanced Analytics and Reporting for Investment Portfolio Analysis
+            driver.get("http://assetmaxresearch.com/login");
 
-            // Enter username
-            driver.findElement(By.id("username")).sendKeys("testUser");
-
-            // Enter password
-            driver.findElement(By.id("password")).sendKeys("testPass");
-
-            // Click the login button
+            // Step 1: Log in to the AssetMax Research platform as a financial analyst.
+            driver.findElement(By.id("username")).sendKeys("financialAnalyst");
+            driver.findElement(By.id("password")).sendKeys("password123");
             driver.findElement(By.id("loginButton")).click();
 
-            // Assert the login success message
-            String successMessage = driver.findElement(By.id("successMessage")).getText();
-            Assert.assertEquals("You are logged in", successMessage);
-            
-            // Additional test steps as needed...
+            // Step 2: Navigate to the "Investment Portfolio Analysis" section.
+            driver.findElement(By.linkText("Investment Portfolio Analysis")).click();
+
+             // Script ATS002: Generating Customized Reports for Investment Portfolios
+            driver.get("http://assetmaxresearch.com/login");
+
+            // Step 1: Log in to the AssetMax Research platform as a financial analyst.
+            driver.findElement(By.id("username")).sendKeys("financialAnalyst");
+            driver.findElement(By.id("password")).sendKeys("password123");
+            driver.findElement(By.id("loginButton")).click();
+
+            // Step 2: Navigate to the "Investment Portfolio Analysis" section.
+            driver.findElement(By.linkText("Investment Portfolio Analysis")).click();
+
+            // Step 3: Select an investment portfolio for analysis.
+            driver.findElement(By.id("portfolioSelect")).selectByVisibleText("Sample Portfolio");
+
+             // Script ATS003: Comparing Performance of Multiple Investment Portfolios
+            driver.get("http://assetmaxresearch.com/login");
+
+            // Step 1: Log in to the AssetMax Research platform as a financial analyst.
+            driver.findElement(By.id("username")).sendKeys("financialAnalyst");
+            driver.findElement(By.id("password")).sendKeys("password123");
+            driver.findElement(By.id("loginButton")).click();
+
+            // Step 2: Navigate to the "Investment Portfolio Analysis" section.
+            driver.findElement(By.linkText("Investment Portfolio Analysis")).click();
             
         } finally {
             // Teardown

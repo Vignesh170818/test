@@ -37,10 +37,11 @@ async def generate_epic(form: GenLiteMainForm):
         epicdictobject.highlevelreq = form.scope_vision.data
     else:
         epicdictobject.highlevelreq = ""
-
+        
     epic = await asyncio.to_thread(
         epicgenerator.generate,
-        epicdictobject
+        epicdictobject,
+        form
         )
 
     return epic

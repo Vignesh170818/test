@@ -39,7 +39,7 @@
     "Scope"  : "['User.Read']",
     "BaseUri" : "#{genlitebaseuri}#/core"
   },
-  "AllowedOrigins":["https://*.accenture.com*","https://*.azurewebsites.net*"],
+  "AllowedOrigins":["https://*.accenture.com*","https://*.azurewebsites.net*","localhost"],
 
   "AppLog": {
     "LogDir": "/home/LogFiles",
@@ -50,5 +50,5 @@
     "LogLevel": "INFO"
     },
     "SUFFIX":"/core",
-    "AllowedWebsites":["accenture.com","azurewebsites.net"]
+    "AllowedWebsites":["accenture.com","azurewebsites.net","localhost"]
 }

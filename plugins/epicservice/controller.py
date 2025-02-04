@@ -3,6 +3,7 @@ from coreengine.textcompletion.orchestration import GenliteCompletion
 from promptengine.promptrenderer import PromptRenderer
 from plugins.epicservice.model import EPICInput, EPICReviewInput, EPICApplyReviewInput
 from bpmtree.util.industry import GenLiteIndustry
+from appext.models.form import GenLiteMainForm
 
 class GenLiteEPIC:
     '''Class for EPIC Service'''
@@ -22,7 +23,8 @@ class GenLiteEPIC:
 
     def generate(
             self,
-            epicinputdata: EPICInput
+            epicinputdata: EPICInput,
+            form: GenLiteMainForm = None
             ):
         '''Generate a process flow for given business context'''
         promptobject = PromptRenderer("generateepic")
@@ -33,10 +35,13 @@ class GenLiteEPIC:
             "applicationcontext": epicinputdata.applicationcontext
             }
         systemprompt = promptobject.render(**dictobject)
-        processflow = self.completionmodel.generate_artifact(systemprompt)
-        processflow = processflow.replace("\n\n","\n")
-        processflow = processflow.replace("**","")
-        processflow = processflow.replace("```","")
+        processflow = self.completionmodel.generate_artifact(systemprompt,form)
+        
+        if not form or not form.streamOpenAICheckBox.data:
+            processflow = processflow.replace("\n\n","\n")
+            processflow = processflow.replace("**","")
+            processflow = processflow.replace("```","")
+            
         return processflow
 
     def review(

@@ -77,6 +77,7 @@ from functools import wraps
 from llm_output_parsers.parser import *
 from sqlite_handler.handler import *
 from tool_integration.integration import get_entityData
+from appext.orchestration.graph import get_graph
 
 logger = get_logger("GenLiteApp")
 logger.info("App Started Initialization")
@@ -519,24 +520,24 @@ async def getbusinesscontext():
                         context = eachrow.split("~")[0]
                         if counter == 0:
                             businesscontext = context
-                        # context = context.replace(
-                        #     "Business Sub Domain:",
-                        #     "<br>Business Sub Domain:"
-                        #     )
-                        # context = context.replace(
-                        #     "Business Capability:",
-                        #     "<br>Business Capability:"
-                        #     )
+                        context = context.replace(
+                            "Business Sub Domain:",
+                            "<br>Business Sub Domain:"
+                            )
+                        context = context.replace(
+                            "Business Capability:",
+                            "<br>Business Capability:"
+                            )
                         context = context.replace(
                             "Business Sub Capability:",
-                            "Business Domain:"
+                            "<br>Business Domain:"
                             )
-                        # context = context.replace("Workflow:", "<br>Workflow:")
+                        context = context.replace("Workflow:", "<br>Workflow:")
                         score = eachrow.split("~")[1]
                         if counter == 0:
                             businesscontext = context
                         popovercontent += f"Mapped Business Context {counter + 1} with {score}"
-                        # popovercontent += "<br>"
+                        popovercontent += "<br>"
                         popovercontent += f"<p>{context}</p>"
                         # popovercontent += "<br>"
                         counter += 1
@@ -589,8 +590,11 @@ async def generateepic():
         epic = await generate_epic(form)
     else:
         epic = "Invalid Request"
-    return jsonify({"response": epic})
-
+    if form.streamOpenAICheckBox.data:
+        return epic
+    else:
+        return jsonify({"response": epic})
+    
 @app.route('/getentitydata', methods=['POST','OPTIONS'])
 @validate_origin
 @csrf.exempt
@@ -1268,10 +1272,37 @@ def cleanse_form(inputform: GenLiteMainForm):
             logger.exception(e)
     return inputform
 
+@app.route('/download_eco_doc', methods=['POST'])
+@csrf.exempt
+async def generate_eco_doc():
+    '''Generate Functional Design Doc'''
+    if request.method == 'POST':
+        form = GenLiteMainForm()
+        save_file_path = await worddocgenerator.download_doc(form)
+ 
+        return jsonify(
+            {
+                "filepath": save_file_path
+            }
+        )        
 
+
+@app.route('/getgraph', methods=['POST','OPTIONS'])
+@validate_origin
+@csrf.exempt
+async def getgraph():
+    '''Get Graph'''
+    if request.method == 'POST':
+        logger.info('Testing get graph')
+        form = GenLiteMainForm()
+        serviceCode = form.services_code.data
+        result = await get_graph(form, serviceCode)
+        return jsonify({"response":  result.generate_html()})
+    
 
 if __name__ == '__main__':
     app.run(
-        port='8000',
+        port='9000',
         debug=True
         )
+    

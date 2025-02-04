@@ -82,7 +82,7 @@ async function fetchBusinessContext() {
     // console.log(formJSON);
 
     try {
-        const url = window.location.href.replace('\/#', '') + '/getbusinesscontext'
+        const url = window.location.href.replace('\/#', '').replace('#', '') + '/getbusinesscontext'
         const response = await fetch(url, {
             method: 'POST', // or 'PUT'
             headers: {

@@ -99,31 +99,31 @@ async function asyncUserStoryFunction(eventType) {
     let url = '';
 
     if (eventType === 'generate') {
-        url = window.location.href.replace('\/#', '') + '/generateuserstories';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generateuserstories';
     }
     else if (eventType === 'getData') {
-        url = window.location.href.replace('\/#', '') + '/getentitydata';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/getentitydata';
     }
     else if (eventType === 'resetUserStory') {
-        url = window.location.href.replace('\/#', '') + '/resetentitydata';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/resetentitydata';
     }
     else if (eventType === 'expand') {
-        url = window.location.href.replace('\/#', '') + '/expanduserstory';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/expanduserstory';
     }
     else if (eventType === 'consolidate') {
-        url = window.location.href.replace('\/#', '') + '/consolidateworkitems';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/consolidateworkitems';
     }
     else if (eventType === 'pushtoalm') {
-        url = window.location.href.replace('\/#', '') + '/mergeworkitems';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/mergeworkitems';
     }
     else if (eventType === 'checkstatus') {
-        url = window.location.href.replace('\/#', '') + '/checkstatus';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/checkstatus';
     }
     else if (eventType === 'downloadjson') {
-        url = window.location.href.replace('\/#', '') + '/download_tool_queue';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/download_tool_queue';
     }
     else {
-        url = window.location.href.replace('\/#', '') + '/generateuserstories';
+        url = window.location.href.replace('\/#', '').replace('#', '') + '/generateuserstories';
     }
 
     try {

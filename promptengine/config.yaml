@@ -91,7 +91,7 @@ codegeneration_services_python:
 codegeneration_services_java:
   template_dir: "promptengine/prompt/tdlc/code/services"
   template_name: "java.txt"
-codegeneration_services_nodejs:
+codegeneration_services_node:
   template_dir: "promptengine/prompt/tdlc/code/services"
   template_name: "node.txt"
 codegeneration_services_csharp:
@@ -175,3 +175,15 @@ deployment_gcp:
 functionaldesign_image:
   template_dir: "promptengine/prompt/tdlc/design/functional"
   template_name: "fromimage.txt"
+graph_csharp:
+  template_dir: "promptengine/prompt/tdlc/graph"
+  template_name: "csharp.txt"
+graph_python:
+  template_dir: "promptengine/prompt/tdlc/graph"
+  template_name: "python.txt"
+graph_abap:
+  template_dir: "promptengine/prompt/tdlc/graph"
+  template_name: "abap.txt"
+graph_sql:
+  template_dir: "promptengine/prompt/tdlc/graph"
+  template_name: "sql.txt"

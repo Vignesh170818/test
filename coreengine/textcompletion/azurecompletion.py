@@ -2,6 +2,7 @@
 import os
 import logging
 import yaml
+import time
 from openai import AzureOpenAI, OpenAIError, AsyncAzureOpenAI
 from coreengine.vault.azurevault import GenLiteAzureVault
 
@@ -118,6 +119,43 @@ class AzureGPT35Completion:
             returnresponse = "Error: " + str(exception)
 
         return returnresponse
+    
+    def generateStream(self, systemprompt):
+        '''
+        Generate a completion
+        '''
+        
+        messageslist = [
+            {
+                "role": "system",
+                "content": systemprompt
+            }
+        ]
+        try:
+            completionmodel = AzureOpenAI(
+            azure_endpoint=self.azure_endpoint,
+            api_key=self.api_key,
+            azure_deployment=self.azure_deployment,
+            api_version=self.api_version
+            )
+            azurecompletion = completionmodel.chat.completions.create(
+                    model=self.modelname,
+                    messages=messageslist,
+                    temperature=self.temperature,
+                    top_p=self.top_p,
+                    stream=True
+                )
+            
+            for chunk in azurecompletion:
+                 if len(chunk.choices) > 0:
+                    delta = chunk.choices[0].delta
+                    if delta.content:
+                        time.sleep(0.05)
+                        yield(delta.content)
+                        
+        except OpenAIError as exception:
+            logger.error("Error: %s", exception)
+            yield "Error: " + str(exception)
 
 class AzureGPT4Completion:
     '''
