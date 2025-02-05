@@ -313,7 +313,8 @@ def after_request(response):
     response.headers['X-Frame-Options'] = 'SAMEORIGIN'
     response.headers['X-XSS-Protection'] = '1; mode=block'
     csp = (
-    "default-src 'self' 'unsafe-eval' 'unsafe-inline' *.accenture.com; "
+    # "default-src 'self' 'unsafe-eval' 'unsafe-inline' *.accenture.com; "
+    "default-src 'self' 'unsafe-eval' 'unsafe-inline' *.accenture.com; media-src data:; "
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' *.cloudflare.com *.jsdelivr.net; "
     "worker-src 'self' blob: *.accenture.com; " 
     "font-src 'self' 'unsafe-inline' 'unsafe-eval' *.cloudflare.com *.jsdelivr.net; "
