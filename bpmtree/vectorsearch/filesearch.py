@@ -36,9 +36,17 @@ class PickleFileSearch:
         Returns:
             str: A string containing the top n most similar business contexts.
         '''
-        with open(self.indexfile_location, "rb") as f:
-            logger.info("PicklefileSize: %d bytes", os.path.getsize(self.indexfile_location))
-        bcdf = pd.read_pickle(self.indexfile_location)
+        # with open(self.indexfile_location, "rb") as f:
+        #     data = pickle.load(file)
+        #     logger.info("PicklefileSize: %d bytes", os.path.getsize(self.indexfile_location))
+
+        file_path = self.indexfilelocation
+        with open(file_path, "rb") as file:
+            data = pickle.load(file)
+            Logger.info(data)
+ 
+        # bcdf = pd.read_pickle(self.indexfile_location)
+         
         
         # with open(self.indexfile_location, "rb") as f:
         #     bcdf = pickle.load(f)
