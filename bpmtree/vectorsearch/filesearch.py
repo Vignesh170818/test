@@ -42,8 +42,8 @@ class PickleFileSearch:
 
         file_path = self.indexfile_location
         with open(file_path, "rb") as file:
-            data = pickle.load(file)
-            Logger.info(data)
+            bcdf = pickle.load(file)
+            Logger.info(bcdf)
  
         # bcdf = pd.read_pickle(self.indexfile_location)
          
