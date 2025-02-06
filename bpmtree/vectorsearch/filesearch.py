@@ -35,7 +35,7 @@ class PickleFileSearch:
         '''
 
         bcdf = pd.read_pickle(self.indexfile_location)
-        logger.info(os.path.getsize("file.pkl"))
+        logger.info("Picklefile Size",os.path.getsize(bcdf))
         # with open(self.indexfile_location, "rb") as f:
         #     bcdf = pickle.load(f)
         embeddingobject = AzureEmbedding()
