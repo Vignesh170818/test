@@ -40,7 +40,7 @@ class PickleFileSearch:
         #     data = pickle.load(file)
         #     logger.info("PicklefileSize: %d bytes", os.path.getsize(self.indexfile_location))
 
-        file_path = self.indexfilelocation
+        file_path = self.indexfile_location
         with open(file_path, "rb") as file:
             data = pickle.load(file)
             Logger.info(data)
