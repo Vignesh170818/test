@@ -1,5 +1,6 @@
 '''LLMManager class for managing LLM models'''
 import pandas as pd
+import os
 import pickle
 from bpmtree.util.treefilepath import BPMFilePath
 from coreengine.embedding.azureembedding import AzureEmbedding
@@ -34,6 +35,7 @@ class PickleFileSearch:
         '''
 
         bcdf = pd.read_pickle(self.indexfile_location)
+        logger.info(os.path.getsize("file.pkl"))
         # with open(self.indexfile_location, "rb") as f:
         #     bcdf = pickle.load(f)
         embeddingobject = AzureEmbedding()
