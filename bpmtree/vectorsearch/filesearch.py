@@ -1,10 +1,13 @@
 '''LLMManager class for managing LLM models'''
+import logging
 import pandas as pd
 import os
 import pickle
 from bpmtree.util.treefilepath import BPMFilePath
 from coreengine.embedding.azureembedding import AzureEmbedding
 from coreengine.embedding.utils import cosine_similarity
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class PickleFileSearch:
     '''Class for Generating BPM Diagrams in mermaid'''
@@ -34,7 +37,7 @@ class PickleFileSearch:
             str: A string containing the top n most similar business contexts.
         '''
         with open(self.indexfile_location, "rb") as f:
-            logger.info("PicklefileSize",os.path.getsize(self.indexfile_location))
+            logger.info("PicklefileSize: %d bytes", os.path.getsize(self.indexfile_location))
         bcdf = pd.read_pickle(self.indexfile_location)
         
         # with open(self.indexfile_location, "rb") as f:
