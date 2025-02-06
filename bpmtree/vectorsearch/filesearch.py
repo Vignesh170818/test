@@ -33,9 +33,10 @@ class PickleFileSearch:
         Returns:
             str: A string containing the top n most similar business contexts.
         '''
-
+        with open(self.indexfile_location, "rb") as f:
+            logger.info("PicklefileSize",os.path.getsize(self.indexfile_location))
         bcdf = pd.read_pickle(self.indexfile_location)
-        logger.info("Picklefile Size",os.path.getsize(bcdf))
+        
         # with open(self.indexfile_location, "rb") as f:
         #     bcdf = pickle.load(f)
         embeddingobject = AzureEmbedding()
