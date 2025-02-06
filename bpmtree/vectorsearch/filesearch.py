@@ -34,7 +34,7 @@ class PickleFileSearch:
         '''
 
         # bcdf = pd.read_pickle(self.indexfile_location)
-        with open("self.indexfile_location", "rb") as f:
+        with open(self.indexfile_location, "rb") as f:
             bcdf = pickle.load(f)
         embeddingobject = AzureEmbedding()
         search_term_vector = embeddingobject.get_embedding(scopevision)
