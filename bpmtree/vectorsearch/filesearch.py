@@ -33,9 +33,9 @@ class PickleFileSearch:
             str: A string containing the top n most similar business contexts.
         '''
 
-        # bcdf = pd.read_pickle(self.indexfile_location)
-        with open(self.indexfile_location, "rb") as f:
-            bcdf = pickle.load(f)
+        bcdf = pd.read_pickle(self.indexfile_location)
+        # with open(self.indexfile_location, "rb") as f:
+        #     bcdf = pickle.load(f)
         embeddingobject = AzureEmbedding()
         search_term_vector = embeddingobject.get_embedding(scopevision)
 
