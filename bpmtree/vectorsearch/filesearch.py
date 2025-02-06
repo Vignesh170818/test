@@ -1,5 +1,6 @@
 '''LLMManager class for managing LLM models'''
 import pandas as pd
+import pickle
 from bpmtree.util.treefilepath import BPMFilePath
 from coreengine.embedding.azureembedding import AzureEmbedding
 from coreengine.embedding.utils import cosine_similarity
@@ -32,7 +33,9 @@ class PickleFileSearch:
             str: A string containing the top n most similar business contexts.
         '''
 
-        bcdf = pd.read_pickle(self.indexfile_location)
+        # bcdf = pd.read_pickle(self.indexfile_location)
+        with open("self.indexfile_location", "rb") as f:
+            bcdf = pickle.load(f)
         embeddingobject = AzureEmbedding()
         search_term_vector = embeddingobject.get_embedding(scopevision)
 
