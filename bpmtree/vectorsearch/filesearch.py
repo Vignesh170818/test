@@ -45,6 +45,9 @@ class PickleFileSearch:
         #     bcdf = pickle.load(file)
         #     Logger.info(bcdf)
         with open(file_path, "rb") as f:
+            print(f.read(10))  # Read first 10 bytes to check format
+
+        with open(file_path, "rb") as f:
             data = pickle.load(f)
  
         if isinstance(data, dict):
