@@ -41,9 +41,18 @@ class PickleFileSearch:
         #     logger.info("PicklefileSize: %d bytes", os.path.getsize(self.indexfile_location))
 
         file_path = self.indexfile_location
-        with open(file_path, "rb") as file:
-            bcdf = pickle.load(file)
-            Logger.info(bcdf)
+        # with open(file_path, "rb") as file:
+        #     bcdf = pickle.load(file)
+        #     Logger.info(bcdf)
+          with open(file_path, "rb") as f:
+            data = pickle.load(f)
+ 
+          if isinstance(data, dict):
+            df = pd.DataFrame(data["dataframe"])  # Extract DataFrame
+            logger.info(df.head())
+ 
+            json_part = data.get("json_data", "{}")  # Extract JSON
+            logger.info(json.loads(json_part))
  
         # bcdf = pd.read_pickle(self.indexfile_location)
          
