@@ -44,10 +44,10 @@ class PickleFileSearch:
         # with open(file_path, "rb") as file:
         #     bcdf = pickle.load(file)
         #     Logger.info(bcdf)
-          with open(file_path, "rb") as f:
+        with open(file_path, "rb") as f:
             data = pickle.load(f)
  
-          if isinstance(data, dict):
+        if isinstance(data, dict):
             df = pd.DataFrame(data["dataframe"])  # Extract DataFrame
             logger.info(df.head())
  
