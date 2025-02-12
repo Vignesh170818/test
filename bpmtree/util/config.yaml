@@ -1,27 +1,27 @@
 assetmanagement:
-  indexfile_location: "bpmtree/indexdata/assetmanagement/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/assetmanagement/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/assetmanagement/businesscontext.csv"
 banking:
-  indexfile_location: "bpmtree/indexdata/banking/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/banking/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/banking/businesscontext.csv"
 healthcareinsurance:
-  indexfile_location: "bpmtree/indexdata/healthcareinsurance/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/healthcareinsurance/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/healthcareinsurance/businesscontext.csv"
 capitalmarkets:
-  indexfile_location: "bpmtree/indexdata/capitalmarkets/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/capitalmarkets/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/capitalmarkets/businesscontext.csv"
 consumerservicegoods:
-  indexfile_location: "bpmtree/indexdata/consumerservicegoods/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/consumerservicegoods/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/consumerservicegoods/businesscontext.csv"
 lifesciences:
-  indexfile_location: "bpmtree/indexdata/lifesciences/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/lifesciences/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/lifesciences/businesscontext.csv"
 retail:
-  indexfile_location: "bpmtree/indexdata/retail/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/retail/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/retail/businesscontext.csv"
 retailecommerce:
-  indexfile_location: "bpmtree/indexdata/retailecommerce/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/retailecommerce/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/retailecommerce/businesscontext.csv"
 travelaviationairlines:
-  indexfile_location: "bpmtree/indexdata/travelaviationairlines/embedded.pkl"
+  indexfile_location: "https://#{storageAccountName}#.blob.core.windows.net/#{storageContainerName}#/travelaviationairlines/embedded.pkl?#{SASToken}#"
   treefile_location: "bpmtree/treedata/travelaviationairlines/businesscontext.csv"
