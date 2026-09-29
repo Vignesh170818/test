@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(C:\\Users\\likitha.reddy.ganta\\Downloads\\test\\project\\**)"
+    ]
+  }
+}
